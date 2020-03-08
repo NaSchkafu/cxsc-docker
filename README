@@ -1,3 +1,9 @@
+This is a modified copy of the C-XSC source code available at the official homepage (http://www2.math.uni-wuppertal.de/wrswt/xsc/cxsc_new.html).
+
+Modifcations:
+
+- Replace all dynamic exception specifiers with noexcept (so that the code-base is C++17 compatible).
+
 
                      Installing C-XSC (CToolbox included)
                      ===================================
