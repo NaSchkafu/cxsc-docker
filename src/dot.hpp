@@ -121,9 +121,9 @@ class dotprecision
    public:
       // ---- Constructors  -----------------------------------------
       //! Constructor of class dotprecision
-      dotprecision(void)                 throw();
+      dotprecision(void)                 noexcept;
       //! Constructor of class dotprecision
-      dotprecision(const dotprecision &) throw();
+      dotprecision(const dotprecision &) noexcept;
       
       //! Get currently set precision for computation of dot products
       inline int get_k() const { return k; }
@@ -139,141 +139,141 @@ class dotprecision
       inline void set_err(real e) { err = e; }
 
       //! Implementation of standard assigning operator
-      dotprecision & operator =(const dotprecision &) throw();
+      dotprecision & operator =(const dotprecision &) noexcept;
       //! Implementation of standard assigning operator
-      dotprecision & operator =(const real &)         throw();
+      dotprecision & operator =(const real &)         noexcept;
       //! Implementation of standard assigning operator
-      dotprecision & operator =(const l_real &)       throw(); // in l_real.cpp
+      dotprecision & operator =(const l_real &)       noexcept; // in l_real.cpp
 
       // ---- Typecasts     -----------------------------------------
       //! Constructor of class dotprecision
-      explicit dotprecision(const real &)         throw();
+      explicit dotprecision(const real &)         noexcept;
       //! Constructor of class dotprecision
-      explicit dotprecision(const l_real &) throw();
+      explicit dotprecision(const l_real &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
       /*!
       \deprecated use standard contructors for typecasting
 
       \sa dotprecision(const real &)
       */
-      friend inline dotprecision _dotprecision(const real &d) throw();
+      friend inline dotprecision _dotprecision(const real &d) noexcept;
 
       // ---- Destruktor    -----------------------------------------
       ~dotprecision(void) ;
 
       // ---- Input/Output  -----------------------------------------
       //! Implementation of standard output method
-      friend std::string  & operator <<(std::string &,const dotprecision &) throw();
+      friend std::string  & operator <<(std::string &,const dotprecision &) noexcept;
       //! Implementation of standard input method
-      friend std::string  & operator >>(std::string &,dotprecision &)       throw();
+      friend std::string  & operator >>(std::string &,dotprecision &)       noexcept;
       //! Implementation of standard input method
-      friend void           operator >>(const std::string &,dotprecision &) throw();
+      friend void           operator >>(const std::string &,dotprecision &) noexcept;
       //! Implementation of standard input method
-      friend void           operator >>(const char *,dotprecision &)        throw();
+      friend void           operator >>(const char *,dotprecision &)        noexcept;
       //! Implementation of standard output method
-      friend std::ostream & operator <<(std::ostream &,const dotprecision &) throw();
+      friend std::ostream & operator <<(std::ostream &,const dotprecision &) noexcept;
       //! Implementation of standard input method
-      friend std::istream & operator >>(std::istream &,dotprecision &)      throw();
+      friend std::istream & operator >>(std::istream &,dotprecision &)      noexcept;
 
       // ---- Std.Operators -----------------------------------------
       //! Implementation of standard algebraic negative sign operation
-      friend  dotprecision operator -(const dotprecision &) throw();
+      friend  dotprecision operator -(const dotprecision &) noexcept;
       //! Implementation of standard algebraic positive sign operation
-      friend  dotprecision operator +(const dotprecision &) throw();
+      friend  dotprecision operator +(const dotprecision &) noexcept;
 
       //! Implementation of standard algebraic addition operation
-      friend  dotprecision operator +(const dotprecision &,const dotprecision &) throw();
+      friend  dotprecision operator +(const dotprecision &,const dotprecision &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend  dotprecision operator -(const dotprecision &,const dotprecision &) throw();
+      friend  dotprecision operator -(const dotprecision &,const dotprecision &) noexcept;
       //! Returns the convex hull of the arguments
-      friend inline idotprecision operator |(const dotprecision &,const dotprecision &) throw();
+      friend inline idotprecision operator |(const dotprecision &,const dotprecision &) noexcept;
 
       //! Implementation of standard algebraic addition operation
-      friend  dotprecision operator +(const dotprecision &,const real &) throw();
+      friend  dotprecision operator +(const dotprecision &,const real &) noexcept;
       //! Implementation of standard algebraic addition operation
-      friend  dotprecision operator +(const real &,const dotprecision &) throw();
+      friend  dotprecision operator +(const real &,const dotprecision &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend  dotprecision operator -(const dotprecision &,const real &) throw();
+      friend  dotprecision operator -(const dotprecision &,const real &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend  dotprecision operator -(const real &,const dotprecision &) throw();
+      friend  dotprecision operator -(const real &,const dotprecision &) noexcept;
       //! Returns the convex hull of the arguments
-      friend inline idotprecision operator |(const real &,const dotprecision &) throw();
+      friend inline idotprecision operator |(const real &,const dotprecision &) noexcept;
       //! Returns the convex hull of the arguments
-      friend inline idotprecision operator |(const dotprecision &,const real &) throw();
+      friend inline idotprecision operator |(const dotprecision &,const real &) noexcept;
 
       //! Implementation of standard algebraic addition and allocation operation
-      friend dotprecision & operator +=(dotprecision &,const dotprecision &) throw();
+      friend dotprecision & operator +=(dotprecision &,const dotprecision &) noexcept;
       //! Implementation of standard algebraic subtraction and allocation operation
-      friend dotprecision & operator -=(dotprecision &,const dotprecision &) throw();
+      friend dotprecision & operator -=(dotprecision &,const dotprecision &) noexcept;
 
       //! Implementation of standard algebraic addition and allocation operation
-      friend dotprecision & operator +=(dotprecision &,const real &) throw();
+      friend dotprecision & operator +=(dotprecision &,const real &) noexcept;
       //! Implementation of standard algebraic subtraction and allocation operation
-      friend dotprecision & operator -=(dotprecision &,const real &) throw();
+      friend dotprecision & operator -=(dotprecision &,const real &) noexcept;
 
       // ---- Comp.Operat. ------------------------------------------
       //! Implementation of standard negation operation
-      friend bool operator  !(const dotprecision &) throw();
+      friend bool operator  !(const dotprecision &) noexcept;
 //      operator void *() const throw() { if(sign(*this)) return (void *)1; else return 0;}
 
       //! Implementation of standard equality operation
-      friend bool operator ==(const dotprecision &,const dotprecision &) throw();
+      friend bool operator ==(const dotprecision &,const dotprecision &) noexcept;
       //! Implementation of standard negated equality operation
-      friend bool operator !=(const dotprecision &,const dotprecision &) throw();
+      friend bool operator !=(const dotprecision &,const dotprecision &) noexcept;
       //! Implementation of standard less-than operation
-      friend bool operator  <(const dotprecision &,const dotprecision &) throw();
+      friend bool operator  <(const dotprecision &,const dotprecision &) noexcept;
       //! Implementation of standard greater-than operation
-      friend bool operator  >(const dotprecision &,const dotprecision &) throw();
+      friend bool operator  >(const dotprecision &,const dotprecision &) noexcept;
       //! Implementation of standard less-or-equal-than operation
-      friend bool operator <=(const dotprecision &,const dotprecision &) throw();
+      friend bool operator <=(const dotprecision &,const dotprecision &) noexcept;
       //! Implementation of standard greater-or-equal-than operation
-      friend bool operator >=(const dotprecision &,const dotprecision &) throw();
+      friend bool operator >=(const dotprecision &,const dotprecision &) noexcept;
 
       //! Implementation of standard equality operation
-      friend bool operator ==(const real &,const dotprecision &) throw();
+      friend bool operator ==(const real &,const dotprecision &) noexcept;
       //! Implementation of standard negated equality operation
-      friend bool operator !=(const real &,const dotprecision &) throw();
+      friend bool operator !=(const real &,const dotprecision &) noexcept;
       //! Implementation of standard less-than operation
-      friend bool operator  <(const real &,const dotprecision &) throw();
+      friend bool operator  <(const real &,const dotprecision &) noexcept;
       //! Implementation of standard greater-than operation
-      friend bool operator  >(const real &,const dotprecision &) throw();
+      friend bool operator  >(const real &,const dotprecision &) noexcept;
       //! Implementation of standard less-or-equal-than operation
-      friend bool operator <=(const real &,const dotprecision &) throw();
+      friend bool operator <=(const real &,const dotprecision &) noexcept;
       //! Implementation of standard greater-or-equal-than operation
-      friend bool operator >=(const real &,const dotprecision &) throw();
+      friend bool operator >=(const real &,const dotprecision &) noexcept;
 
       //! Implementation of standard equality operation
-      friend bool operator ==(const dotprecision &,const real &) throw();
+      friend bool operator ==(const dotprecision &,const real &) noexcept;
       //! Implementation of standard negated equality operation
-      friend bool operator !=(const dotprecision &,const real &) throw();
+      friend bool operator !=(const dotprecision &,const real &) noexcept;
       //! Implementation of standard less-than operation
-      friend bool operator  <(const dotprecision &,const real &) throw();
+      friend bool operator  <(const dotprecision &,const real &) noexcept;
       //! Implementation of standard greater-than operation
-      friend bool operator  >(const dotprecision &,const real &) throw();
+      friend bool operator  >(const dotprecision &,const real &) noexcept;
       //! Implementation of standard less-or-equal-than operation
-      friend bool operator <=(const dotprecision &,const real &) throw();
+      friend bool operator <=(const dotprecision &,const real &) noexcept;
       //! Implementation of standard greater-or-equal-than operation
-      friend bool operator >=(const dotprecision &,const real &) throw();
+      friend bool operator >=(const dotprecision &,const real &) noexcept;
 
       // ---- Others ------------------------------------------------
       //! Converting the exact dotprecision value with one rounding into a real value
-      friend void rnd (const dotprecision&, real&, rndtype) throw();
+      friend void rnd (const dotprecision&, real&, rndtype) noexcept;
       //! Converting the exact dotprecision value with one rounding into the nearest lower and upper real value
-      friend void rnd (const dotprecision&, real&, real&)              throw();
+      friend void rnd (const dotprecision&, real&, real&)              noexcept;
       //! Converting the exact dotprecision value into an interval with the nearest lower and upper bound
-      friend void rnd (const dotprecision&, interval&) throw(); // Blomquist
+      friend void rnd (const dotprecision&, interval&) noexcept; // Blomquist
       //! Converting the exact dotprecision value with one rounding into a real value
-      friend real rnd (const dotprecision&, rndtype)        throw();
+      friend real rnd (const dotprecision&, rndtype)        noexcept;
 
       //! The absolute value of a dotprecision value
-      friend dotprecision abs(const dotprecision &) throw();
+      friend dotprecision abs(const dotprecision &) noexcept;
       //! The sign of a dotprecision value
-      friend int         sign(const dotprecision &) throw();
+      friend int         sign(const dotprecision &) noexcept;
       //! The accurate scalar product of the last two arguments added to the value of the first argument
-      friend dotprecision & accumulate (dotprecision&, const real&, const real&) throw();
+      friend dotprecision & accumulate (dotprecision&, const real&, const real&) noexcept;
 
       //! The accurate scalar product of the last two arguments added to the value of the first argument (no error bounds)
-      friend dotprecision & accumulate_approx (dotprecision&, const real&, const real&) throw();
+      friend dotprecision & accumulate_approx (dotprecision&, const real&, const real&) noexcept;
 
       template<typename S, typename T>
       friend INLINE void addDot( dotprecision&, const S&, const T&);
@@ -296,59 +296,59 @@ class dotprecision
 
 
    private:
-      dotprecision & negdot(void) throw(); // Negates current dotprecision
+      dotprecision & negdot(void) noexcept; // Negates current dotprecision
 };
 
 
 
-      inline dotprecision _dotprecision(const real &d) throw() { return dotprecision(d); }
-      std::string  & operator <<(std::string &,const dotprecision &) throw();
-      std::string  & operator >>(std::string &,dotprecision &)       throw();
-      void           operator >>(const std::string &,dotprecision &) throw();
-      void           operator >>(const char *,dotprecision &)        throw();
-      std::ostream & operator <<(std::ostream &,const dotprecision &) throw();
-      std::istream & operator >>(std::istream &,dotprecision &)      throw();
-      dotprecision operator -(const dotprecision &) throw();
-      dotprecision operator +(const dotprecision &) throw();
-      dotprecision operator +(const dotprecision &,const dotprecision &) throw();
-      dotprecision operator -(const dotprecision &,const dotprecision &) throw();
-      inline idotprecision operator |(const dotprecision &,const dotprecision &) throw();
-      dotprecision operator +(const dotprecision &,const real &) throw();
-      dotprecision operator +(const real &,const dotprecision &) throw();
-      dotprecision operator -(const dotprecision &,const real &) throw();
-      dotprecision operator -(const real &,const dotprecision &) throw();
-      inline idotprecision operator |(const real &,const dotprecision &) throw();
-      inline idotprecision operator |(const dotprecision &,const real &) throw();
-      dotprecision & operator +=(dotprecision &,const dotprecision &) throw();
-      dotprecision & operator -=(dotprecision &,const dotprecision &) throw();
-      dotprecision & operator +=(dotprecision &,const real &) throw();
-      dotprecision & operator -=(dotprecision &,const real &) throw();
-      bool operator  !(const dotprecision &) throw();
-      bool operator ==(const dotprecision &,const dotprecision &) throw();
-      bool operator !=(const dotprecision &,const dotprecision &) throw();
-      bool operator  <(const dotprecision &,const dotprecision &) throw();
-      bool operator  >(const dotprecision &,const dotprecision &) throw();
-      bool operator <=(const dotprecision &,const dotprecision &) throw();
-      bool operator >=(const dotprecision &,const dotprecision &) throw();
-      bool operator ==(const real &,const dotprecision &) throw();
-      bool operator !=(const real &,const dotprecision &) throw();
-      bool operator  <(const real &,const dotprecision &) throw();
-      bool operator  >(const real &,const dotprecision &) throw();
-      bool operator <=(const real &,const dotprecision &) throw();
-      bool operator >=(const real &,const dotprecision &) throw();
-      bool operator ==(const dotprecision &,const real &) throw();
-      bool operator !=(const dotprecision &,const real &) throw();
-      bool operator  <(const dotprecision &,const real &) throw();
-      bool operator  >(const dotprecision &,const real &) throw();
-      bool operator <=(const dotprecision &,const real &) throw();
-      bool operator >=(const dotprecision &,const real &) throw();
-      void rnd (const dotprecision&, real&, rndtype = RND_NEXT) throw();
-      void rnd (const dotprecision&, real&, real&)              throw();
-      void rnd (const dotprecision&, interval&) throw();
-      real rnd (const dotprecision&, rndtype = RND_NEXT)        throw();
-      dotprecision abs(const dotprecision &) throw();
-      int         sign(const dotprecision &) throw();
-      dotprecision & accumulate (dotprecision&, const real&, const real&) throw();
+      inline dotprecision _dotprecision(const real &d) noexcept { return dotprecision(d); }
+      std::string  & operator <<(std::string &,const dotprecision &) noexcept;
+      std::string  & operator >>(std::string &,dotprecision &)       noexcept;
+      void           operator >>(const std::string &,dotprecision &) noexcept;
+      void           operator >>(const char *,dotprecision &)        noexcept;
+      std::ostream & operator <<(std::ostream &,const dotprecision &) noexcept;
+      std::istream & operator >>(std::istream &,dotprecision &)      noexcept;
+      dotprecision operator -(const dotprecision &) noexcept;
+      dotprecision operator +(const dotprecision &) noexcept;
+      dotprecision operator +(const dotprecision &,const dotprecision &) noexcept;
+      dotprecision operator -(const dotprecision &,const dotprecision &) noexcept;
+      inline idotprecision operator |(const dotprecision &,const dotprecision &) noexcept;
+      dotprecision operator +(const dotprecision &,const real &) noexcept;
+      dotprecision operator +(const real &,const dotprecision &) noexcept;
+      dotprecision operator -(const dotprecision &,const real &) noexcept;
+      dotprecision operator -(const real &,const dotprecision &) noexcept;
+      inline idotprecision operator |(const real &,const dotprecision &) noexcept;
+      inline idotprecision operator |(const dotprecision &,const real &) noexcept;
+      dotprecision & operator +=(dotprecision &,const dotprecision &) noexcept;
+      dotprecision & operator -=(dotprecision &,const dotprecision &) noexcept;
+      dotprecision & operator +=(dotprecision &,const real &) noexcept;
+      dotprecision & operator -=(dotprecision &,const real &) noexcept;
+      bool operator  !(const dotprecision &) noexcept;
+      bool operator ==(const dotprecision &,const dotprecision &) noexcept;
+      bool operator !=(const dotprecision &,const dotprecision &) noexcept;
+      bool operator  <(const dotprecision &,const dotprecision &) noexcept;
+      bool operator  >(const dotprecision &,const dotprecision &) noexcept;
+      bool operator <=(const dotprecision &,const dotprecision &) noexcept;
+      bool operator >=(const dotprecision &,const dotprecision &) noexcept;
+      bool operator ==(const real &,const dotprecision &) noexcept;
+      bool operator !=(const real &,const dotprecision &) noexcept;
+      bool operator  <(const real &,const dotprecision &) noexcept;
+      bool operator  >(const real &,const dotprecision &) noexcept;
+      bool operator <=(const real &,const dotprecision &) noexcept;
+      bool operator >=(const real &,const dotprecision &) noexcept;
+      bool operator ==(const dotprecision &,const real &) noexcept;
+      bool operator !=(const dotprecision &,const real &) noexcept;
+      bool operator  <(const dotprecision &,const real &) noexcept;
+      bool operator  >(const dotprecision &,const real &) noexcept;
+      bool operator <=(const dotprecision &,const real &) noexcept;
+      bool operator >=(const dotprecision &,const real &) noexcept;
+      void rnd (const dotprecision&, real&, rndtype = RND_NEXT) noexcept;
+      void rnd (const dotprecision&, real&, real&)              noexcept;
+      void rnd (const dotprecision&, interval&) noexcept;
+      real rnd (const dotprecision&, rndtype = RND_NEXT)        noexcept;
+      dotprecision abs(const dotprecision &) noexcept;
+      int         sign(const dotprecision &) noexcept;
+      dotprecision & accumulate (dotprecision&, const real&, const real&) noexcept;
 
 
 } // namespace cxsc 

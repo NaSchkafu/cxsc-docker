@@ -60,28 +60,28 @@ class l_rmatrix_subv
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_ROW_OR_COL_NOT_IN_MAT);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Returns one column of the matrix as a vector
 	friend INLINE l_rmatrix_subv Col(l_rmatrix &m,const int &i)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_ROW_OR_COL_NOT_IN_MAT);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Returns one row of the matrix as a vector
 	friend INLINE l_rmatrix_subv Row(const l_rmatrix &m,const int &i)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_ROW_OR_COL_NOT_IN_MAT);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Returns one column of the matrix as a vector
 	friend INLINE l_rmatrix_subv Col(const l_rmatrix &m,const int &i)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_ROW_OR_COL_NOT_IN_MAT);
 #else
-	throw();
+	noexcept;
 #endif
 //#if(CXSC_INDEX_CHECK)
 
@@ -95,28 +95,28 @@ template <class MV1,class MV2> friend  MV1 &_mvmvassign(MV1 &v,const MV2 &rv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__OP_WITH_WRONG_DIM<MV1>);
 #else
-	throw();
+	noexcept;
 #endif
-template <class MV,class S> friend  MV &_mvsassign(MV &v,const  S &r) throw();
+template <class MV,class S> friend  MV &_mvsassign(MV &v,const  S &r) noexcept;
 template <class MV,class V> friend  MV &_mvvassign(MV &v,const V &rv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__OP_WITH_WRONG_DIM<MV>);
 #else
-	throw();
+	noexcept;
 #endif
-template <class V,class MV2,class S> friend  V &_vmvassign(V &v,const MV2 &rv) throw();
-template <class MV,class V> friend  V _mvabs(const MV &mv) throw();
+template <class V,class MV2,class S> friend  V &_vmvassign(V &v,const MV2 &rv) noexcept;
+template <class MV,class V> friend  V _mvabs(const MV &mv) noexcept;
 template <class DP,class V,class SV> friend 	 void _vmvaccu(DP &dp, const V & rv1, const SV &rv2)
 #if(CXSC_INDEX_CHECK)
 		throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 template <class DP,class MV1,class MV2> friend 	 void _mvmvaccu(DP &dp, const MV1 & rv1, const MV2 &rv2)
 #if(CXSC_INDEX_CHECK)
 		throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 
 
@@ -124,98 +124,98 @@ template <class DP,class MV1,class MV2> friend 	 void _mvmvaccu(DP &dp, const MV
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MV1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class V,class MV,class S> friend 	 S _vmvlmult(const V &rv1, const MV &rv2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MV>);
 #else
-	throw();
+	noexcept;
 #endif
- template <class MV,class S,class E> friend 	 E _mvsmult(const MV &rv, const S &s) throw();
+ template <class MV,class S,class E> friend 	 E _mvsmult(const MV &rv, const S &s) noexcept;
  template <class MV1,class MV2,class E> friend 	 E _mvmvplus(const MV1 &rv1, const MV2 &rv2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MV1,class MV2,class E> friend 	 E _mvmvminus(const MV1 &rv1, const MV2 &rv2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MV,class V,class E> friend 	 E _mvvplus(const MV &rv1, const V &rv2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MV,class V,class E> friend 	 E _mvvminus(const MV &rv1, const V &rv2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class V,class MV,class E> friend 	 E _vmvminus(const V &rv1, const MV &rv2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
- template <class MV,class S,class E> friend 	 E _mvsdiv(const MV &rv, const S &s) throw();
-template <class MV,class S> friend  MV &_mvsmultassign(MV &v,const S &r) throw();
-template <class MV, class S> friend  MV &_mvsplusassign(MV &v,const S &r) throw();
-template <class MV,class S> friend  MV &_mvsminusassign(MV &v,const S &r) throw();
-template <class MV,class S> friend  MV &_mvsdivassign(MV &v,const S &r) throw();
+ template <class MV,class S,class E> friend 	 E _mvsdiv(const MV &rv, const S &s) noexcept;
+template <class MV,class S> friend  MV &_mvsmultassign(MV &v,const S &r) noexcept;
+template <class MV, class S> friend  MV &_mvsplusassign(MV &v,const S &r) noexcept;
+template <class MV,class S> friend  MV &_mvsminusassign(MV &v,const S &r) noexcept;
+template <class MV,class S> friend  MV &_mvsdivassign(MV &v,const S &r) noexcept;
 template <class MV,class V> friend  MV &_mvvplusassign(MV &v,const V &rv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__OP_WITH_WRONG_DIM<MV>);
 #else
-	throw();
+	noexcept;
 #endif
 template <class V,class MV> friend  V &_vmvplusassign(V &rv,const MV &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 template <class MV,class V> friend  MV &_mvvminusassign(MV &v,const V &rv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__OP_WITH_WRONG_DIM<MV>);
 #else
-	throw();
+	noexcept;
 #endif
 template <class V,class MV> friend  V &_vmvminusassign(V &rv,const MV &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 template <class V,class MV> friend  V &_vmvsetinf(V &rv,const MV &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 template <class V,class MV> friend  V &_vmvsetsup(V &rv,const MV &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 template <class V,class MV> friend  V &_vmvusetinf(V &rv,const MV &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 template <class V,class MV> friend  V &_vmvusetsup(V &rv,const MV &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 #endif
@@ -223,180 +223,180 @@ template <class V,class MV> friend  V &_vmvusetsup(V &rv,const MV &v)
 	//----------------- Konstruktoren ----------------------------------
 
 	//! Constructor of class l_rmatrix_subv
-	explicit INLINE l_rmatrix_subv (l_real *d, const int &l, const int &u, const int &s, const int &st, const int &o) throw():dat(d),lb(l),ub(u),size(s),start(st),offset(o) { }
+	explicit INLINE l_rmatrix_subv (l_real *d, const int &l, const int &u, const int &s, const int &st, const int &o) noexcept:dat(d),lb(l),ub(u),size(s),start(st),offset(o) { }
 	public:
 	//! Constructor of class l_rmatrix_subv
-	INLINE l_rmatrix_subv(const l_rmatrix_subv &v) throw():dat(v.dat),lb(v.lb),ub(v.ub),size(v.size),start(v.start),offset(v.offset) { }
+	INLINE l_rmatrix_subv(const l_rmatrix_subv &v) noexcept:dat(v.dat),lb(v.lb),ub(v.ub),size(v.size),start(v.start),offset(v.offset) { }
 	public:
 
 	//---------------------- Standardfunktionen ------------------------
 	//! Returns the lower bound of the vector
-	friend INLINE int Lb(const l_rmatrix_subv &rv) throw() { return rv.lb; }
+	friend INLINE int Lb(const l_rmatrix_subv &rv) noexcept { return rv.lb; }
 	//! Returns the upper bound of the vector
-	friend INLINE int Ub(const l_rmatrix_subv &rv) throw() { return rv.ub; }
+	friend INLINE int Ub(const l_rmatrix_subv &rv) noexcept { return rv.ub; }
 	//! Operator for accessing the single elements of the vector
 	INLINE l_real &operator [](const int &i) const
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_ELEMENT_NOT_IN_VEC);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Operator for accessing the whole vector
-	INLINE l_rmatrix_subv &operator ()() throw() { return *this; }
+	INLINE l_rmatrix_subv &operator ()() noexcept { return *this; }
 	//! Operator for accessing a part of the vector
 	INLINE l_rmatrix_subv operator ()(const int &i)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_SUB_ARRAY_TOO_BIG);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Operator for accessing a part of the vector
 	INLINE l_rmatrix_subv operator ()(const int &i1,const int &i2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_SUB_ARRAY_TOO_BIG);
 #else
-	throw();
+	noexcept;
 #endif
 	
 
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix_subv &operator =(const l_rmatrix_subv &rv) throw();
+	INLINE l_rmatrix_subv &operator =(const l_rmatrix_subv &rv) noexcept;
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix_subv &operator =(const l_real &r) throw();
+	INLINE l_rmatrix_subv &operator =(const l_real &r) noexcept;
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_subv &operator =(const l_rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_TYPE_CAST_OF_THICK_OBJ);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_subv &operator =(const l_rmatrix_slice &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_TYPE_CAST_OF_THICK_OBJ);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_subv &operator =(const l_rvector &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_subv &operator =(const l_rvector_slice &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 
 	//! Implementation of multiplication and allocation operation
-	INLINE l_rmatrix_subv &operator *=(const l_real &c) throw();
+	INLINE l_rmatrix_subv &operator *=(const l_real &c) noexcept;
 	//! Implementation of addition and allocation operation
-	INLINE l_rmatrix_subv &operator +=(const l_real &c) throw();
+	INLINE l_rmatrix_subv &operator +=(const l_real &c) noexcept;
 	//! Implementation of subtraction and allocation operation
-	INLINE l_rmatrix_subv &operator -=(const l_real &c) throw();
+	INLINE l_rmatrix_subv &operator -=(const l_real &c) noexcept;
 	//! Implementation of division and allocation operation
-	INLINE l_rmatrix_subv &operator /=(const l_real &c) throw();
+	INLINE l_rmatrix_subv &operator /=(const l_real &c) noexcept;
 	//! Implementation of subtraction and allocation operation
 	INLINE l_rmatrix_subv &operator -=(const l_rvector &rv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition and allocation operation
 	INLINE l_rmatrix_subv &operator +=(const l_rvector &rv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction and allocation operation
 	INLINE l_rmatrix_subv &operator -=(const l_rvector_slice &rv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition and allocation operation
 	INLINE l_rmatrix_subv &operator +=(const l_rvector_slice &rv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	// Real
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix_subv &operator =(const rmatrix_subv &rv) throw();
+	INLINE l_rmatrix_subv &operator =(const rmatrix_subv &rv) noexcept;
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix_subv &operator =(const real &r) throw();
+	INLINE l_rmatrix_subv &operator =(const real &r) noexcept;
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_subv &operator =(const rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_TYPE_CAST_OF_THICK_OBJ);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_subv &operator =(const rmatrix_slice &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_TYPE_CAST_OF_THICK_OBJ);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_subv &operator =(const rvector &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_subv &operator =(const rvector_slice &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 
 	//! Implementation of multiplication and allocation operation
-	INLINE l_rmatrix_subv &operator *=(const real &c) throw();
+	INLINE l_rmatrix_subv &operator *=(const real &c) noexcept;
 	//! Implementation of addition and allocation operation
-	INLINE l_rmatrix_subv &operator +=(const real &c) throw();
+	INLINE l_rmatrix_subv &operator +=(const real &c) noexcept;
 	//! Implementation of subtraction and allocation operation
-	INLINE l_rmatrix_subv &operator -=(const real &c) throw();
+	INLINE l_rmatrix_subv &operator -=(const real &c) noexcept;
 	//! Implementation of division and allocation operation
-	INLINE l_rmatrix_subv &operator /=(const real &c) throw();
+	INLINE l_rmatrix_subv &operator /=(const real &c) noexcept;
 	//! Implementation of subtraction and allocation operation
 	INLINE l_rmatrix_subv &operator -=(const rvector &rv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition and allocation operation
 	INLINE l_rmatrix_subv &operator +=(const rvector &rv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction and allocation operation
 	INLINE l_rmatrix_subv &operator -=(const rvector_slice &rv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition and allocation operation
 	INLINE l_rmatrix_subv &operator +=(const rvector_slice &rv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 //#else
 //#endif	
@@ -429,314 +429,314 @@ template <class S,class M> friend  void _smconstr(S &s,const M &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__TYPE_CAST_OF_THICK_OBJ<M>,ERROR__USE_OF_UNINITIALIZED_OBJ<M>);
 #else
-	throw();
+	noexcept;
 #endif
 template <class V,class M,class S> friend  void _vmconstr(V &v,const M &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__TYPE_CAST_OF_THICK_OBJ<M>);
 #else
-	throw();
+	noexcept;
 #endif
- template <class M1,class M2,class S> friend 	 M1 &_mmassign(M1 &m1,const M2 &m,S ms) throw();
- template <class M,class MS2,class S> friend 	 M &_mmsassign(M &m,const MS2 &ms) throw();
+ template <class M1,class M2,class S> friend 	 M1 &_mmassign(M1 &m1,const M2 &m,S ms) noexcept;
+ template <class M,class MS2,class S> friend 	 M &_mmsassign(M &m,const MS2 &ms) noexcept;
  template <class MS,class M> friend 	 MS &_msmassign(MS &ms,const M &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
- template <class M,class S> friend 	 M &_msassign(M &m,const S &r) throw();
+ template <class M,class S> friend 	 M &_msassign(M &m,const S &r) noexcept;
 template <class V,class M,class S> friend  V &_vmassign(V &v,const M &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__TYPE_CAST_OF_THICK_OBJ<M>);
 #else
-	throw();
+	noexcept;
 #endif
-template <class M,class V,class S> friend  M &_mvassign(M &m,const V &v) throw();
+template <class M,class V,class S> friend  M &_mvassign(M &m,const V &v) noexcept;
  template <class M> friend 	 int _mlb(const M &m, const int &i)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__WRONG_ROW_OR_COL<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M> friend 	 int _mub(const M &m, const int &i)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__WRONG_ROW_OR_COL<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M> friend 	 M &_msetlb(M &m, const int &i,const int &j)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__WRONG_ROW_OR_COL<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M> friend 	 M &_msetub(M &m, const int &i,const int &j)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__WRONG_ROW_OR_COL<M>);
 #else
-	throw();
+	noexcept;
 #endif
- template <class M> friend 	 void _mresize(M &A) throw();
+ template <class M> friend 	 void _mresize(M &A) noexcept;
  template <class M,class S> friend 	 void _mresize(M &A,const int &m, const int &n)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__WRONG_BOUNDARIES<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class S> friend 	 void _mresize(M &A,const int &m1, const int &m2,const int &n1,const int &n2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__WRONG_BOUNDARIES<M>);
 #else
-	throw();
+	noexcept;
 #endif
- template <class M,class E> friend 	 E _mabs(const M &m) throw();
- template <class MS,class E> friend 	 E _msabs(const MS &ms) throw();
+ template <class M,class E> friend 	 E _mabs(const M &m) noexcept;
+ template <class MS,class E> friend 	 E _msabs(const MS &ms) noexcept;
 	//-------------- matrix-matrix -------------
  template <class M1,class M2,class E> friend 	 E _mmplus(const M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS,class E> friend 	 E _mmsplus(const M &m,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
- template <class M> friend 	 M _mminus(const M &m) throw();
- template <class MS,class E> friend 	 E _msminus(const MS &ms) throw();
+ template <class M> friend 	 M _mminus(const M &m) noexcept;
+ template <class MS,class E> friend 	 E _msminus(const MS &ms) noexcept;
  template <class M1,class M2,class E> friend 	 E _mmminus(const M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M1,class M2> friend 	 M1 &_mmplusassign(M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS> friend 	 M &_mmsplusassign(M &m1,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS,class M> friend 	 MS &_msmplusassign(MS &ms,const M &m1)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2,class E> friend 	 E _msmsplus(const MS1 &m1,const MS2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS,class E> friend 	 E _mmsminus(const M &m,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS,class M,class E> friend 	 E _msmminus(const MS &ms,const M &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2,class E> friend 	 E _msmsminus(const MS1 &ms1,const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M1,class M2> friend 	 M1 &_mmminusassign(M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS> friend 	 M &_mmsminusassign(M &m1,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS,class M> friend 	 MS &_msmminusassign(MS &ms,const M &m1)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M1,class M2,class E> friend 	 E _mmlmult(const M1 &m1, const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M1,class M2,class S> friend 	 M1 &_mmlmultassign(M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS,class E> friend 	 E _mmslmult(const M &m1, const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS,class M,class E> friend 	 E _msmlmult(const MS &ms, const M &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS,class S> friend 	 M &_mmslmultassign(M &m1,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2,class E> friend 	 E _msmslmult(const MS1 &ms1, const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M1,class M2,class E> friend 	 E _mmconv(const M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS,class E> friend 	 E _mmsconv(const M &m,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
 	//-------- matrix-scalar -----------------
- template <class S,class M,class E> friend 	 E _smmult(const S &c, const M &m) throw();
- template <class M,class S> friend 	 M &_msmultassign(M &m,const S &c) throw();
- template <class S,class MS,class E> friend 	 E _smsmult(const S &c, const MS &ms) throw();
- template <class M,class S,class E> friend 	 E _msdiv(const M &m,const S &c) throw();
- template <class M,class S> friend 	 M &_msdivassign(M &m,const S &c) throw();
- template <class MS,class S,class E> friend 	 E _mssdiv(const MS &ms, const S &c) throw();
+ template <class S,class M,class E> friend 	 E _smmult(const S &c, const M &m) noexcept;
+ template <class M,class S> friend 	 M &_msmultassign(M &m,const S &c) noexcept;
+ template <class S,class MS,class E> friend 	 E _smsmult(const S &c, const MS &ms) noexcept;
+ template <class M,class S,class E> friend 	 E _msdiv(const M &m,const S &c) noexcept;
+ template <class M,class S> friend 	 M &_msdivassign(M &m,const S &c) noexcept;
+ template <class MS,class S,class E> friend 	 E _mssdiv(const MS &ms, const S &c) noexcept;
 	//-------- matrix-vector ---------------------
  template <class M,class V,class E> friend 	 E _mvlmult(const M &m,const V &v)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class V,class M,class E> friend 	 E _vmlmult(const V &v,const M &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class V,class M,class S> friend 	 V &_vmlmultassign(V &v,const M &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class VS,class M,class S> friend 	 VS &_vsmlmultassign(VS &v,const M &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
 	
- template <class M> friend 	 void *_mvoid(const M &m) throw();
- template <class M> friend 	 bool _mnot(const M &m) throw();
- template <class MS> friend 	 void *_msvoid(const MS &ms) throw();
- template <class MS> friend 	 bool _msnot(const MS &ms) throw();
- template <class M1,class M2> friend 	 bool _mmeq(const M1 &m1,const M2 &m2) throw();
- template <class M1,class M2> friend 	 bool _mmneq(const M1 &m1,const M2 &m2) throw();
- template <class M1,class M2> friend 	 bool _mmless(const M1 &m1,const M2 &m2) throw();
- template <class M1,class M2> friend 	 bool _mmleq(const M1 &m1,const M2 &m2) throw();
- template <class M,class MS> friend 	 bool _mmseq(const M &m1,const MS &ms) throw();
- template <class M,class MS> friend 	 bool _mmsneq(const M &m1,const MS &ms) throw();
- template <class M,class MS> friend 	 bool _mmsless(const M &m1,const MS &ms) throw();
- template <class M,class MS> friend 	 bool _mmsleq(const M &m1,const MS &ms) throw();
- template <class MS,class M> friend 	 bool _msmless(const MS &ms,const M &m1) throw();
- template <class MS,class M> friend 	 bool _msmleq(const MS &ms,const M &m1) throw();
- template <class M> friend 	std::ostream &_mout(std::ostream &s,const M &r) throw();
- template <class M> friend 	std::istream &_min(std::istream &s,M &r) throw();
+ template <class M> friend 	 void *_mvoid(const M &m) noexcept;
+ template <class M> friend 	 bool _mnot(const M &m) noexcept;
+ template <class MS> friend 	 void *_msvoid(const MS &ms) noexcept;
+ template <class MS> friend 	 bool _msnot(const MS &ms) noexcept;
+ template <class M1,class M2> friend 	 bool _mmeq(const M1 &m1,const M2 &m2) noexcept;
+ template <class M1,class M2> friend 	 bool _mmneq(const M1 &m1,const M2 &m2) noexcept;
+ template <class M1,class M2> friend 	 bool _mmless(const M1 &m1,const M2 &m2) noexcept;
+ template <class M1,class M2> friend 	 bool _mmleq(const M1 &m1,const M2 &m2) noexcept;
+ template <class M,class MS> friend 	 bool _mmseq(const M &m1,const MS &ms) noexcept;
+ template <class M,class MS> friend 	 bool _mmsneq(const M &m1,const MS &ms) noexcept;
+ template <class M,class MS> friend 	 bool _mmsless(const M &m1,const MS &ms) noexcept;
+ template <class M,class MS> friend 	 bool _mmsleq(const M &m1,const MS &ms) noexcept;
+ template <class MS,class M> friend 	 bool _msmless(const MS &ms,const M &m1) noexcept;
+ template <class MS,class M> friend 	 bool _msmleq(const MS &ms,const M &m1) noexcept;
+ template <class M> friend 	std::ostream &_mout(std::ostream &s,const M &r) noexcept;
+ template <class M> friend 	std::istream &_min(std::istream &s,M &r) noexcept;
 
 	//--- Real --------- matrix-vector ----------------------
  template <class MS,class V,class E> friend 	 E _msvlmult(const MS &ms,const V &v)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class V,class MS,class E> friend 	 E _vmslmult(const V &v,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class M1,class M2,class E> friend 	 E _mmlimult(const M1 &m1, const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class M,class MS,class E> friend 	 E _mmslimult(const M &m1, const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class MS,class M,class E> friend 	 E _msmlimult(const MS &ms, const M &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class MS1,class MS2,class E> friend 	 E _msmslimult(const MS1 &ms1, const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class MS1,class MS2,class E> friend 	 E _msmsconv(const MS1 &m1,const MS2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M1,class M2,class E> friend 	 E _mmsect(const M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS,class E> friend 	 E _mmssect(const M &m,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class MS1,class MS2,class E> friend 	 E _msmssect(const MS1 &m1,const MS2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 	// matrix-scalar
 
@@ -746,143 +746,143 @@ template <class M,class V,class S> friend  M &_mvassign(M &m,const V &v) throw()
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class V,class M,class E> friend 	 E _vmlimult(const V &v,const M &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS,class V,class E> friend 	 E _msvlimult(const MS &ms,const V &v)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	// l_interval ----------
 
- template <class M,class E> friend 	 E _mdiam(const M &m) throw();
- template <class M,class E> friend 	 E _mmid(const M &m) throw();
- template <class MS,class E> friend 	 E _msdiam(const MS &ms) throw();
- template <class MS,class E> friend 	 E _msmid(const MS &ms) throw();
- template <class M,class E> friend 	 E _minf(const M &m) throw();
- template <class MS,class E> friend 	 E _msinf(const MS &ms) throw();
- template <class M,class E> friend 	 E _msup(const M &m) throw();
- template <class MS,class E> friend 	 E _mssup(const MS &ms) throw();
+ template <class M,class E> friend 	 E _mdiam(const M &m) noexcept;
+ template <class M,class E> friend 	 E _mmid(const M &m) noexcept;
+ template <class MS,class E> friend 	 E _msdiam(const MS &ms) noexcept;
+ template <class MS,class E> friend 	 E _msmid(const MS &ms) noexcept;
+ template <class M,class E> friend 	 E _minf(const M &m) noexcept;
+ template <class MS,class E> friend 	 E _msinf(const MS &ms) noexcept;
+ template <class M,class E> friend 	 E _msup(const M &m) noexcept;
+ template <class MS,class E> friend 	 E _mssup(const MS &ms) noexcept;
  template <class M1,class M2> friend 	 M1 &_mmsetinf(M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M1,class M2> friend 	 M1 &_mmsetsup(M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M1,class M2> friend 	 M1 &_mmusetinf(M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M1,class M2> friend 	 M1 &_mmusetsup(M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class M2> friend 	 MS1 &_msmsetinf(MS1 &ms1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class M2> friend 	 MS1 &_msmsetsup(MS1 &ms1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class M2> friend 	 MS1 &_msmusetinf(MS1 &ms1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class M2> friend 	 MS1 &_msmusetsup(MS1 &ms1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class M1,class M2,class S> friend 	 M1 &_mmlimultassign(M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class M,class MS,class S> friend 	 M &_mmslimultassign(M &m1,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class M1,class M2> friend 	 M1 &_mmconvassign(M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS> friend 	 M &_mmsconvassign(M &m1,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS,class M> friend 	 MS &_msmconvassign(MS &ms,const M &m1)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class M1,class M2> friend 	 M1 &_mmsectassign(M1 &m1,const M2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS> friend 	 M &_mmssectassign(M &m1,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS,class M> friend 	 MS &_msmsectassign(MS &ms,const M &m1)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class V,class M,class S> friend 	 V &_vmlimultassign(V &v,const M &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class VS,class M,class S> friend 	 VS &_vsmlimultassign(VS &v,const M &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
 	
 #endif
@@ -891,66 +891,66 @@ template <class M,class V,class S> friend  M &_mvassign(M &m,const V &v) throw()
 
 // l_real
 	//! Constructor of class l_rmatrix
-	INLINE l_rmatrix(const l_rmatrix &rm) throw();
+	INLINE l_rmatrix(const l_rmatrix &rm) noexcept;
 	//! Constructor of class l_rmatrix
-	INLINE l_rmatrix(const l_rmatrix_slice &rm) throw();
+	INLINE l_rmatrix(const l_rmatrix_slice &rm) noexcept;
 	//! Constructor of class l_rmatrix
-	INLINE l_rmatrix() throw();
+	INLINE l_rmatrix() noexcept;
 	//! Constructor of class l_rmatrix
 	explicit INLINE l_rmatrix(const int &m, const int &n)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_WRONG_BOUNDARIES);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Constructor of class l_rmatrix
 	explicit INLINE l_rmatrix(const int &m1, const int &n1, const int &m2, const int &n2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_WRONG_BOUNDARIES);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Constructor of class l_rmatrix
-	explicit INLINE l_rmatrix(const l_rvector &v) throw();
+	explicit INLINE l_rmatrix(const l_rvector &v) noexcept;
 	//! Constructor of class l_rmatrix
-	explicit INLINE l_rmatrix(const l_rvector_slice &v) throw();
+	explicit INLINE l_rmatrix(const l_rvector_slice &v) noexcept;
 	//! Constructor of class l_rmatrix
-	explicit INLINE l_rmatrix(const l_real &r) throw();
+	explicit INLINE l_rmatrix(const l_real &r) noexcept;
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix &operator =(const l_real &r) throw();
+	INLINE l_rmatrix &operator =(const l_real &r) noexcept;
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix &operator =(const l_rmatrix &m) throw();
+	INLINE l_rmatrix &operator =(const l_rmatrix &m) noexcept;
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix &operator =(const l_rmatrix_slice &ms) throw();
+	INLINE l_rmatrix &operator =(const l_rmatrix_slice &ms) noexcept;
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix &operator =(const l_rvector &v) throw();
+	INLINE l_rmatrix &operator =(const l_rvector &v) noexcept;
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix &operator =(const l_rvector_slice &v) throw();
+	INLINE l_rmatrix &operator =(const l_rvector_slice &v) noexcept;
 //  real
 	//! Constructor of class l_rmatrix
-	explicit INLINE l_rmatrix(const real &) throw();
+	explicit INLINE l_rmatrix(const real &) noexcept;
 	//! Constructor of class l_rmatrix
-	explicit INLINE l_rmatrix(const rmatrix &rm) throw();
+	explicit INLINE l_rmatrix(const rmatrix &rm) noexcept;
 	//! Constructor of class l_rmatrix
-	explicit INLINE l_rmatrix(const rmatrix_slice &rm) throw();
+	explicit INLINE l_rmatrix(const rmatrix_slice &rm) noexcept;
 	//! Constructor of class l_rmatrix
-	explicit INLINE l_rmatrix(const rvector &v) throw();
+	explicit INLINE l_rmatrix(const rvector &v) noexcept;
 	//! Constructor of class l_rmatrix
-	explicit INLINE l_rmatrix(const rvector_slice &v) throw();
+	explicit INLINE l_rmatrix(const rvector_slice &v) noexcept;
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix &operator =(const real &r) throw();
+	INLINE l_rmatrix &operator =(const real &r) noexcept;
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix &operator =(const rmatrix &m) throw();
+	INLINE l_rmatrix &operator =(const rmatrix &m) noexcept;
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix &operator =(const rmatrix_slice &ms) throw();
+	INLINE l_rmatrix &operator =(const rmatrix_slice &ms) noexcept;
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix &operator =(const rvector &v) throw();
+	INLINE l_rmatrix &operator =(const rvector &v) noexcept;
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix &operator =(const rvector_slice &v) throw();
+	INLINE l_rmatrix &operator =(const rvector_slice &v) noexcept;
 
 	//--------------------------- Destruktoren -----------------------------
 
-	INLINE ~l_rmatrix() throw() { delete [] dat; }
+	INLINE ~l_rmatrix() noexcept { delete [] dat; }
 
 	//------------------------- Standardfunktionen -------------------------
 
@@ -959,32 +959,32 @@ template <class M,class V,class S> friend  M &_mvassign(M &m,const V &v) throw()
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_ROW_OR_COL_NOT_IN_MAT);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Operator for accessing a single column of the matrix
 	INLINE l_rmatrix_subv operator [](const cxscmatrix_column &i) const
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_ROW_OR_COL_NOT_IN_MAT);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Operator for accessing the whole matrix
-	INLINE l_rmatrix &operator ()() throw() { return *this; }
+	INLINE l_rmatrix &operator ()() noexcept { return *this; }
 	//! Operator for accessing a part of the matrix
 	INLINE l_rmatrix_slice operator ()(const int &m, const int &n)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_SUB_ARRAY_TOO_BIG);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Operator for accessing a part of the matrix
 	INLINE l_rmatrix_slice operator ()(const int &m1, const int &m2, const int &n1, const int &n2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_SUB_ARRAY_TOO_BIG);
 #else
-	throw();
+	noexcept;
 #endif
-	INLINE operator void*() throw();
+	INLINE operator void*() noexcept;
 //#else
 //#endif
 };
@@ -1013,179 +1013,179 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__TYPE_CAST_OF_THICK_OBJ<MS>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS,class M> friend 	 MS &_msmassign(MS &ms,const M &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2> friend 	 MS1 &_msmsassign(MS1 &ms1,const MS2 &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS1>);
 #else
-	throw();
+	noexcept;
 #endif
- template <class M,class MS2,class S> friend 	 M &_mmsassign(M &m,const MS2 &ms) throw();
- template <class MS,class S> friend 	 MS &_mssassign(MS &ms,const S &r) throw();
+ template <class M,class MS2,class S> friend 	 M &_mmsassign(M &m,const MS2 &ms) noexcept;
+ template <class MS,class S> friend 	 MS &_mssassign(MS &ms,const S &r) noexcept;
 
  template <class MS> friend 	 int _mslb(const MS &ms, const int &i)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__WRONG_ROW_OR_COL<MS>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS> friend 	 int _msub(const MS &ms, const int &i)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__WRONG_ROW_OR_COL<MS>);
 #else
-	throw();
+	noexcept;
 #endif
- template <class MS,class E> friend 	 E _msabs(const MS &ms) throw();
+ template <class MS,class E> friend 	 E _msabs(const MS &ms) noexcept;
 	//-------- matrix-matrix --------------
- template <class MS,class E> friend 	 E _msminus(const MS &ms) throw();
+ template <class MS,class E> friend 	 E _msminus(const MS &ms) noexcept;
  template <class M,class MS,class E> friend 	 E _mmsplus(const M &m,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2,class E> friend 	 E _msmsplus(const MS1 &m1,const MS2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS> friend 	 M &_mmsplusassign(M &m1,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS,class M> friend 	 MS &_msmplusassign(MS &ms,const M &m1)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2> friend 	 MS1 &_msmsplusassign(MS1 &ms1,const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS,class E> friend 	 E _mmsminus(const M &m,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS,class M,class E> friend 	 E _msmminus(const MS &ms,const M &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2,class E> friend 	 E _msmsminus(const MS1 &ms1,const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS> friend 	 M &_mmsminusassign(M &m1,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS,class M> friend 	 MS &_msmminusassign(MS &ms,const M &m1)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2> friend 	 MS1 &_msmsminusassign(MS1 &ms1,const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS,class E> friend 	 E _mmslmult(const M &m1, const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS,class M,class E> friend 	 E _msmlmult(const MS &ms, const M &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS,class S> friend 	 M &_mmslmultassign(M &m1,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2,class E> friend 	 E _msmslmult(const MS1 &ms1, const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M,class MS,class E> friend 	 E _mmsconv(const M &m,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2,class E> friend 	 E _msmsconv(const MS1 &m1,const MS2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 	//--------- matrix-vector --------------
  template <class MS,class V,class E> friend 	 E _msvlmult(const MS &ms,const V &v)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class V,class MS,class E> friend 	 E _vmslmult(const V &v,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class V,class MS,class S> friend 	 V &_vmslmultassign(V &v,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
 	//--------- matrix-scalar --------------
- template <class S,class MS,class E> friend 	 E _smsmult(const S &c, const MS &ms) throw();
- template <class MS,class S> friend 	 MS &_mssmultassign(MS &ms,const S &c) throw();
- template <class MS,class S,class E> friend 	 E _mssdiv(const MS &ms, const S &c) throw();
- template <class MS,class S> friend 	 MS &_mssdivassign(MS &ms,const S &c) throw();
+ template <class S,class MS,class E> friend 	 E _smsmult(const S &c, const MS &ms) noexcept;
+ template <class MS,class S> friend 	 MS &_mssmultassign(MS &ms,const S &c) noexcept;
+ template <class MS,class S,class E> friend 	 E _mssdiv(const MS &ms, const S &c) noexcept;
+ template <class MS,class S> friend 	 MS &_mssdivassign(MS &ms,const S &c) noexcept;
 	
- template <class MS> friend 	 void *_msvoid(const MS &ms) throw();
- template <class MS> friend 	 bool _msnot(const MS &ms) throw();
- template <class M,class MS> friend 	 bool _mmseq(const M &m1,const MS &ms) throw();
- template <class M,class MS> friend 	 bool _mmsneq(const M &m1,const MS &ms) throw();
- template <class M,class MS> friend 	 bool _mmsless(const M &m1,const MS &ms) throw();
- template <class M,class MS> friend 	 bool _mmsleq(const M &m1,const MS &ms) throw();
- template <class MS,class M> friend 	 bool _msmless(const MS &ms,const M &m1) throw();
- template <class MS,class M> friend 	 bool _msmleq(const MS &ms,const M &m1) throw();
- template <class MS1,class MS2> friend 	 bool _msmseq(const MS1 &ms1,const MS2 &ms2) throw();
- template <class MS1,class MS2> friend 	 bool _msmsneq(const MS1 &ms1,const MS2 &ms2) throw();
- template <class MS1,class MS2> friend 	 bool _msmsless(const MS1 &ms1,const MS2 &ms2) throw();
- template <class MS1,class MS2> friend 	 bool _msmsleq(const MS1 &ms1,const MS2 &ms2) throw();
- template <class MS> friend 	std::ostream &_msout(std::ostream &s,const MS &r) throw();
- template <class MS> friend 	std::istream &_msin(std::istream &s,MS &r) throw();
+ template <class MS> friend 	 void *_msvoid(const MS &ms) noexcept;
+ template <class MS> friend 	 bool _msnot(const MS &ms) noexcept;
+ template <class M,class MS> friend 	 bool _mmseq(const M &m1,const MS &ms) noexcept;
+ template <class M,class MS> friend 	 bool _mmsneq(const M &m1,const MS &ms) noexcept;
+ template <class M,class MS> friend 	 bool _mmsless(const M &m1,const MS &ms) noexcept;
+ template <class M,class MS> friend 	 bool _mmsleq(const M &m1,const MS &ms) noexcept;
+ template <class MS,class M> friend 	 bool _msmless(const MS &ms,const M &m1) noexcept;
+ template <class MS,class M> friend 	 bool _msmleq(const MS &ms,const M &m1) noexcept;
+ template <class MS1,class MS2> friend 	 bool _msmseq(const MS1 &ms1,const MS2 &ms2) noexcept;
+ template <class MS1,class MS2> friend 	 bool _msmsneq(const MS1 &ms1,const MS2 &ms2) noexcept;
+ template <class MS1,class MS2> friend 	 bool _msmsless(const MS1 &ms1,const MS2 &ms2) noexcept;
+ template <class MS1,class MS2> friend 	 bool _msmsleq(const MS1 &ms1,const MS2 &ms2) noexcept;
+ template <class MS> friend 	std::ostream &_msout(std::ostream &s,const MS &r) noexcept;
+ template <class MS> friend 	std::istream &_msin(std::istream &s,MS &r) noexcept;
 
 	//--- Real ------------ matrix-matrix -----------
 
@@ -1193,33 +1193,33 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS,class M,class E> friend 	 E _msmlimult(const MS &ms, const M &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class MS1,class MS2,class E> friend 	 E _msmslimult(const MS1 &ms1, const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class M,class MS,class E> friend 	 E _mmssect(const M &m,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2,class E> friend 	 E _msmssect(const MS1 &m1,const MS2 &m2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 	// matrix-scalar
 	// matrix-vector
@@ -1228,13 +1228,13 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class V,class MS,class E> friend 	 E _vmslimult(const V &v,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	// l_interval --------------
@@ -1243,49 +1243,49 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M1,class MS2> friend 	 M1 &_mmssetsup(M1 &m1,const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M1,class MS2> friend 	 M1 &_mmsusetinf(M1 &m1,const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class M1,class MS2> friend 	 M1 &_mmsusetsup(M1 &m1,const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2> friend 	 MS1 &_msmssetinf(MS1 &ms1,const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2> friend 	 MS1 &_msmssetsup(MS1 &ms1,const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2> friend 	 MS1 &_msmsusetinf(MS1 &ms1,const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS1>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2> friend 	 MS1 &_msmsusetsup(MS1 &ms1,const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 
@@ -1293,7 +1293,7 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
 
 
@@ -1301,26 +1301,26 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2> friend 	 MS1 &_msmsconvassign(MS1 &ms1,const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
  template <class M,class MS> friend 	 M &_mmssectassign(M &m1,const MS &ms)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<M>);
 #else
-	throw();
+	noexcept;
 #endif
  template <class MS1,class MS2> friend 	 MS1 &_msmssectassign(MS1 &ms1,const MS2 &ms2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
   /*   friend TINLINE l_ivector &_vsmslimultassign<l_ivector_slice,l_rmatrix_slice,l_interval>(l_ivector_slice &v,const l_rmatrix_slice &ms)
@@ -1333,7 +1333,7 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<MS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 #endif
@@ -1341,12 +1341,12 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 	//--------------- Konstruktoren ----------------------------------------
 
 	//! Constructor of class l_rmatrix_slice
-	explicit INLINE l_rmatrix_slice(l_rmatrix &a,const int &l1,const int &u1,const int &l2, const int &u2) throw():dat(a.dat),offset1(l1-a.lb1),offset2(l2-a.lb2),mxsize(a.xsize),mysize(a.ysize),start1(l1),end1(u1),start2(l2),end2(u2),sxsize(u2-l2+1),sysize(u1-l1+1) { }
+	explicit INLINE l_rmatrix_slice(l_rmatrix &a,const int &l1,const int &u1,const int &l2, const int &u2) noexcept:dat(a.dat),offset1(l1-a.lb1),offset2(l2-a.lb2),mxsize(a.xsize),mysize(a.ysize),start1(l1),end1(u1),start2(l2),end2(u2),sxsize(u2-l2+1),sysize(u1-l1+1) { }
 	//! Constructor of class l_rmatrix_slice
-	explicit INLINE l_rmatrix_slice(l_rmatrix_slice &a,const int &l1,const int &u1,const int &l2, const int &u2) throw():dat(a.dat),offset1(a.offset1+l1-a.start1),offset2(a.offset2+l2-a.start2),mxsize(a.mxsize),mysize(a.mysize),start1(l1),end1(u1),start2(l2),end2(u2),sxsize(u2-l2+1),sysize(u1-l1+1) { }
+	explicit INLINE l_rmatrix_slice(l_rmatrix_slice &a,const int &l1,const int &u1,const int &l2, const int &u2) noexcept:dat(a.dat),offset1(a.offset1+l1-a.start1),offset2(a.offset2+l2-a.start2),mxsize(a.mxsize),mysize(a.mysize),start1(l1),end1(u1),start2(l2),end2(u2),sxsize(u2-l2+1),sysize(u1-l1+1) { }
 	public: 
 	//! Constructor of class l_rmatrix_slice
-	INLINE l_rmatrix_slice(const l_rmatrix_slice &ms) throw():dat(ms.dat),offset1(ms.offset1),offset2(ms.offset2),mxsize(ms.mxsize),mysize(ms.mysize),start1(ms.start1),end1(ms.end1),start2(ms.start2),end2(ms.end2),sxsize(ms.sxsize),sysize(ms.sysize) { }
+	INLINE l_rmatrix_slice(const l_rmatrix_slice &ms) noexcept:dat(ms.dat),offset1(ms.offset1),offset2(ms.offset2),mxsize(ms.mxsize),mysize(ms.mysize),start1(ms.start1),end1(ms.end1),start2(ms.start2),end2(ms.end2),sxsize(ms.sxsize),sysize(ms.sysize) { }
 	public:
 
 	//---------------- Standardfunktionen -----------------------------------
@@ -1355,220 +1355,220 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_TYPE_CAST_OF_THICK_OBJ);
 #else
-	throw();
+	noexcept;
 #endif
-	friend INLINE l_rmatrix::l_rmatrix(const l_rmatrix_slice &) throw();
+	friend INLINE l_rmatrix::l_rmatrix(const l_rmatrix_slice &) noexcept;
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_slice &operator =(const l_rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_slice &operator =(const l_rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix_slice &operator =(const l_real &r) throw();
+	INLINE l_rmatrix_slice &operator =(const l_real &r) noexcept;
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_slice &operator =(const l_rvector &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_slice &operator =(const l_rvector_slice &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_slice &operator =(const rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_slice &operator =(const rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of standard assigning operator
-	INLINE l_rmatrix_slice &operator =(const real &r) throw();
+	INLINE l_rmatrix_slice &operator =(const real &r) noexcept;
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_slice &operator =(const rvector &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of standard assigning operator
 	INLINE l_rmatrix_slice &operator =(const rvector_slice &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Operator for accessing a single row of the matrix
 	INLINE l_rmatrix_subv operator [](const int &i) const
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_ROW_OR_COL_NOT_IN_MAT);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Operator for accessing a single column of the matrix
 	INLINE l_rmatrix_subv operator [](const cxscmatrix_column &i) const
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_ROW_OR_COL_NOT_IN_MAT);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Operator for accessing the whole matrix
-	INLINE l_rmatrix_slice &operator ()() throw() { return *this; }
+	INLINE l_rmatrix_slice &operator ()() noexcept { return *this; }
 	//! Operator for accessing a part of the matrix
 	INLINE l_rmatrix_slice operator ()(const int &m, const int &n)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_SUB_ARRAY_TOO_BIG);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Operator for accessing a part of the matrix
 	INLINE l_rmatrix_slice operator ()(const int &m1, const int &m2, const int &n1, const int &n2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_SUB_ARRAY_TOO_BIG);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication and allocation operation
 	INLINE l_rmatrix_slice &operator *=(const l_rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication and allocation operation
 	INLINE l_rmatrix_slice &operator *=(const rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication and allocation operation
 	INLINE l_rmatrix_slice &operator *=(const l_rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication and allocation operation
 	INLINE l_rmatrix_slice &operator *=(const rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition and allocation operation
 	INLINE l_rmatrix_slice &operator +=(const l_rmatrix &m1)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition and allocation operation
 	INLINE l_rmatrix_slice &operator +=(const rmatrix &m1)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition and allocation operation
 	INLINE l_rmatrix_slice &operator +=(const l_rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition and allocation operation
 	INLINE l_rmatrix_slice &operator +=(const rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction and allocation operation
 	INLINE l_rmatrix_slice &operator -=(const l_rmatrix &m1)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction and allocation operation
 	INLINE l_rmatrix_slice &operator -=(const rmatrix &m1)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction and allocation operation
 	INLINE l_rmatrix_slice &operator -=(const l_rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction and allocation operation
 	INLINE l_rmatrix_slice &operator -=(const rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Allocates the convex hull of the arguments to the first argument
 	INLINE l_rmatrix_slice &operator |=(const l_rmatrix &m1)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Allocates the convex hull of the arguments to the first argument
 	INLINE l_rmatrix_slice &operator |=(const rmatrix &m1)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Allocates the convex hull of the arguments to the first argument
 	INLINE l_rmatrix_slice &operator |=(const l_rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Allocates the convex hull of the arguments to the first argument
 	INLINE l_rmatrix_slice &operator |=(const rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication and allocation operation
-	INLINE l_rmatrix_slice &operator *=(const l_real &c) throw();
+	INLINE l_rmatrix_slice &operator *=(const l_real &c) noexcept;
 	//! Implementation of multiplication and allocation operation
-	INLINE l_rmatrix_slice &operator *=(const real &c) throw();
+	INLINE l_rmatrix_slice &operator *=(const real &c) noexcept;
 	//! Implementation of division and allocation operation
-	INLINE l_rmatrix_slice &operator /=(const l_real &c) throw();
+	INLINE l_rmatrix_slice &operator /=(const l_real &c) noexcept;
 	//! Implementation of division and allocation operation
-	INLINE l_rmatrix_slice &operator /=(const real &c) throw();
-	INLINE operator void*() throw();
+	INLINE l_rmatrix_slice &operator /=(const real &c) noexcept;
+	INLINE operator void*() noexcept;
 //#else
 //#endif
 };
@@ -1579,51 +1579,51 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 //=======================Vector / Scalar =========================
 
 	//! Implementation of division operation
-	INLINE l_rvector operator /(const l_rmatrix_subv &rv, const l_real &s) throw();
+	INLINE l_rvector operator /(const l_rmatrix_subv &rv, const l_real &s) noexcept;
 	//! Implementation of multiplication operation
-	INLINE l_rvector operator *(const l_rmatrix_subv &rv, const l_real &s) throw();
+	INLINE l_rvector operator *(const l_rmatrix_subv &rv, const l_real &s) noexcept;
 	//! Implementation of multiplication operation
-	INLINE l_rvector operator *(const l_real &s, const l_rmatrix_subv &rv) throw();
+	INLINE l_rvector operator *(const l_real &s, const l_rmatrix_subv &rv) noexcept;
 
 //======================== Vector / Vector ========================
 	
 	//! Returns the absolute value of the vector
-	INLINE l_rvector abs(const l_rmatrix_subv &mv) throw();
+	INLINE l_rvector abs(const l_rmatrix_subv &mv) noexcept;
 	
 	//! The accurate scalar product of the last two arguments added to the value of the first argument
 	INLINE void accumulate(dotprecision &dp, const l_rmatrix_subv & rv1, const l_rmatrix_subv &rv2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! The accurate scalar product of the last two arguments added to the value of the first argument
 	INLINE void accumulate(dotprecision &dp, const l_rvector & rv1, const l_rmatrix_subv &rv2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! The accurate scalar product of the last two arguments added to the value of the first argument
 	INLINE void accumulate(dotprecision &dp, const l_rmatrix_subv & rv1, const l_rvector &rv2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! The accurate scalar product of the last two arguments added to the value of the first argument
 	INLINE void accumulate(dotprecision &dp, const l_rvector_slice & sl1, const l_rmatrix_subv &rv2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! The accurate scalar product of the last two arguments added to the value of the first argument
 	INLINE void accumulate(dotprecision &dp, const l_rmatrix_subv & rv1, const l_rvector_slice &sl2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	
 	//! The accurate scalar product of the last two arguments added to the value of the first argument
@@ -1631,35 +1631,35 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! The accurate scalar product of the last two arguments added to the value of the first argument
 	INLINE void accumulate(idotprecision &dp, const l_rvector & rv1, const l_rmatrix_subv &rv2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! The accurate scalar product of the last two arguments added to the value of the first argument
 	INLINE void accumulate(idotprecision &dp, const l_rmatrix_subv & rv1, const l_rvector &rv2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! The accurate scalar product of the last two arguments added to the value of the first argument
 	INLINE void accumulate(idotprecision &dp, const l_rvector_slice & sl1, const l_rmatrix_subv &rv2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! The accurate scalar product of the last two arguments added to the value of the first argument
 	INLINE void accumulate(idotprecision &dp, const l_rmatrix_subv & rv1, const l_rvector_slice &sl2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	
 	//! Implementation of multiplication operation
@@ -1667,35 +1667,35 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_real operator *(const l_rvector & rv1, const l_rmatrix_subv &rv2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_real operator *(const l_rmatrix_subv &rv1,const l_rvector &rv2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_real operator *(const l_rvector_slice &sl,const l_rmatrix_subv &sv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_real operator *(const l_rmatrix_subv &mv,const l_rvector_slice &vs)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 
 	//! Implementation of addition operation
@@ -1703,35 +1703,35 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rvector operator +(const l_rmatrix_subv &rv1,const l_rvector &rv2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rvector operator +(const l_rvector & rv1, const l_rmatrix_subv &rv2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rvector operator +(const l_rvector_slice &sl,const l_rmatrix_subv &mv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rvector operator +(const l_rmatrix_subv &mv,const l_rvector_slice &sl)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	
 	//! Implementation of subtraction operation
@@ -1739,164 +1739,164 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rvector operator -(const l_rvector & rv1, const l_rmatrix_subv &rv2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rvector operator -(const l_rmatrix_subv &rv1,const l_rvector &rv2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rvector operator -(const l_rvector_slice &sl,const l_rmatrix_subv &mv)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rvector operator -(const l_rmatrix_subv &mv,const l_rvector_slice &sl)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRVECTOR_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 
 //====================================================================
 //===================== Matrix Functions =============================
 
 	//! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-	INLINE l_rmatrix _l_rmatrix(const l_rmatrix &rm) throw();
+	INLINE l_rmatrix _l_rmatrix(const l_rmatrix &rm) noexcept;
 	//! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-	INLINE l_rmatrix _l_rmatrix(const l_rvector &v) throw();
+	INLINE l_rmatrix _l_rmatrix(const l_rvector &v) noexcept;
 	//! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-	INLINE l_rmatrix _l_rmatrix(const l_rvector_slice &v) throw();
+	INLINE l_rmatrix _l_rmatrix(const l_rvector_slice &v) noexcept;
 	//! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-	INLINE l_rmatrix _l_rmatrix(const l_real &r) throw();
+	INLINE l_rmatrix _l_rmatrix(const l_real &r) noexcept;
 
 	//! Returns the lower bound index
 	INLINE int Lb(const l_rmatrix &rm, const int &i)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_WRONG_ROW_OR_COL);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Returns the upper bound index
 	INLINE int Ub(const l_rmatrix &rm, const int &i)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_WRONG_ROW_OR_COL);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Returns the lower bound index
 	INLINE int Lb(const l_rmatrix_slice &rm, const int &i)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_WRONG_ROW_OR_COL);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Returns the upper bound index
 	INLINE int Ub(const l_rmatrix_slice &rm, const int &i)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_WRONG_ROW_OR_COL);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Sets the lower bound index
 	INLINE l_rmatrix &SetLb(l_rmatrix &m, const int &i,const int &j)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_WRONG_ROW_OR_COL);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Sets the upper bound index
 	INLINE l_rmatrix &SetUb(l_rmatrix &m, const int &i,const int &j)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_WRONG_ROW_OR_COL);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Resizes the matrix
-	INLINE void Resize(l_rmatrix &A) throw();
+	INLINE void Resize(l_rmatrix &A) noexcept;
 	//! Resizes the matrix
 	INLINE void Resize(l_rmatrix &A,const int &m, const int &n)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_WRONG_BOUNDARIES);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Resizes the matrix
 	INLINE void Resize(l_rmatrix &A,const int &m1, const int &m2,const int &n1,const int &n2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_WRONG_BOUNDARIES);
 #else
-	throw();
+	noexcept;
 #endif
 
 	//! Returns the absolute value of the matrix
-	INLINE l_rmatrix abs(const l_rmatrix &m) throw();
+	INLINE l_rmatrix abs(const l_rmatrix &m) noexcept;
 	//! Returns the absolute value of the matrix
-	INLINE l_rmatrix abs(const l_rmatrix_slice &ms) throw();
+	INLINE l_rmatrix abs(const l_rmatrix_slice &ms) noexcept;
 
 //===================== Matrix / Scalar ===============================
 
 	//! Implementation of multiplication operation
-	INLINE l_rmatrix operator *(const l_real &c, const l_rmatrix &m) throw();
+	INLINE l_rmatrix operator *(const l_real &c, const l_rmatrix &m) noexcept;
 	//! Implementation of multiplication operation
-	INLINE l_rmatrix operator *(const l_real &c, const l_rmatrix_slice &ms) throw();
+	INLINE l_rmatrix operator *(const l_real &c, const l_rmatrix_slice &ms) noexcept;
 	//! Implementation of multiplication operation
-	INLINE l_rmatrix operator *(const l_rmatrix &m,const l_real &c) throw();
+	INLINE l_rmatrix operator *(const l_rmatrix &m,const l_real &c) noexcept;
 	//! Implementation of multiplication operation
-	INLINE l_rmatrix operator *(const l_rmatrix_slice &ms,const l_real &c) throw();
+	INLINE l_rmatrix operator *(const l_rmatrix_slice &ms,const l_real &c) noexcept;
 	//! Implementation of multiplication and allocation operation
-	INLINE l_rmatrix &operator *=(l_rmatrix &m,const l_real &c) throw();
+	INLINE l_rmatrix &operator *=(l_rmatrix &m,const l_real &c) noexcept;
 	//! Implementation of division operation
-	INLINE l_rmatrix operator /(const l_rmatrix &m,const l_real &c) throw();
+	INLINE l_rmatrix operator /(const l_rmatrix &m,const l_real &c) noexcept;
 	//! Implementation of division operation
-	INLINE l_rmatrix operator /(const l_rmatrix_slice &ms, const l_real &c) throw();
+	INLINE l_rmatrix operator /(const l_rmatrix_slice &ms, const l_real &c) noexcept;
 	//! Implementation of division and allocation operation
-	INLINE l_rmatrix &operator /=(l_rmatrix &m,const l_real &c) throw();
+	INLINE l_rmatrix &operator /=(l_rmatrix &m,const l_real &c) noexcept;
 	
 //------------ real - l_rmatrix -----------------------------------------------
 
 	//! Implementation of multiplication operation
-	INLINE l_rmatrix operator *(const real &c, const l_rmatrix &m) throw();
+	INLINE l_rmatrix operator *(const real &c, const l_rmatrix &m) noexcept;
 	//! Implementation of multiplication operation
-	INLINE l_rmatrix operator *(const real &c, const l_rmatrix_slice &ms) throw();
+	INLINE l_rmatrix operator *(const real &c, const l_rmatrix_slice &ms) noexcept;
 	//! Implementation of multiplication operation
-	INLINE l_rmatrix operator *(const l_rmatrix &m,const real &c) throw();
+	INLINE l_rmatrix operator *(const l_rmatrix &m,const real &c) noexcept;
 	//! Implementation of multiplication operation
-	INLINE l_rmatrix operator *(const l_rmatrix_slice &ms,const real &c) throw();
+	INLINE l_rmatrix operator *(const l_rmatrix_slice &ms,const real &c) noexcept;
 	//! Implementation of multiplication and allocation operation
-	INLINE l_rmatrix &operator *=(l_rmatrix &m,const real &c) throw();
+	INLINE l_rmatrix &operator *=(l_rmatrix &m,const real &c) noexcept;
 	//! Implementation of division operation
-	INLINE l_rmatrix operator /(const l_rmatrix &m,const real &c) throw();
+	INLINE l_rmatrix operator /(const l_rmatrix &m,const real &c) noexcept;
 	//! Implementation of division operation
-	INLINE l_rmatrix operator /(const l_rmatrix_slice &ms, const real &c) throw();
+	INLINE l_rmatrix operator /(const l_rmatrix_slice &ms, const real &c) noexcept;
 	//! Implementation of division and allocation operation
-	INLINE l_rmatrix &operator /=(l_rmatrix &m,const real &c) throw();
+	INLINE l_rmatrix &operator /=(l_rmatrix &m,const real &c) noexcept;
 //----------------- rmatrix - l_real ----------------
 
 	//! Implementation of multiplication operation
-	INLINE l_rmatrix operator *(const l_real &c, const rmatrix &m) throw();
+	INLINE l_rmatrix operator *(const l_real &c, const rmatrix &m) noexcept;
 	//! Implementation of multiplication operation
-	INLINE l_rmatrix operator *(const l_real &c, const rmatrix_slice &ms) throw();
+	INLINE l_rmatrix operator *(const l_real &c, const rmatrix_slice &ms) noexcept;
 	//! Implementation of multiplication operation
-	INLINE l_rmatrix operator *(const rmatrix &m,const l_real &c) throw();
+	INLINE l_rmatrix operator *(const rmatrix &m,const l_real &c) noexcept;
 	//! Implementation of multiplication operation
-	INLINE l_rmatrix operator *(const rmatrix_slice &ms,const l_real &c) throw();
+	INLINE l_rmatrix operator *(const rmatrix_slice &ms,const l_real &c) noexcept;
 	//! Implementation of division operation
-	INLINE l_rmatrix operator /(const rmatrix &m,const l_real &c) throw();
+	INLINE l_rmatrix operator /(const rmatrix &m,const l_real &c) noexcept;
 	//! Implementation of division operation
-	INLINE l_rmatrix operator /(const rmatrix_slice &ms, const l_real &c) throw();
+	INLINE l_rmatrix operator /(const rmatrix_slice &ms, const l_real &c) noexcept;
 	
 
 //============================ Matrix / Vector ===================================
@@ -1907,42 +1907,42 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rvector operator *(const l_rmatrix_slice &ms,const l_rvector &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rvector operator *(const l_rvector &v,const l_rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rvector operator *(const l_rvector &v,const l_rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication and allocation operation
 	INLINE l_rvector &operator *=(l_rvector &v,const l_rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication and allocation operation
 	INLINE l_rvector &operator *=(l_rvector &v,const l_rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 
 	//! Implementation of multiplication operation
@@ -1950,14 +1950,14 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rvector operator *(const l_rvector_slice &v,const l_rmatrix_slice &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	
 //----------------- real -------------------------------------
@@ -1967,21 +1967,21 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rvector operator *(const rvector &v,const l_rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rvector operator *(const rvector_slice &v,const l_rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	
 	//! Implementation of multiplication operation
@@ -1989,111 +1989,111 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rvector operator *(const l_rmatrix_slice &ms,const rvector &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	
 
 //================ Matrix / Matrix ============================
 
 	//! Implementation of positive sign operation
-	INLINE const l_rmatrix &operator +(const l_rmatrix &m1) throw();
+	INLINE const l_rmatrix &operator +(const l_rmatrix &m1) noexcept;
 	//! Implementation of positive sign operation
-	INLINE l_rmatrix operator +(const l_rmatrix_slice &ms) throw();
+	INLINE l_rmatrix operator +(const l_rmatrix_slice &ms) noexcept;
 	//! Implementation of addition operation
 	INLINE l_rmatrix operator +(const l_rmatrix &m1,const l_rmatrix &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rmatrix operator +(const l_rmatrix &m,const l_rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rmatrix operator +(const l_rmatrix_slice &ms,const l_rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rmatrix operator +(const l_rmatrix_slice &m1,const l_rmatrix_slice &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition and allocation operation
 	INLINE l_rmatrix &operator +=(l_rmatrix &m1,const l_rmatrix &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition and allocation operation
 	INLINE l_rmatrix &operator +=(l_rmatrix &m1,const l_rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	
 	//! Implementation of negative sign operation
-	INLINE l_rmatrix operator -(const l_rmatrix &m) throw();
+	INLINE l_rmatrix operator -(const l_rmatrix &m) noexcept;
 	//! Implementation of negative sign operation
-	INLINE l_rmatrix operator -(const l_rmatrix_slice &ms) throw();
+	INLINE l_rmatrix operator -(const l_rmatrix_slice &ms) noexcept;
 	//! Implementation of subtraction operation
 	INLINE l_rmatrix operator -(const l_rmatrix &m1,const l_rmatrix &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rmatrix operator -(const l_rmatrix &m,const l_rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rmatrix operator -(const l_rmatrix_slice &ms,const l_rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rmatrix operator -(const l_rmatrix_slice &ms1,const l_rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction and allocation operation
 	INLINE l_rmatrix &operator -=(l_rmatrix &m1,const l_rmatrix &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction and allocation operation
 	INLINE l_rmatrix &operator -=(l_rmatrix &m1,const l_rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	
 	//! Implementation of multiplication operation
@@ -2101,42 +2101,42 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rmatrix operator *(const l_rmatrix &m1, const l_rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rmatrix operator *(const l_rmatrix_slice &ms, const l_rmatrix &m1)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rmatrix operator *(const l_rmatrix_slice &ms1, const l_rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication and allocation operation
 	INLINE l_rmatrix &operator *=(l_rmatrix &m1,const l_rmatrix &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication and allocation operation
 	INLINE l_rmatrix &operator *=(l_rmatrix &m1,const l_rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	
 	
@@ -2146,70 +2146,70 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rmatrix operator +(const l_rmatrix &m1,const rmatrix &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rmatrix operator +(const rmatrix &m,const l_rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rmatrix operator +(const l_rmatrix &m,const rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rmatrix operator +(const rmatrix_slice &ms,const l_rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rmatrix operator +(const l_rmatrix_slice &ms,const rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rmatrix operator +(const rmatrix_slice &m1,const l_rmatrix_slice &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition operation
 	INLINE l_rmatrix operator +(const l_rmatrix_slice &m1,const rmatrix_slice &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition and allocation operation
 	INLINE l_rmatrix &operator +=(l_rmatrix &m1,const rmatrix &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of addition and allocation operation
 	INLINE l_rmatrix &operator +=(l_rmatrix &m1,const rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	
 	//! Implementation of subtraction operation
@@ -2217,70 +2217,70 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rmatrix operator -(const l_rmatrix &m1,const rmatrix &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rmatrix operator -(const rmatrix &m,const l_rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rmatrix operator -(const l_rmatrix &m,const rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rmatrix operator -(const rmatrix_slice &ms,const l_rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rmatrix operator -(const l_rmatrix_slice &ms,const rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rmatrix operator -(const rmatrix_slice &ms1,const l_rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction operation
 	INLINE l_rmatrix operator -(const l_rmatrix_slice &ms1,const rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction and allocation operation
 	INLINE l_rmatrix &operator -=(l_rmatrix &m1,const rmatrix &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of subtraction and allocation operation
 	INLINE l_rmatrix &operator -=(l_rmatrix &m1,const rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	
 	//! Implementation of multiplication operation
@@ -2288,70 +2288,70 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rmatrix operator *(const l_rmatrix &m1, const rmatrix &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rmatrix operator *(const rmatrix &m1, const l_rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rmatrix operator *(const l_rmatrix &m1, const rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rmatrix operator *(const rmatrix_slice &ms, const l_rmatrix &m1)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rmatrix operator *(const l_rmatrix_slice &ms, const rmatrix &m1)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rmatrix operator *(const rmatrix_slice &ms1, const l_rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication operation
 	INLINE l_rmatrix operator *(const l_rmatrix_slice &ms1, const rmatrix_slice &ms2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication and allocation operation
 	INLINE l_rmatrix &operator *=(l_rmatrix &m1,const rmatrix &m2)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Implementation of multiplication and allocation operation
 	INLINE l_rmatrix &operator *=(l_rmatrix &m1,const rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_LRMATRIX_OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 	
 
@@ -2360,62 +2360,62 @@ template <class V,class MS,class S> friend  void _vmsconstr(V &v,const MS &m)
 //-------------- Matrix - Matrix   -------------------------
 
 	//! Implementation of standard equality operation
-	INLINE bool operator ==(const l_rmatrix &m1,const l_rmatrix &m2) throw();
+	INLINE bool operator ==(const l_rmatrix &m1,const l_rmatrix &m2) noexcept;
 	//! Implementation of standard negated equality operation
-	INLINE bool operator !=(const l_rmatrix &m1,const l_rmatrix &m2) throw();
+	INLINE bool operator !=(const l_rmatrix &m1,const l_rmatrix &m2) noexcept;
 	//! Implementation of standard less-than operation
-	INLINE bool operator <(const l_rmatrix &m1,const l_rmatrix &m2) throw();
+	INLINE bool operator <(const l_rmatrix &m1,const l_rmatrix &m2) noexcept;
 	//! Implementation of standard less-or-equal-than operation
-	INLINE bool operator <=(const l_rmatrix &m1,const l_rmatrix &m2) throw();
+	INLINE bool operator <=(const l_rmatrix &m1,const l_rmatrix &m2) noexcept;
 	//! Implementation of standard greater-than operation
-	INLINE bool operator >(const l_rmatrix &m1,const l_rmatrix &m2) throw();
+	INLINE bool operator >(const l_rmatrix &m1,const l_rmatrix &m2) noexcept;
 	//! Implementation of standard greater-or-equal-than operation
-	INLINE bool operator >=(const l_rmatrix &m1,const l_rmatrix &m2) throw();
+	INLINE bool operator >=(const l_rmatrix &m1,const l_rmatrix &m2) noexcept;
 	//! Implementation of standard equality operation
-	INLINE bool operator ==(const l_rmatrix &m1,const l_rmatrix_slice &ms) throw();
+	INLINE bool operator ==(const l_rmatrix &m1,const l_rmatrix_slice &ms) noexcept;
 	//! Implementation of standard negated equality operation
-	INLINE bool operator !=(const l_rmatrix &m1,const l_rmatrix_slice &ms) throw();
+	INLINE bool operator !=(const l_rmatrix &m1,const l_rmatrix_slice &ms) noexcept;
 	//! Implementation of standard less-than operation
-	INLINE bool operator <(const l_rmatrix &m1,const l_rmatrix_slice &ms) throw();
+	INLINE bool operator <(const l_rmatrix &m1,const l_rmatrix_slice &ms) noexcept;
 	//! Implementation of standard less-or-equal-than operation
-	INLINE bool operator <=(const l_rmatrix &m1,const l_rmatrix_slice &ms) throw();
+	INLINE bool operator <=(const l_rmatrix &m1,const l_rmatrix_slice &ms) noexcept;
 	//! Implementation of standard greater-than operation
-	INLINE bool operator >(const l_rmatrix &m1,const l_rmatrix_slice &ms) throw();
+	INLINE bool operator >(const l_rmatrix &m1,const l_rmatrix_slice &ms) noexcept;
 	//! Implementation of standard greater-or-equal-than operation
-	INLINE bool operator >=(const l_rmatrix &m1,const l_rmatrix_slice &ms) throw();
+	INLINE bool operator >=(const l_rmatrix &m1,const l_rmatrix_slice &ms) noexcept;
 
 //---------------- Matrix - Matrix_slice ----------------------
 
 	//! Implementation of standard equality operation
-	INLINE bool operator ==(const l_rmatrix_slice &m1,const l_rmatrix_slice &m2) throw();
+	INLINE bool operator ==(const l_rmatrix_slice &m1,const l_rmatrix_slice &m2) noexcept;
 	//! Implementation of standard negated equality operation
-	INLINE bool operator !=(const l_rmatrix_slice &m1,const l_rmatrix_slice &m2) throw();
+	INLINE bool operator !=(const l_rmatrix_slice &m1,const l_rmatrix_slice &m2) noexcept;
 	//! Implementation of standard less-than operation
-	INLINE bool operator <(const l_rmatrix_slice &m1,const l_rmatrix_slice &m2) throw();
+	INLINE bool operator <(const l_rmatrix_slice &m1,const l_rmatrix_slice &m2) noexcept;
 	//! Implementation of standard less-or-equal-than operation
-	INLINE bool operator <=(const l_rmatrix_slice &m1,const l_rmatrix_slice &m2) throw();
+	INLINE bool operator <=(const l_rmatrix_slice &m1,const l_rmatrix_slice &m2) noexcept;
 	//! Implementation of standard greater-than operation
-	INLINE bool operator >(const l_rmatrix_slice &m1,const l_rmatrix_slice &m2) throw();
+	INLINE bool operator >(const l_rmatrix_slice &m1,const l_rmatrix_slice &m2) noexcept;
 	//! Implementation of standard greater-or-equal-than operation
-	INLINE bool operator >=(const l_rmatrix_slice &m1,const l_rmatrix_slice &m2) throw();
+	INLINE bool operator >=(const l_rmatrix_slice &m1,const l_rmatrix_slice &m2) noexcept;
 
 //=================== Not Operator =============================
 
 	//! Implementation of standard negation operation
-	INLINE bool operator !(const l_rmatrix &ms) throw();
+	INLINE bool operator !(const l_rmatrix &ms) noexcept;
 	//! Implementation of standard negation operation
-	INLINE bool operator !(const l_rmatrix_slice &ms) throw();
+	INLINE bool operator !(const l_rmatrix_slice &ms) noexcept;
 
 //======================== Input / Output ========================
 
 	//! Implementation of standard output method
-	INLINE std::ostream &operator <<(std::ostream &s,const l_rmatrix &r) throw();
+	INLINE std::ostream &operator <<(std::ostream &s,const l_rmatrix &r) noexcept;
 	//! Implementation of standard output method
-	INLINE std::ostream &operator <<(std::ostream &s,const l_rmatrix_slice &r) throw();
+	INLINE std::ostream &operator <<(std::ostream &s,const l_rmatrix_slice &r) noexcept;
 	//! Implementation of standard input method
-	INLINE std::istream &operator >>(std::istream &s,l_rmatrix &r) throw();
+	INLINE std::istream &operator >>(std::istream &s,l_rmatrix &r) noexcept;
 	//! Implementation of standard input method
-	INLINE std::istream &operator >>(std::istream &s,l_rmatrix_slice &r) throw();
+	INLINE std::istream &operator >>(std::istream &s,l_rmatrix_slice &r) noexcept;
 
         //! Returns the row dimension
         INLINE int RowLen ( const l_rmatrix& );

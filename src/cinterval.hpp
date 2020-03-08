@@ -61,11 +61,11 @@ class cinterval
    public:
       // ---- implicit constructors  ------------------------------
       //! Constructor of class cinterval
-      inline cinterval(void)  throw ()           {}
+      inline cinterval(void)  noexcept           {}
       //! Constructor of class cinterval
-      inline cinterval(const interval & a,const interval &b) throw(); 
+      inline cinterval(const interval & a,const interval &b) noexcept; 
       //! Constructor of class cinterval
-      inline cinterval(const complex & a,const complex & b)  throw(ERROR_CINTERVAL_EMPTY_INTERVAL); 
+      inline cinterval(const complex & a,const complex & b)  noexcept(false); 
 
       // The following are defined in the specific vector, matrix-files
 #if(CXSC_INDEX_CHECK) 
@@ -79,448 +79,448 @@ class cinterval
       INLINE cinterval(const cimatrix_slice &) throw (ERROR_CIMATRIX_TYPE_CAST_OF_THICK_OBJ,ERROR_CIMATRIX_USE_OF_UNINITIALIZED_OBJ);
 #else
       //! Constructor of class cinterval
-      INLINE cinterval(const civector &)       throw ();
+      INLINE cinterval(const civector &)       noexcept;
       //! Constructor of class cinterval
-      INLINE cinterval(const civector_slice &) throw ();
+      INLINE cinterval(const civector_slice &) noexcept;
       //! Constructor of class cinterval
-      INLINE cinterval(const cimatrix &)       throw ();
+      INLINE cinterval(const cimatrix &)       noexcept;
       //! Constructor of class cinterval
-      INLINE cinterval(const cimatrix_slice &) throw ();
+      INLINE cinterval(const cimatrix_slice &) noexcept;
 #endif
       // ---- explicit constructors -------------------------------
 
       //! Constructor of class cinterval
-      explicit inline cinterval(const real     & a)  throw();
+      explicit inline cinterval(const real     & a)  noexcept;
       //! Constructor of class cinterval
-      explicit inline cinterval(const interval & a)  throw();
+      explicit inline cinterval(const interval & a)  noexcept;
       //! Constructor of class cinterval
-      explicit inline cinterval(const complex  & a)  throw(); 
+      explicit inline cinterval(const complex  & a)  noexcept; 
       //! Constructor of class cinterval
-      explicit        cinterval(const dotprecision &)  throw();
+      explicit        cinterval(const dotprecision &)  noexcept;
       //! Constructor of class cinterval
-      explicit        cinterval(const cdotprecision &) throw();
+      explicit        cinterval(const cdotprecision &) noexcept;
       //! Constructor of class cinterval
-      explicit        cinterval(const idotprecision &) throw();
+      explicit        cinterval(const idotprecision &) noexcept;
       //! Constructor of class cinterval
-      explicit        cinterval(const cidotprecision &) throw();
+      explicit        cinterval(const cidotprecision &) noexcept;
       //! Constructor of class cinterval
-      explicit        cinterval(const l_cinterval&) throw();
+      explicit        cinterval(const l_cinterval&) noexcept;
 
       // ---- assignments -----------------------------------------
 
       //! Implementation of standard assigning operator
-      inline cinterval & operator =(const real &) throw();
+      inline cinterval & operator =(const real &) noexcept;
       //! Implementation of standard assigning operator
-      inline cinterval & operator =(const interval &) throw();
+      inline cinterval & operator =(const interval &) noexcept;
       //! Implementation of standard assigning operator
-      inline cinterval & operator =(const complex &) throw();
+      inline cinterval & operator =(const complex &) noexcept;
       //! Implementation of standard assigning operator
-      inline cinterval & operator =(const cinterval &) throw();
+      inline cinterval & operator =(const cinterval &) noexcept;
       
       //! Implementation of standard assigning operator
-      inline cinterval & operator =(const dotprecision &) throw();
+      inline cinterval & operator =(const dotprecision &) noexcept;
       //! Implementation of standard assigning operator
-      inline cinterval & operator =(const idotprecision &) throw();
+      inline cinterval & operator =(const idotprecision &) noexcept;
       //! Implementation of standard assigning operator
-      inline cinterval & operator =(const cdotprecision &) throw();
+      inline cinterval & operator =(const cdotprecision &) noexcept;
       //! Implementation of standard assigning operator
-      inline cinterval & operator =(const cidotprecision &) throw();
+      inline cinterval & operator =(const cidotprecision &) noexcept;
       //! Implementation of standard assigning operator
-             cinterval & operator = (const l_cinterval&) throw();      
+             cinterval & operator = (const l_cinterval&) noexcept;      
       //! Implementation of standard assigning operator
-             cinterval & operator = (const lx_cinterval&) throw();
+             cinterval & operator = (const lx_cinterval&) noexcept;
 
       // ---- compatiblility typecasts ----------------------------
 
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _cinterval(const real &) throw ();
+      friend inline cinterval _cinterval(const real &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _cinterval(const interval &) throw();
+      friend inline cinterval _cinterval(const interval &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _cinterval(const complex &) throw ();
+      friend inline cinterval _cinterval(const complex &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _cinterval(const dotprecision &) throw();
+      friend inline cinterval _cinterval(const dotprecision &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _cinterval(const idotprecision &) throw();
+      friend inline cinterval _cinterval(const idotprecision &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _cinterval(const cdotprecision &) throw();
+      friend inline cinterval _cinterval(const cdotprecision &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _cinterval(const cidotprecision &) throw();
+      friend inline cinterval _cinterval(const cidotprecision &) noexcept;
       
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _cinterval(const interval &,const interval &) throw();
+      friend inline cinterval _cinterval(const interval &,const interval &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _cinterval(const real &,const interval &) throw();
+      friend inline cinterval _cinterval(const real &,const interval &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _cinterval(const interval &,const real &) throw();
+      friend inline cinterval _cinterval(const interval &,const real &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _cinterval(const complex &,const complex &) throw();
+      friend inline cinterval _cinterval(const complex &,const complex &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _cinterval(const real &,const complex &) throw();
+      friend inline cinterval _cinterval(const real &,const complex &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _cinterval(const complex &,const real &) throw();
+      friend inline cinterval _cinterval(const complex &,const real &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _unchecked_cinterval(const complex &,const complex &) throw();
+      friend inline cinterval _unchecked_cinterval(const complex &,const complex &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _unchecked_cinterval(const real &,const complex &) throw();
+      friend inline cinterval _unchecked_cinterval(const real &,const complex &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline cinterval _unchecked_cinterval(const complex &,const real &) throw();
+      friend inline cinterval _unchecked_cinterval(const complex &,const real &) noexcept;
 
       // ---- Input/Output  ---------------------------------------
 
       //! Implementation of standard output method
-      friend std::ostream & operator <<(std::ostream &,const cinterval &) throw();
+      friend std::ostream & operator <<(std::ostream &,const cinterval &) noexcept;
       //! Implementation of standard input method
-      friend std::istream & operator >>(std::istream &,cinterval &)       throw(ERROR_CINTERVAL_EMPTY_INTERVAL);
+      friend std::istream & operator >>(std::istream &,cinterval &)       noexcept(false);
       //! Implementation of standard output method
-      friend std::string &  operator <<(std::string &,const cinterval &)  throw();
+      friend std::string &  operator <<(std::string &,const cinterval &)  noexcept;
       //! Implementation of standard input method
-      friend std::string &  operator >>(std::string &,cinterval &)        throw(ERROR_CINTERVAL_EMPTY_INTERVAL);
+      friend std::string &  operator >>(std::string &,cinterval &)        noexcept(false);
       //! Implementation of standard input method
-      friend void           operator >>(const char *,cinterval &)         throw(ERROR_CINTERVAL_EMPTY_INTERVAL);
+      friend void           operator >>(const char *,cinterval &)         noexcept(false);
       //! Implementation of standard input method
-      friend void           operator >>(const std::string &,cinterval &)  throw(ERROR_CINTERVAL_EMPTY_INTERVAL);
+      friend void           operator >>(const std::string &,cinterval &)  noexcept(false);
 
       // ---- Std.Operators ---------------------------------------
 
       //! Implementation of standard algebraic negative sign operation
-      friend inline cinterval operator -(const cinterval &) throw ();
+      friend inline cinterval operator -(const cinterval &) noexcept;
       //! Implementation of standard algebraic positive sign operation
-      friend inline cinterval operator +(const cinterval &) throw ();
+      friend inline cinterval operator +(const cinterval &) noexcept;
       //! Implementation of standard negation operation
-      friend inline bool operator!  (const cinterval & a)                    throw();
+      friend inline bool operator!  (const cinterval & a)                    noexcept;
 
       // CI-CI
 
       //! Implementation of standard algebraic addition operation
-      friend inline cinterval operator +(const cinterval &,const cinterval &) throw();
+      friend inline cinterval operator +(const cinterval &,const cinterval &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend inline cinterval operator -(const cinterval &,const cinterval &) throw();
+      friend inline cinterval operator -(const cinterval &,const cinterval &) noexcept;
       //! Implementation of standard algebraic multiplication operation
-      friend        cinterval operator *(const cinterval &,const cinterval &) throw();
+      friend        cinterval operator *(const cinterval &,const cinterval &) noexcept;
       //! Implementation of standard algebraic division operation
-      friend        cinterval operator /(const cinterval &,const cinterval &) throw(DIV_BY_ZERO);
+      friend        cinterval operator /(const cinterval &,const cinterval &) noexcept(false);
       //! Returns the convex hull of the arguments
-      friend inline cinterval operator |(const cinterval &,const cinterval &) throw();
+      friend inline cinterval operator |(const cinterval &,const cinterval &) noexcept;
       //! Returns the intersection of the arguments
-      friend inline cinterval operator &(const cinterval &,const cinterval &) throw(ERROR_CINTERVAL_EMPTY_INTERVAL);
+      friend inline cinterval operator &(const cinterval &,const cinterval &) noexcept(false);
       
       //! Implementation of standard algebraic addition and allocation operation
-      friend inline cinterval & operator +=(cinterval &, const cinterval &) throw();
+      friend inline cinterval & operator +=(cinterval &, const cinterval &) noexcept;
       //! Implementation of standard algebraic subtraction and allocation operation
-      friend inline cinterval & operator -=(cinterval &, const cinterval &) throw();
+      friend inline cinterval & operator -=(cinterval &, const cinterval &) noexcept;
       //! Implementation of standard algebraic multiplication and allocation operation
-      friend inline cinterval & operator *=(cinterval &, const cinterval &) throw();
+      friend inline cinterval & operator *=(cinterval &, const cinterval &) noexcept;
       //! Implementation of standard algebraic division and allocation operation
-      friend inline cinterval & operator /=(cinterval &, const cinterval &) throw();
+      friend inline cinterval & operator /=(cinterval &, const cinterval &) noexcept;
       //! Allocates the convex hull of the arguments to the first argument
-      friend inline cinterval & operator |=(cinterval &, const cinterval &) throw();
+      friend inline cinterval & operator |=(cinterval &, const cinterval &) noexcept;
       //! Allocates the intersection of the arguments to the first argument
-      friend inline cinterval & operator &=(cinterval &, const cinterval &) throw(ERROR_CINTERVAL_EMPTY_INTERVAL);
+      friend inline cinterval & operator &=(cinterval &, const cinterval &) noexcept(false);
       
       // CI-R
       
       //! Implementation of standard algebraic addition operation
-      friend inline cinterval operator +(const cinterval &,const real &) throw();
+      friend inline cinterval operator +(const cinterval &,const real &) noexcept;
       //! Implementation of standard algebraic addition operation
-      friend inline cinterval operator +(const real &,const cinterval &) throw();
+      friend inline cinterval operator +(const real &,const cinterval &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend inline cinterval operator -(const cinterval &,const real &) throw();
+      friend inline cinterval operator -(const cinterval &,const real &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend inline cinterval operator -(const real &,const cinterval &) throw();
+      friend inline cinterval operator -(const real &,const cinterval &) noexcept;
       //! Implementation of standard algebraic multiplication operation
-      friend inline cinterval operator *(const cinterval &,const real &) throw();
+      friend inline cinterval operator *(const cinterval &,const real &) noexcept;
       //! Implementation of standard algebraic multiplication operation
-      friend inline cinterval operator *(const real &,const cinterval &) throw();
+      friend inline cinterval operator *(const real &,const cinterval &) noexcept;
       //! Implementation of standard algebraic division operation
-      friend inline cinterval operator /(const cinterval &,const real &) throw();
+      friend inline cinterval operator /(const cinterval &,const real &) noexcept;
       //! Implementation of standard algebraic division operation
-      friend inline cinterval operator /(const real &,const cinterval &) throw();
+      friend inline cinterval operator /(const real &,const cinterval &) noexcept;
       //! Returns the convex hull of the arguments
-      friend inline cinterval operator |(const cinterval &,const real &) throw();
+      friend inline cinterval operator |(const cinterval &,const real &) noexcept;
       //! Returns the convex hull of the arguments
-      friend inline cinterval operator |(const real &,const cinterval &) throw();
+      friend inline cinterval operator |(const real &,const cinterval &) noexcept;
       //! Returns the intersection of the arguments
-      friend inline cinterval operator &(const cinterval &,const real &) throw();
+      friend inline cinterval operator &(const cinterval &,const real &) noexcept;
       //! Returns the intersection of the arguments
-      friend inline cinterval operator &(const real &,const cinterval &) throw();
+      friend inline cinterval operator &(const real &,const cinterval &) noexcept;
       
       //! Implementation of standard algebraic addition and allocation operation
-      friend inline cinterval & operator +=(cinterval &, const real &) throw();
+      friend inline cinterval & operator +=(cinterval &, const real &) noexcept;
       //! Implementation of standard algebraic subtraction and allocation operation
-      friend inline cinterval & operator -=(cinterval &, const real &) throw();
+      friend inline cinterval & operator -=(cinterval &, const real &) noexcept;
       //! Implementation of standard algebraic multiplication and allocation operation
-      friend inline cinterval & operator *=(cinterval &, const real &) throw();
+      friend inline cinterval & operator *=(cinterval &, const real &) noexcept;
       //! Implementation of standard algebraic division and allocation operation
-      friend inline cinterval & operator /=(cinterval &, const real &) throw();
+      friend inline cinterval & operator /=(cinterval &, const real &) noexcept;
       //! Allocates the convex hull of the arguments to the first argument
-      friend inline cinterval & operator |=(cinterval &, const real &) throw();
+      friend inline cinterval & operator |=(cinterval &, const real &) noexcept;
       //! Allocates the intersection of the arguments to the first argument
-      friend inline cinterval & operator &=(cinterval &, const real &) throw();
+      friend inline cinterval & operator &=(cinterval &, const real &) noexcept;
       
       // CI-I
 
       //! Implementation of standard algebraic addition operation
-      friend inline cinterval operator +(const cinterval &,const interval &) throw();
+      friend inline cinterval operator +(const cinterval &,const interval &) noexcept;
       //! Implementation of standard algebraic addition operation
-      friend inline cinterval operator +(const interval &,const cinterval &) throw();
+      friend inline cinterval operator +(const interval &,const cinterval &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend inline cinterval operator -(const cinterval &,const interval &) throw();
+      friend inline cinterval operator -(const cinterval &,const interval &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend inline cinterval operator -(const interval &,const cinterval &) throw();
+      friend inline cinterval operator -(const interval &,const cinterval &) noexcept;
       //! Implementation of standard algebraic multiplication operation
-      friend inline cinterval operator *(const cinterval &,const interval &) throw();
+      friend inline cinterval operator *(const cinterval &,const interval &) noexcept;
       //! Implementation of standard algebraic multiplication operation
-      friend inline cinterval operator *(const interval &,const cinterval &) throw();
+      friend inline cinterval operator *(const interval &,const cinterval &) noexcept;
       //! Implementation of standard algebraic division operation
-      friend inline cinterval operator /(const cinterval &,const interval &) throw();
+      friend inline cinterval operator /(const cinterval &,const interval &) noexcept;
       //! Implementation of standard algebraic division operation
-      friend inline cinterval operator /(const interval &,const cinterval &) throw();
+      friend inline cinterval operator /(const interval &,const cinterval &) noexcept;
       //! Returns the convex hull of the arguments
-      friend inline cinterval operator |(const cinterval &,const interval &) throw();
+      friend inline cinterval operator |(const cinterval &,const interval &) noexcept;
       //! Returns the convex hull of the arguments
-      friend inline cinterval operator |(const interval &,const cinterval &) throw();
+      friend inline cinterval operator |(const interval &,const cinterval &) noexcept;
       //! Returns the intersection cinterval of the arguments
-      friend inline cinterval operator &(const cinterval &,const interval &) throw();
+      friend inline cinterval operator &(const cinterval &,const interval &) noexcept;
       //! Returns the intersection cinterval of the arguments
-      friend inline cinterval operator &(const interval &,const cinterval &) throw();
+      friend inline cinterval operator &(const interval &,const cinterval &) noexcept;
       
       //! Implementation of standard algebraic addition and allocation operation
-      friend inline cinterval & operator +=(cinterval &, const interval &) throw();
+      friend inline cinterval & operator +=(cinterval &, const interval &) noexcept;
       //! Implementation of standard algebraic subtraction and allocation operation
-      friend inline cinterval & operator -=(cinterval &, const interval &) throw();
+      friend inline cinterval & operator -=(cinterval &, const interval &) noexcept;
       //! Implementation of standard algebraic multiplication and allocation operation
-      friend inline cinterval & operator *=(cinterval &, const interval &) throw();
+      friend inline cinterval & operator *=(cinterval &, const interval &) noexcept;
       //! Implementation of standard algebraic division and allocation operation
-      friend inline cinterval & operator /=(cinterval &, const interval &) throw();
+      friend inline cinterval & operator /=(cinterval &, const interval &) noexcept;
       //! Allocates the convex hull of the arguments to the first argument
-      friend inline cinterval & operator |=(cinterval &, const interval &) throw();
+      friend inline cinterval & operator |=(cinterval &, const interval &) noexcept;
       //! Allocates the intersection cinterval of the arguments to the first argument
-      friend inline cinterval & operator &=(cinterval &, const interval &) throw();
+      friend inline cinterval & operator &=(cinterval &, const interval &) noexcept;
 
       // CI-C
 
       //! Implementation of standard algebraic addition operation
-      friend inline cinterval operator +(const cinterval &,const complex &) throw();
+      friend inline cinterval operator +(const cinterval &,const complex &) noexcept;
       //! Implementation of standard algebraic addition operation
-      friend inline cinterval operator +(const complex &,const cinterval &) throw();
+      friend inline cinterval operator +(const complex &,const cinterval &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend inline cinterval operator -(const cinterval &,const complex &) throw();
+      friend inline cinterval operator -(const cinterval &,const complex &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend inline cinterval operator -(const complex &,const cinterval &) throw();
+      friend inline cinterval operator -(const complex &,const cinterval &) noexcept;
       //! Implementation of standard algebraic multiplication operation
-      friend inline cinterval operator *(const cinterval &,const complex &) throw();
+      friend inline cinterval operator *(const cinterval &,const complex &) noexcept;
       //! Implementation of standard algebraic multiplication operation
-      friend inline cinterval operator *(const complex &,const cinterval &) throw();
+      friend inline cinterval operator *(const complex &,const cinterval &) noexcept;
       //! Implementation of standard algebraic division operation
-      friend inline cinterval operator /(const cinterval &,const complex &) throw();
+      friend inline cinterval operator /(const cinterval &,const complex &) noexcept;
       //! Implementation of standard algebraic division operation
-      friend inline cinterval operator /(const complex &,const cinterval &) throw();
+      friend inline cinterval operator /(const complex &,const cinterval &) noexcept;
       //! Returns the convex hull of the arguments
-      friend inline cinterval operator |(const cinterval &,const complex &) throw();
+      friend inline cinterval operator |(const cinterval &,const complex &) noexcept;
       //! Returns the convex hull of the arguments
-      friend inline cinterval operator |(const complex &,const cinterval &) throw();
+      friend inline cinterval operator |(const complex &,const cinterval &) noexcept;
       //! Returns the intersection of the arguments
-      friend inline cinterval operator &(const cinterval &,const complex &) throw();
+      friend inline cinterval operator &(const cinterval &,const complex &) noexcept;
       //! Returns the intersection of the arguments
-      friend inline cinterval operator &(const complex &,const cinterval &) throw();
+      friend inline cinterval operator &(const complex &,const cinterval &) noexcept;
       
 
       //! Implementation of standard algebraic addition and allocation operation
-      friend inline cinterval & operator +=(cinterval &, const complex &) throw();
+      friend inline cinterval & operator +=(cinterval &, const complex &) noexcept;
       //! Implementation of standard algebraic subtraction and allocation operation
-      friend inline cinterval & operator -=(cinterval &, const complex &) throw();
+      friend inline cinterval & operator -=(cinterval &, const complex &) noexcept;
       //! Implementation of standard algebraic multiplication and allocation operation
-      friend inline cinterval & operator *=(cinterval &, const complex &) throw();
+      friend inline cinterval & operator *=(cinterval &, const complex &) noexcept;
       //! Implementation of standard algebraic division and allocation operation
-      friend inline cinterval & operator /=(cinterval &, const complex &) throw();
+      friend inline cinterval & operator /=(cinterval &, const complex &) noexcept;
       //! Allocates the convex hull of the arguments to the first argument
-      friend inline cinterval & operator |=(cinterval &, const complex &) throw();
+      friend inline cinterval & operator |=(cinterval &, const complex &) noexcept;
       //! Allocates the intersection of the arguments to the first argument
-      friend inline cinterval & operator &=(cinterval &, const complex &) throw();
+      friend inline cinterval & operator &=(cinterval &, const complex &) noexcept;
       
       // C-R
 
       //! Returns the union cinterval of the arguments
-      friend inline cinterval operator |(const complex &,const real &) throw();
+      friend inline cinterval operator |(const complex &,const real &) noexcept;
       //! Returns the union cinterval of the arguments
-      friend inline cinterval operator |(const real &,const complex &) throw();
+      friend inline cinterval operator |(const real &,const complex &) noexcept;
 
       // C-I
 
       //! Implementation of standard algebraic addition operation
-      friend inline cinterval operator +(const complex &,const interval &) throw();
+      friend inline cinterval operator +(const complex &,const interval &) noexcept;
       //! Implementation of standard algebraic addition operation
-      friend inline cinterval operator +(const interval &,const complex &) throw();
+      friend inline cinterval operator +(const interval &,const complex &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend inline cinterval operator -(const complex &,const interval &) throw();
+      friend inline cinterval operator -(const complex &,const interval &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend inline cinterval operator -(const interval &,const complex &) throw();
+      friend inline cinterval operator -(const interval &,const complex &) noexcept;
       //! Implementation of standard algebraic multiplication operation
-      friend inline cinterval operator *(const complex &,const interval &) throw();
+      friend inline cinterval operator *(const complex &,const interval &) noexcept;
       //! Implementation of standard algebraic multiplication operation
-      friend inline cinterval operator *(const interval &,const complex &) throw();
+      friend inline cinterval operator *(const interval &,const complex &) noexcept;
       //! Implementation of standard algebraic division operation
-      friend inline cinterval operator /(const complex &,const interval &) throw();
+      friend inline cinterval operator /(const complex &,const interval &) noexcept;
       //! Implementation of standard algebraic division operation
-      friend inline cinterval operator /(const interval &,const complex &) throw();
+      friend inline cinterval operator /(const interval &,const complex &) noexcept;
       //! Returns the convex hull of the arguments
-      friend inline cinterval operator |(const complex &,const interval &) throw();
+      friend inline cinterval operator |(const complex &,const interval &) noexcept;
       //! Returns the convex hull of the arguments
-      friend inline cinterval operator |(const interval &,const complex &) throw();
+      friend inline cinterval operator |(const interval &,const complex &) noexcept;
       //! Returns the intersection of the arguments
-      friend inline cinterval operator &(const complex &,const interval &) throw();
+      friend inline cinterval operator &(const complex &,const interval &) noexcept;
       //! Returns the intersection of the arguments
-      friend inline cinterval operator &(const interval &,const complex &) throw();
+      friend inline cinterval operator &(const interval &,const complex &) noexcept;
       
 
       // C-C
 
       //! Returns the union cinterval of the arguments
-      friend inline cinterval operator |(const complex &,const complex &) throw();
+      friend inline cinterval operator |(const complex &,const complex &) noexcept;
 
       // ---- Comp.Operat.  ---------------------------------------
       
       //! Implementation of standard equality operation
-      friend inline bool operator== (const cinterval & a, const cinterval & b) throw();
+      friend inline bool operator== (const cinterval & a, const cinterval & b) noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator!= (const cinterval & a, const cinterval & b) throw();
+      friend inline bool operator!= (const cinterval & a, const cinterval & b) noexcept;
       
       // CI-R
       
       //! Implementation of standard equality operation
-      friend inline bool operator== (const cinterval & a, const real & b)    throw();
+      friend inline bool operator== (const cinterval & a, const real & b)    noexcept;
       //! Implementation of standard equality operation
-      friend inline bool operator== (const real & a, const cinterval & b)    throw();
+      friend inline bool operator== (const real & a, const cinterval & b)    noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator!= (const cinterval & a, const real & b)    throw();
+      friend inline bool operator!= (const cinterval & a, const real & b)    noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator!= (const real & a, const cinterval & b)    throw();
+      friend inline bool operator!= (const real & a, const cinterval & b)    noexcept;
 
       // CI-I
       
       //! Implementation of standard equality operation
-      friend inline bool operator== (const cinterval & a, const interval & b)    throw();
+      friend inline bool operator== (const cinterval & a, const interval & b)    noexcept;
       //! Implementation of standard equality operation
-      friend inline bool operator== (const interval & a, const cinterval & b)    throw();
+      friend inline bool operator== (const interval & a, const cinterval & b)    noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator!= (const cinterval & a, const interval & b)    throw();
+      friend inline bool operator!= (const cinterval & a, const interval & b)    noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator!= (const interval & a, const cinterval & b)    throw();
+      friend inline bool operator!= (const interval & a, const cinterval & b)    noexcept;
 
       // CI-C
       
       //! Implementation of standard equality operation
-      friend inline bool operator== (const cinterval & a, const complex & b)    throw();
+      friend inline bool operator== (const cinterval & a, const complex & b)    noexcept;
       //! Implementation of standard equality operation
-      friend inline bool operator== (const complex & a, const cinterval & b)    throw();
+      friend inline bool operator== (const complex & a, const cinterval & b)    noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator!= (const cinterval & a, const complex & b)    throw();
+      friend inline bool operator!= (const cinterval & a, const complex & b)    noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator!= (const complex & a, const cinterval & b)    throw();
+      friend inline bool operator!= (const complex & a, const cinterval & b)    noexcept;
 
       // ---- Set Operators ----
       
       //! Implementation of standard less-than operation
-      friend inline bool operator  <(const cinterval &,const cinterval &) throw();
+      friend inline bool operator  <(const cinterval &,const cinterval &) noexcept;
       //! Implementation of standard greater-than operation
-      friend inline bool operator  >(const cinterval &,const cinterval &) throw();
+      friend inline bool operator  >(const cinterval &,const cinterval &) noexcept;
       //! Implementation of standard less-or-equal-than operation
-      friend inline bool operator <=(const cinterval &,const cinterval &) throw();
+      friend inline bool operator <=(const cinterval &,const cinterval &) noexcept;
       //! Implementation of standard more-or-equal-than operation
-      friend inline bool operator >=(const cinterval &,const cinterval &) throw();
+      friend inline bool operator >=(const cinterval &,const cinterval &) noexcept;
 
       // CI-R
 
       //! Implementation of standard less-than operation
-      friend inline bool operator  <(const real &,const cinterval &) throw();
+      friend inline bool operator  <(const real &,const cinterval &) noexcept;
       //! Implementation of standard greater-than operation
-      friend inline bool operator  >(const real &,const cinterval &) throw();
+      friend inline bool operator  >(const real &,const cinterval &) noexcept;
       //! Implementation of standard less-or-equal-than operation
-      friend inline bool operator <=(const real &,const cinterval &) throw();
+      friend inline bool operator <=(const real &,const cinterval &) noexcept;
       //! Implementation of standard more-or-equal-than operation
-      friend inline bool operator >=(const real &,const cinterval &) throw();
+      friend inline bool operator >=(const real &,const cinterval &) noexcept;
 
       //! Implementation of standard less-than operation
-      friend inline bool operator  <(const cinterval &,const real &) throw();
+      friend inline bool operator  <(const cinterval &,const real &) noexcept;
       //! Implementation of standard greater-than operation
-      friend inline bool operator  >(const cinterval &,const real &) throw();
+      friend inline bool operator  >(const cinterval &,const real &) noexcept;
       //! Implementation of standard less-or-equal-than operation
-      friend inline bool operator <=(const cinterval &,const real &) throw();
+      friend inline bool operator <=(const cinterval &,const real &) noexcept;
       //! Implementation of standard more-or-equal-than operation
-      friend inline bool operator >=(const cinterval &,const real &) throw();
+      friend inline bool operator >=(const cinterval &,const real &) noexcept;
 
       // CI-I
 
       //! Implementation of standard less-than operation
-      friend inline bool operator  <(const interval &,const cinterval &) throw();
+      friend inline bool operator  <(const interval &,const cinterval &) noexcept;
       //! Implementation of standard greater-than operation
-      friend inline bool operator  >(const interval &,const cinterval &) throw();
+      friend inline bool operator  >(const interval &,const cinterval &) noexcept;
       //! Implementation of standard less-or-equal-than operation
-      friend inline bool operator <=(const interval &,const cinterval &) throw();
+      friend inline bool operator <=(const interval &,const cinterval &) noexcept;
       //! Implementation of standard more-or-equal-than operation
-      friend inline bool operator >=(const interval &,const cinterval &) throw();
+      friend inline bool operator >=(const interval &,const cinterval &) noexcept;
 
       //! Implementation of standard less-than operation
-      friend inline bool operator  <(const cinterval &,const interval &) throw();
+      friend inline bool operator  <(const cinterval &,const interval &) noexcept;
       //! Implementation of standard greater-than operation
-      friend inline bool operator  >(const cinterval &,const interval &) throw();
+      friend inline bool operator  >(const cinterval &,const interval &) noexcept;
       //! Implementation of standard less-or-equal-than operation
-      friend inline bool operator <=(const cinterval &,const interval &) throw();
+      friend inline bool operator <=(const cinterval &,const interval &) noexcept;
       //! Implementation of standard more-or-equal-than operation
-      friend inline bool operator >=(const cinterval &,const interval &) throw();
+      friend inline bool operator >=(const cinterval &,const interval &) noexcept;
 
       // CI-C
 
       //! Implementation of standard less-than operation
-      friend inline bool operator  <(const complex &,const cinterval &) throw();
+      friend inline bool operator  <(const complex &,const cinterval &) noexcept;
       //! Implementation of standard greater-than operation
-      friend inline bool operator  >(const complex &,const cinterval &) throw();
+      friend inline bool operator  >(const complex &,const cinterval &) noexcept;
       //! Implementation of standard less-or-equal-than operation
-      friend inline bool operator <=(const complex &,const cinterval &) throw();
+      friend inline bool operator <=(const complex &,const cinterval &) noexcept;
       //! Implementation of standard more-or-equal-than operation
-      friend inline bool operator >=(const complex &,const cinterval &) throw();
+      friend inline bool operator >=(const complex &,const cinterval &) noexcept;
 
       //! Implementation of standard less-than operation
-      friend inline bool operator  <(const cinterval &,const complex &) throw();
+      friend inline bool operator  <(const cinterval &,const complex &) noexcept;
       //! Implementation of standard greater-than operation
-      friend inline bool operator  >(const cinterval &,const complex &) throw();
+      friend inline bool operator  >(const cinterval &,const complex &) noexcept;
       //! Implementation of standard less-or-equal-than operation
-      friend inline bool operator <=(const cinterval &,const complex &) throw();
+      friend inline bool operator <=(const cinterval &,const complex &) noexcept;
       //! Implementation of standard greater-or-equal-than operation
-      friend inline bool operator >=(const cinterval &,const complex &) throw();
+      friend inline bool operator >=(const cinterval &,const complex &) noexcept;
 
       // ---- Others   -------------------------------------------
       //! Returns the infimum of a complex interval
-      friend inline complex    Inf(const cinterval &) throw();
+      friend inline complex    Inf(const cinterval &) noexcept;
       //! Returns the supremum of a complex interval
-      friend inline complex    Sup(const cinterval &) throw();
+      friend inline complex    Sup(const cinterval &) noexcept;
       
       //! Returns the complex interval with the new given infimum value
-      friend inline cinterval & SetInf(cinterval &,const complex &) throw(ERROR_CINTERVAL_EMPTY_INTERVAL);
+      friend inline cinterval & SetInf(cinterval &,const complex &) noexcept(false);
       //! Returns the complex interval with the new given infimum value
-      friend inline cinterval & SetInf(cinterval &,const real &) throw(ERROR_CINTERVAL_EMPTY_INTERVAL);
+      friend inline cinterval & SetInf(cinterval &,const real &) noexcept(false);
       //! Returns the complex interval with the new given supremum value
-      friend inline cinterval & SetSup(cinterval &,const complex &) throw(ERROR_CINTERVAL_EMPTY_INTERVAL);
+      friend inline cinterval & SetSup(cinterval &,const complex &) noexcept(false);
       //! Returns the complex interval with the new given supremum value
-      friend inline cinterval & SetSup(cinterval &,const real &) throw(ERROR_CINTERVAL_EMPTY_INTERVAL);
+      friend inline cinterval & SetSup(cinterval &,const real &) noexcept(false);
       //! Returns the complex interval with the unchecked new given infimum value
-      friend inline cinterval & UncheckedSetInf(cinterval &,const complex &) throw();
+      friend inline cinterval & UncheckedSetInf(cinterval &,const complex &) noexcept;
       //! Returns the complex interval with the unchecked new given infimum value
-      friend inline cinterval & UncheckedSetInf(cinterval &,const real &)    throw();
+      friend inline cinterval & UncheckedSetInf(cinterval &,const real &)    noexcept;
       //! Returns the complex interval with the unchecked new given supremum value
-      friend inline cinterval & UncheckedSetSup(cinterval &,const complex &) throw();
+      friend inline cinterval & UncheckedSetSup(cinterval &,const complex &) noexcept;
       //! Returns the cinterval with the unchecked new given supremum value
-      friend inline cinterval & UncheckedSetSup(cinterval &,const real &)    throw();
+      friend inline cinterval & UncheckedSetSup(cinterval &,const real &)    noexcept;
       
       //! Returns the real interval of the complex interval
-      friend inline interval & Re(cinterval & a)       throw();
+      friend inline interval & Re(cinterval & a)       noexcept;
       //! Returns the real interval of the complex interval
-      friend inline interval   Re(const cinterval & a) throw();
+      friend inline interval   Re(const cinterval & a) noexcept;
       //! Returns the imaginary interval of the complex interval
-      friend inline interval & Im(cinterval & a)       throw();
+      friend inline interval & Im(cinterval & a)       noexcept;
       //! Returns the imaginary interval of the complex interval
-      friend inline interval   Im(const cinterval & a) throw();
+      friend inline interval   Im(const cinterval & a) noexcept;
       
       //! Sets the real interval of the complex interval
       friend inline cinterval & SetRe(cinterval & a,const interval & b);
@@ -532,31 +532,31 @@ class cinterval
       friend inline cinterval & SetIm(cinterval & a,const real     & b);
 
       //! Returns the infimum of the real interval of the complex interval
-      friend inline real InfRe(const cinterval &a) throw();
+      friend inline real InfRe(const cinterval &a) noexcept;
       //! Returns the infimum of the imaginary interval of the complex interval
-      friend inline real InfIm(const cinterval &a) throw();
+      friend inline real InfIm(const cinterval &a) noexcept;
       //! Returns the supremum of the real interval of the complex interval
-      friend inline real SupRe(const cinterval &a) throw();
+      friend inline real SupRe(const cinterval &a) noexcept;
       //! Returns the supremum of the imaginary interval of the complex interval
-      friend inline real SupIm(const cinterval &a) throw();
+      friend inline real SupIm(const cinterval &a) noexcept;
       
       //! Returns the infimum of the real interval of the complex interval
-      friend inline real & InfRe(cinterval &a) throw();
+      friend inline real & InfRe(cinterval &a) noexcept;
       //! Returns the infimum of the imaginary interval of the complex interval
-      friend inline real & InfIm(cinterval &a) throw();
+      friend inline real & InfIm(cinterval &a) noexcept;
       //! Returns the supremum of the real interval of the complex interval
-      friend inline real & SupRe(cinterval &a) throw();
+      friend inline real & SupRe(cinterval &a) noexcept;
       //! Returns the supremum of the imaginary interval of the complex interval
-      friend inline real & SupIm(cinterval &a) throw();
+      friend inline real & SupIm(cinterval &a) noexcept;
       
       //! Returns the absolute value of a complex interval
-      friend        interval  abs(const cinterval &) throw();
+      friend        interval  abs(const cinterval &) noexcept;
       //! Returns the conjugated complex interval
-      friend inline cinterval conj(const cinterval &) throw();
+      friend inline cinterval conj(const cinterval &) noexcept;
       //! Returns the rounded middle of the complex interval
-      friend inline   complex mid(const cinterval &) throw();
+      friend inline   complex mid(const cinterval &) noexcept;
       //! Returns the rounded diameter of the complex interval
-      friend inline   complex diam(const cinterval &) throw();
+      friend inline   complex diam(const cinterval &) noexcept;
 };
 
 //! Checks if first argument is part of second argument
@@ -565,7 +565,7 @@ extern int       in   ( const cinterval&, const cinterval& );
 extern cinterval Blow ( cinterval, const real& );
 
 // Additional declaration of friend functions outside class cinterval
-interval  abs(const cinterval &) throw();
+interval  abs(const cinterval &) noexcept;
 
 } // namespace cxsc 
 

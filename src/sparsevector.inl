@@ -46,7 +46,7 @@ inline Tres spsp_vv_mult(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -86,7 +86,7 @@ inline Tres slsp_vv_mult(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -127,7 +127,7 @@ inline Tres spsl_vv_mult(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -166,7 +166,7 @@ inline Tres spf_vv_mult(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -199,7 +199,7 @@ inline Tres fsp_vv_mult(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -234,7 +234,7 @@ inline Tres slf_vv_mult(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -266,7 +266,7 @@ inline Tres fsl_vv_mult(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -298,7 +298,7 @@ inline Tres slsl_vv_mult(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -372,7 +372,7 @@ inline Tres spsp_vv_add(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -417,7 +417,7 @@ inline Tres slsp_vv_add(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -467,7 +467,7 @@ inline Tres spsl_vv_add(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -519,7 +519,7 @@ inline Tres spf_vv_add(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -539,7 +539,7 @@ inline Tres fsp_vv_add(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -559,7 +559,7 @@ inline Tres slf_vv_add(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -579,7 +579,7 @@ inline Tres fsl_vv_add(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -600,7 +600,7 @@ inline Tres slsl_vv_add(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -655,7 +655,7 @@ inline Tres spsp_vv_sub(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -700,7 +700,7 @@ inline Tres slsp_vv_sub(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -750,7 +750,7 @@ inline Tres spsl_vv_sub(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -802,7 +802,7 @@ inline Tres spf_vv_sub(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -822,7 +822,7 @@ inline Tres fsp_vv_sub(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -842,7 +842,7 @@ inline Tres slf_vv_sub(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -862,7 +862,7 @@ inline Tres fsl_vv_sub(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -883,7 +883,7 @@ inline Tres slsl_vv_sub(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -939,7 +939,7 @@ inline Tres spsp_vv_hull(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -984,7 +984,7 @@ inline Tres slsp_vv_hull(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1034,7 +1034,7 @@ inline Tres spsl_vv_hull(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1086,7 +1086,7 @@ inline Tres spf_vv_hull(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1106,7 +1106,7 @@ inline Tres fsp_vv_hull(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1126,7 +1126,7 @@ inline Tres slf_vv_hull(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1146,7 +1146,7 @@ inline Tres fsl_vv_hull(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1167,7 +1167,7 @@ inline Tres slsl_vv_hull(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1223,7 +1223,7 @@ inline Tres spsp_vv_intersect(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1268,7 +1268,7 @@ inline Tres slsp_vv_intersect(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1318,7 +1318,7 @@ inline Tres spsl_vv_intersect(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1370,7 +1370,7 @@ inline Tres spf_vv_intersect(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1390,7 +1390,7 @@ inline Tres fsp_vv_intersect(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1410,7 +1410,7 @@ inline Tres slf_vv_intersect(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1430,7 +1430,7 @@ inline Tres fsl_vv_intersect(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -1451,7 +1451,7 @@ inline Tres slsl_vv_intersect(const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2490,7 +2490,7 @@ inline Tx& fssp_vv_assign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2509,7 +2509,7 @@ inline Tx& fssl_vv_assign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2527,7 +2527,7 @@ inline Tx& slsl_vv_assign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2552,7 +2552,7 @@ inline Tx& slsp_vv_assign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2577,7 +2577,7 @@ inline Tx& slf_vv_assign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2767,7 +2767,7 @@ inline Tx& spf_vv_addassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2782,7 +2782,7 @@ inline Tx& spsp_vv_addassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2797,7 +2797,7 @@ inline Tx& spsl_vv_addassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2812,7 +2812,7 @@ inline Tx& fsp_vv_addassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2829,7 +2829,7 @@ inline Tx& fsl_vv_addassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2846,7 +2846,7 @@ inline Tx& spf_vv_subassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2861,7 +2861,7 @@ inline Tx& spsp_vv_subassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2876,7 +2876,7 @@ inline Tx& spsl_vv_subassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2891,7 +2891,7 @@ inline Tx& fsp_vv_subassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2908,7 +2908,7 @@ inline Tx& fsl_vv_subassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2925,7 +2925,7 @@ inline Tx& spf_vv_hullassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2940,7 +2940,7 @@ inline Tx& spsp_vv_hullassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2955,7 +2955,7 @@ inline Tx& spsl_vv_hullassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2970,7 +2970,7 @@ inline Tx& fsp_vv_hullassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -2987,7 +2987,7 @@ inline Tx& fsl_vv_hullassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3004,7 +3004,7 @@ inline Tx& spf_vv_intersectassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3019,7 +3019,7 @@ inline Tx& spsp_vv_intersectassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3034,7 +3034,7 @@ inline Tx& spsl_vv_intersectassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3049,7 +3049,7 @@ inline Tx& fsp_vv_intersectassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3066,7 +3066,7 @@ inline Tx& fsl_vv_intersectassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3100,7 +3100,7 @@ inline Tx& slf_vv_addassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3128,7 +3128,7 @@ inline Tx& slsp_vv_addassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3143,7 +3143,7 @@ inline Tx& slsl_vv_addassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3158,7 +3158,7 @@ inline Tx& slf_vv_subassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3186,7 +3186,7 @@ inline Tx& slsp_vv_subassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3201,7 +3201,7 @@ inline Tx& slsl_vv_subassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3233,7 +3233,7 @@ inline Tx& slf_vv_hullassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3261,7 +3261,7 @@ inline Tx& slsp_vv_hullassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3276,7 +3276,7 @@ inline Tx& slsl_vv_hullassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3291,7 +3291,7 @@ inline Tx& slf_vv_intersectassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3319,7 +3319,7 @@ inline Tx& slsp_vv_intersectassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3334,7 +3334,7 @@ inline Tx& slsl_vv_intersectassign(Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3369,7 +3369,7 @@ inline void spsp_vv_accu(TDot& dot, const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3392,7 +3392,7 @@ inline void spf_vv_accu(TDot& dot, const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3412,7 +3412,7 @@ inline void fsp_vv_accu(TDot& dot, const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3432,7 +3432,7 @@ inline void slsl_vv_accu(TDot& dot, const Tv1& v1, const Tv2& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3456,7 +3456,7 @@ inline void spsl_vv_accu(TDot& dot, const Tv1& v1, const Tv2& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3479,7 +3479,7 @@ inline void slsp_vv_accu(TDot& dot, const Tv1& v1, const Tv2& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3502,7 +3502,7 @@ inline void slf_vv_accu(TDot& dot, const Tv1& v1, const Tv2& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3522,7 +3522,7 @@ inline void fsl_vv_accu(TDot& dot, const Tv1& v1, const Tv2& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3543,7 +3543,7 @@ inline void spsp_vv_accuapprox(TDot& dot, const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3566,7 +3566,7 @@ inline void spf_vv_accuapprox(TDot& dot, const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3586,7 +3586,7 @@ inline void fsp_vv_accuapprox(TDot& dot, const Tx& v1, const Ty& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3606,7 +3606,7 @@ inline void slsl_vv_accuapprox(TDot& dot, const Tv1& v1, const Tv2& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3630,7 +3630,7 @@ inline void spsl_vv_accuapprox(TDot& dot, const Tv1& v1, const Tv2& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3653,7 +3653,7 @@ inline void slsp_vv_accuapprox(TDot& dot, const Tv1& v1, const Tv2& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3676,7 +3676,7 @@ inline void slf_vv_accuapprox(TDot& dot, const Tv1& v1, const Tv2& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3696,7 +3696,7 @@ inline void fsl_vv_accuapprox(TDot& dot, const Tv1& v1, const Tv2& v2)
 #if(CXSC_INDEX_CHECK)
   throw(OP_WITH_WRONG_DIM)
 #else
-  throw()
+  noexcept
 #endif
 {
 #if(CXSC_INDEX_CHECK)
@@ -3715,7 +3715,7 @@ inline void fsl_vv_accuapprox(TDot& dot, const Tv1& v1, const Tv2& v2)
 //---------------------------------------------------------------------------------------
 
 template<class Tx>
-inline void sp_v_resize(Tx &v) throw() {
+inline void sp_v_resize(Tx &v) noexcept {
   v.n = v.ub = 0;
   v.lb = 0;
   v.p.clear();
@@ -3727,7 +3727,7 @@ inline void sp_v_resize(Tx &v, const int &len)
 #if(CXSC_INDEX_CHECK)
     throw(WRONG_BOUNDARIES)
 #else
-    throw()
+    noexcept
 #endif
 {
    if(v.n == len)
@@ -3753,7 +3753,7 @@ inline void sp_v_resize(Tx &v, const int &lb, const int &ub)
 #if(CXSC_INDEX_CHECK)
 	throw(WRONG_BOUNDARIES)
 #else
-	throw()
+	noexcept
 #endif
 {
      if(v.n == ub-lb+1)

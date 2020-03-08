@@ -63,14 +63,14 @@ class interval
       //! Constructor of class interval
       interval() {}
       //! Constructor of class interval
-      inline interval(const real&, const real&) throw(ERROR_INTERVAL_EMPTY_INTERVAL);
+      inline interval(const real&, const real&) noexcept(false);
       //! Implementation of standard assigning operator
       inline interval& operator= (const real& a);
 
       // ---- Typecasts     ---------------------------------------
       
       //! Typecast for converting a real value in an interval
-      explicit inline interval(const real &r) throw() :inf(r),sup(r) { }
+      explicit inline interval(const real &r) noexcept :inf(r),sup(r) { }
       
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
       friend inline interval _unchecked_interval(const real&, const real&);
@@ -94,56 +94,56 @@ class interval
       friend INLINE interval _interval(const imatrix_slice &m) throw(ERROR_IMATRIX_TYPE_CAST_OF_THICK_OBJ,ERROR_IMATRIX_USE_OF_UNINITIALIZED_OBJ);
 #else
       //! Constructor of class interval
-      explicit INLINE interval(const ivector &) throw();
+      explicit INLINE interval(const ivector &) noexcept;
       //! Constructor of class interval
-      explicit INLINE interval(const ivector_slice &) throw();
+      explicit INLINE interval(const ivector_slice &) noexcept;
       //! Constructor of class interval
-      explicit INLINE interval(const imatrix &m) throw();
+      explicit INLINE interval(const imatrix &m) noexcept;
       //! Constructor of class interval
-      explicit INLINE interval(const imatrix_slice &m) throw();
+      explicit INLINE interval(const imatrix_slice &m) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend INLINE interval _interval(const ivector &) throw();
+      friend INLINE interval _interval(const ivector &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend INLINE interval _interval(const ivector_slice &) throw();
+      friend INLINE interval _interval(const ivector_slice &) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend INLINE interval _interval(const imatrix &m) throw();
+      friend INLINE interval _interval(const imatrix &m) noexcept;
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend INLINE interval _interval(const imatrix_slice &m) throw();
+      friend INLINE interval _interval(const imatrix_slice &m) noexcept;
 #endif
       //! Constructor of class interval
-      explicit        interval(const l_real &) throw();     // in l_real.cpp
+      explicit        interval(const l_real &) noexcept;     // in l_real.cpp
       //! Constructor of class interval
-                      interval(const l_real &,const l_real &) throw(ERROR_INTERVAL_EMPTY_INTERVAL);
+                      interval(const l_real &,const l_real &) noexcept(false);
       //! Constructor of class interval
-      explicit        interval(const l_interval &) throw(); // in l_interval.cpp
+      explicit        interval(const l_interval &) noexcept; // in l_interval.cpp
       //! Constructor of class interval
-      explicit        interval(const dotprecision &) throw();
+      explicit        interval(const dotprecision &) noexcept;
       //! Constructor of class interval
-                      interval(const dotprecision &,const dotprecision &) throw(ERROR_INTERVAL_EMPTY_INTERVAL);
+                      interval(const dotprecision &,const dotprecision &) noexcept(false);
       //! Constructor of class interval
-      explicit        interval(const idotprecision &) throw();
+      explicit        interval(const idotprecision &) noexcept;
       
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline interval _interval(const l_real &a) throw(); // in l_interval.inl
+      friend inline interval _interval(const l_real &a) noexcept; // in l_interval.inl
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend inline interval _interval(const l_real &a,const l_real &b) throw(ERROR_INTERVAL_EMPTY_INTERVAL) { return interval(a,b); }
+      friend inline interval _interval(const l_real &a,const l_real &b) noexcept(false) { return interval(a,b); }
       //! Deprecated typecast, which only exist for the reason of compatibility with older versions of C-XSC
-      friend        interval _interval(const l_interval &a) throw(); // in l_interv.inl
+      friend        interval _interval(const l_interval &a) noexcept; // in l_interv.inl
 //      friend inline interval _interval(const dotprecision &a) throw() { return interval(a); } 
 //      friend inline interval _interval(const dotprecision &a,const dotprecision &b) throw(ERROR_INTERVAL_EMPTY_INTERVAL) { return interval(a,b); }
 //      friend inline interval _interval(const idotprecision &a) throw() { return interval(a); }
       
       // interval & operator= (const interval& a); Default passt
       //! Implementation of standard assigning operator
-      interval & operator =(const l_real &) throw();
+      interval & operator =(const l_real &) noexcept;
       //! Implementation of standard assigning operator
-      interval & operator =(const l_interval &) throw();
+      interval & operator =(const l_interval &) noexcept;
       //! Implementation of standard assigning operator
-      interval & operator = (const lx_interval &) throw();
+      interval & operator = (const lx_interval &) noexcept;
       //! Implementation of standard assigning operator
-      interval & operator =(const dotprecision &) throw();
+      interval & operator =(const dotprecision &) noexcept;
       //! Implementation of standard assigning operator
-      interval & operator =(const idotprecision &) throw();
+      interval & operator =(const idotprecision &) noexcept;
 
       // ---- Destruktor    ----
       // ~interval() {} unnoetig
@@ -152,249 +152,249 @@ class interval
       
       // ---- Ausgabefunkt. ---------------------------------------
       //! Implementation of standard input method
-      friend std::istream& operator >> (std::istream &, interval &)       throw();
+      friend std::istream& operator >> (std::istream &, interval &)       noexcept;
       //! Implementation of standard output method
-      friend std::ostream& operator << (std::ostream &, const interval &) throw();
+      friend std::ostream& operator << (std::ostream &, const interval &) noexcept;
       //! Implementation of standard input method
-      friend std::string & operator >> (std::string &, interval &)       throw();
+      friend std::string & operator >> (std::string &, interval &)       noexcept;
       //! Implementation of standard output method
-      friend std::string & operator << (std::string &, const interval &) throw();	  
+      friend std::string & operator << (std::string &, const interval &) noexcept;	  
       //! Implementation of standard input method
-      friend void          operator >> (const std::string&,interval &)   throw();
+      friend void          operator >> (const std::string&,interval &)   noexcept;
       //! Implementation of standard input method
-      friend void          operator >> (const char *,interval &)   throw();      
+      friend void          operator >> (const char *,interval &)   noexcept;      
 
       // ---- Standardfunkt ---- (arithmetische Operatoren)
       //! Implementation of standard algebraic negative sign operation
-      friend     inline interval operator -(const interval &) throw();
+      friend     inline interval operator -(const interval &) noexcept;
       //! Implementation of standard algebraic positive sign operation
-      friend     inline interval operator +(const interval &) throw();
+      friend     inline interval operator +(const interval &) noexcept;
 
       //! Implementation of standard algebraic addition operation
-      friend     inline interval operator +(const interval &,const interval &) throw();
+      friend     inline interval operator +(const interval &,const interval &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend     inline interval operator -(const interval &,const interval &) throw();
+      friend     inline interval operator -(const interval &,const interval &) noexcept;
       //! Implementation of standard algebraic multiplication operation
-      friend     inline interval operator *(const interval &,const interval &) throw();
+      friend     inline interval operator *(const interval &,const interval &) noexcept;
       //! Implementation of standard algebraic division operation
-      friend     inline interval operator /(const interval &,const interval &) throw(DIV_BY_ZERO);
+      friend     inline interval operator /(const interval &,const interval &) noexcept(false);
       //! Returns the convex hull of the arguments
-      friend     inline interval operator |(const interval &,const interval &) throw();
+      friend     inline interval operator |(const interval &,const interval &) noexcept;
       //! Returns the intersection of the arguments
-      friend     inline interval operator &(const interval &,const interval &) throw(ERROR_INTERVAL_EMPTY_INTERVAL);
+      friend     inline interval operator &(const interval &,const interval &) noexcept(false);
 
       //! Implementation of standard algebraic addition operation
-      friend     inline interval operator +(const interval &,const real &) throw();
+      friend     inline interval operator +(const interval &,const real &) noexcept;
       //! Implementation of standard algebraic addition operation
-      friend     inline interval operator +(const real &,const interval &) throw();
+      friend     inline interval operator +(const real &,const interval &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend     inline interval operator -(const interval &,const real &) throw();
+      friend     inline interval operator -(const interval &,const real &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend     inline interval operator -(const real &,const interval &) throw();
+      friend     inline interval operator -(const real &,const interval &) noexcept;
       //! Implementation of standard algebraic multiplication operation
-      friend     inline interval operator *(const interval &,const real &) throw();
+      friend     inline interval operator *(const interval &,const real &) noexcept;
       //! Implementation of standard algebraic multiplication operation
-      friend     inline interval operator *(const real &,const interval &) throw();
+      friend     inline interval operator *(const real &,const interval &) noexcept;
       //! Implementation of standard algebraic division operation
-      friend     inline interval operator /(const interval &,const real &) throw();
+      friend     inline interval operator /(const interval &,const real &) noexcept;
       //! Implementation of standard algebraic division operation
-      friend     inline interval operator /(const real &,const interval &) throw();
+      friend     inline interval operator /(const real &,const interval &) noexcept;
       //! Returns the convex hull of the arguments
-      friend     inline interval operator |(const real &,const interval &) throw();
+      friend     inline interval operator |(const real &,const interval &) noexcept;
       //! Returns the convex hull of the arguments
-      friend     inline interval operator |(const interval &,const real &) throw();
+      friend     inline interval operator |(const interval &,const real &) noexcept;
       //! Returns the convex hull of the arguments
-      friend     inline interval operator |(const real &,const real &)     throw();
+      friend     inline interval operator |(const real &,const real &)     noexcept;
       //! Returns the intersection of the arguments
-      friend     inline interval operator &(const real &,const interval &) throw(ERROR_INTERVAL_EMPTY_INTERVAL);
+      friend     inline interval operator &(const real &,const interval &) noexcept(false);
       //! Returns the intersection of the arguments
-      friend     inline interval operator &(const interval &,const real &) throw(ERROR_INTERVAL_EMPTY_INTERVAL);
+      friend     inline interval operator &(const interval &,const real &) noexcept(false);
 
 
       //! Implementation of standard algebraic addition operation
-      friend     inline idotprecision operator +(const idotprecision &,const interval &) throw();
+      friend     inline idotprecision operator +(const idotprecision &,const interval &) noexcept;
       //! Implementation of standard algebraic addition operation
-      friend     inline idotprecision operator +(const interval &,const idotprecision &) throw();
+      friend     inline idotprecision operator +(const interval &,const idotprecision &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend     inline idotprecision operator -(const idotprecision &,const interval &) throw();
+      friend     inline idotprecision operator -(const idotprecision &,const interval &) noexcept;
       //! Implementation of standard algebraic subtraction operation
-      friend     inline idotprecision operator -(const interval &,const idotprecision &) throw();
+      friend     inline idotprecision operator -(const interval &,const idotprecision &) noexcept;
       //! Returns the convex hull of the arguments
-      friend     inline idotprecision operator |(const interval &,const idotprecision &) throw();
+      friend     inline idotprecision operator |(const interval &,const idotprecision &) noexcept;
       //! Returns the convex hull of the arguments
-      friend     inline idotprecision operator |(const idotprecision &,const interval &) throw();
+      friend     inline idotprecision operator |(const idotprecision &,const interval &) noexcept;
       //! Returns the intersection of the arguments
-      friend     inline idotprecision operator &(const interval &,const idotprecision &) throw(ERROR_IDOTPRECISION_EMPTY_INTERVAL);
+      friend     inline idotprecision operator &(const interval &,const idotprecision &) noexcept(false);
       //! Returns the intersection of the arguments
-      friend     inline idotprecision operator &(const idotprecision &,const interval &) throw(ERROR_IDOTPRECISION_EMPTY_INTERVAL);
+      friend     inline idotprecision operator &(const idotprecision &,const interval &) noexcept(false);
  
       //! Implementation of standard algebraic addition and allocation operation
-      friend     inline interval & operator +=(interval &,const interval &) throw();
+      friend     inline interval & operator +=(interval &,const interval &) noexcept;
       //! Implementation of standard algebraic subtraction and allocation operation
-      friend     inline interval & operator -=(interval &,const interval &) throw();
+      friend     inline interval & operator -=(interval &,const interval &) noexcept;
       //! Implementation of standard algebraic multiplication and allocation operation
-      friend     inline interval & operator *=(interval &,const interval &) throw();
+      friend     inline interval & operator *=(interval &,const interval &) noexcept;
       //! Implementation of standard algebraic division and allocation operation
-      friend     inline interval & operator /=(interval &,const interval &) throw();
+      friend     inline interval & operator /=(interval &,const interval &) noexcept;
       //! Allocates the convex hull of the arguments to the first argument
-      friend     inline interval & operator |=(interval &,const interval &) throw();
+      friend     inline interval & operator |=(interval &,const interval &) noexcept;
       //! Allocates the intersection of the arguments to the first argument
-      friend     inline interval & operator &=(interval &,const interval &) throw(ERROR_INTERVAL_EMPTY_INTERVAL);
+      friend     inline interval & operator &=(interval &,const interval &) noexcept(false);
 
       //! Implementation of standard algebraic addition and allocation operation
-      friend     inline interval & operator +=(interval &,const real &) throw();   
+      friend     inline interval & operator +=(interval &,const real &) noexcept;   
       //! Implementation of standard algebraic subtraction and allocation operation   
-      friend     inline interval & operator -=(interval &,const real &) throw();
+      friend     inline interval & operator -=(interval &,const real &) noexcept;
       //! Implementation of standard algebraic multiplication and allocation operation
-      friend     inline interval & operator *=(interval &,const real &) throw();
+      friend     inline interval & operator *=(interval &,const real &) noexcept;
       //! Implementation of standard algebraic division and allocation operation
-      friend     inline interval & operator /=(interval &,const real &) throw();
+      friend     inline interval & operator /=(interval &,const real &) noexcept;
       //! Allocates the convex hull of the arguments to the first argument
-      friend     inline interval & operator |=(interval &,const real &) throw();
+      friend     inline interval & operator |=(interval &,const real &) noexcept;
       //! Allocates the intersection of the arguments to the first argument
-      friend     inline interval & operator &=(interval &,const real &) throw(ERROR_INTERVAL_EMPTY_INTERVAL);
+      friend     inline interval & operator &=(interval &,const real &) noexcept(false);
  
       // ---- Vergleichsop. ----
 
       //! Implementation of standard equality operation
-      friend inline bool operator ==(const interval &,const interval &) throw();
+      friend inline bool operator ==(const interval &,const interval &) noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator !=(const interval &,const interval &) throw();
+      friend inline bool operator !=(const interval &,const interval &) noexcept;
 
       //! Implementation of standard negation operation
-      friend inline bool operator !(const interval &) throw();
+      friend inline bool operator !(const interval &) noexcept;
 //             inline      operator void*(void) const throw() { return (void*)(!(!*this)); } 
 
       //! Implementation of standard equality operation
-      friend inline bool operator ==(const real &,const interval &) throw();
+      friend inline bool operator ==(const real &,const interval &) noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator !=(const real &,const interval &) throw();
+      friend inline bool operator !=(const real &,const interval &) noexcept;
 
       //! Implementation of standard equality operation
-      friend inline bool operator ==(const interval &,const real &) throw();
+      friend inline bool operator ==(const interval &,const real &) noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator !=(const interval &,const real &) throw();
+      friend inline bool operator !=(const interval &,const real &) noexcept;
 
       //! Implementation of standard equality operation
-      friend        bool operator ==(const dotprecision &,const interval &) throw();
+      friend        bool operator ==(const dotprecision &,const interval &) noexcept;
       //! Implementation of standard negated equality operation
-      friend        bool operator !=(const dotprecision &,const interval &) throw();
+      friend        bool operator !=(const dotprecision &,const interval &) noexcept;
 
       //! Implementation of standard equality operation
-      friend        bool operator ==(const interval &,const dotprecision &) throw();
+      friend        bool operator ==(const interval &,const dotprecision &) noexcept;
       //! Implementation of standard negated equality operation
-      friend        bool operator !=(const interval &,const dotprecision &) throw();
+      friend        bool operator !=(const interval &,const dotprecision &) noexcept;
 
       //! Implementation of standard equality operation
-      friend inline bool operator ==(const int &,const interval &) throw();
+      friend inline bool operator ==(const int &,const interval &) noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator !=(const int &,const interval &) throw();
+      friend inline bool operator !=(const int &,const interval &) noexcept;
 
       //! Implementation of standard equality operation
-      friend inline bool operator ==(const interval &,const int &) throw();
+      friend inline bool operator ==(const interval &,const int &) noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator !=(const interval &,const int &) throw();
+      friend inline bool operator !=(const interval &,const int &) noexcept;
  
       //! Implementation of standard equality operation
-      friend inline bool operator ==(const long &,const interval &) throw();
+      friend inline bool operator ==(const long &,const interval &) noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator !=(const long &,const interval &) throw();
+      friend inline bool operator !=(const long &,const interval &) noexcept;
 
       //! Implementation of standard equality operation
-      friend inline bool operator ==(const interval &,const long &) throw();
+      friend inline bool operator ==(const interval &,const long &) noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator !=(const interval &,const long &) throw();
+      friend inline bool operator !=(const interval &,const long &) noexcept;
 
       //! Implementation of standard equality operation
-      friend inline bool operator ==(const double &,const interval &) throw();
+      friend inline bool operator ==(const double &,const interval &) noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator !=(const double &,const interval &) throw();
+      friend inline bool operator !=(const double &,const interval &) noexcept;
 
       //! Implementation of standard equality operation
-      friend inline bool operator ==(const interval &,const double &) throw();
+      friend inline bool operator ==(const interval &,const double &) noexcept;
       //! Implementation of standard negated equality operation
-      friend inline bool operator !=(const interval &,const double &) throw();
+      friend inline bool operator !=(const interval &,const double &) noexcept;
 
       // ---- Mengenvergle. ----
 
       //! Implementation of standard less-than operation
-      friend inline bool operator  <(const interval &,const interval &) throw();
+      friend inline bool operator  <(const interval &,const interval &) noexcept;
       //! Implementation of standard greater-than operation
-      friend inline bool operator  >(const interval &,const interval &) throw();
+      friend inline bool operator  >(const interval &,const interval &) noexcept;
       //! Implementation of standard less-or-equal-than operation
-      friend inline bool operator <=(const interval &,const interval &) throw();
+      friend inline bool operator <=(const interval &,const interval &) noexcept;
       //! Implementation of standard greater-or-equal-than operation
-      friend inline bool operator >=(const interval &,const interval &) throw();
+      friend inline bool operator >=(const interval &,const interval &) noexcept;
 
       //! Implementation of standard less-than operation
-      friend inline bool operator  <(const real &,const interval &) throw();
+      friend inline bool operator  <(const real &,const interval &) noexcept;
       //! Implementation of standard greater-than operation
-      friend inline bool operator  >(const real &,const interval &) throw() { return false; }
+      friend inline bool operator  >(const real &,const interval &) noexcept { return false; }
       //! Implementation of standard less-or-equal-than operation
-      friend inline bool operator <=(const real &,const interval &) throw();
+      friend inline bool operator <=(const real &,const interval &) noexcept;
       //! Implementation of standard greater-or-equal-than operation
-      friend inline bool operator >=(const real &,const interval &) throw();
+      friend inline bool operator >=(const real &,const interval &) noexcept;
 
       //! Implementation of standard less-than operation
-      friend inline bool operator  <(const interval &,const real &) throw() { return false; }
+      friend inline bool operator  <(const interval &,const real &) noexcept { return false; }
       //! Implementation of standard greater-than operation
-      friend inline bool operator  >(const interval &,const real &) throw();
+      friend inline bool operator  >(const interval &,const real &) noexcept;
       //! Implementation of standard less-or-equal-than operation
-      friend inline bool operator <=(const interval &,const real &) throw();
+      friend inline bool operator <=(const interval &,const real &) noexcept;
       //! Implementation of standard greater-or-equal-than operation
-      friend inline bool operator >=(const interval &,const real &) throw();
+      friend inline bool operator >=(const interval &,const real &) noexcept;
 
       //! Implementation of standard less-than operation
-      friend        bool operator  <(const dotprecision &,const interval &) throw();
+      friend        bool operator  <(const dotprecision &,const interval &) noexcept;
       //! Implementation of standard greater-than operation
-      friend        bool operator  >(const dotprecision &,const interval &) throw() { return false; }
+      friend        bool operator  >(const dotprecision &,const interval &) noexcept { return false; }
       //! Implementation of standard less-or-equal-than operation
-      friend        bool operator <=(const dotprecision &,const interval &) throw();
+      friend        bool operator <=(const dotprecision &,const interval &) noexcept;
       //! Implementation of standard greater-or-equal-than operation
-      friend        bool operator >=(const dotprecision &,const interval &) throw();
+      friend        bool operator >=(const dotprecision &,const interval &) noexcept;
 
       //! Implementation of standard less-than operation
-      friend        bool operator  <(const interval &,const dotprecision &) throw() { return false; }
+      friend        bool operator  <(const interval &,const dotprecision &) noexcept { return false; }
       //! Implementation of standard greater-than operation
-      friend        bool operator  >(const interval &,const dotprecision &) throw();
+      friend        bool operator  >(const interval &,const dotprecision &) noexcept;
       //! Implementation of standard less-or-equal-than operation
-      friend        bool operator <=(const interval &,const dotprecision &) throw();
+      friend        bool operator <=(const interval &,const dotprecision &) noexcept;
       //! Implementation of standard greater-or-equal-than operation
-      friend        bool operator >=(const interval &,const dotprecision &) throw();
+      friend        bool operator >=(const interval &,const dotprecision &) noexcept;
 
       // ---- Funktionen    ----
       
       //! Returns the infimum of an interval
-      friend inline       real & Inf (interval &)       throw();
+      friend inline       real & Inf (interval &)       noexcept;
       //! Returns the infimum of an interval
-      friend inline const real & Inf (const interval &) throw();
+      friend inline const real & Inf (const interval &) noexcept;
       //! Returns the supremum of an interval
-      friend inline       real & Sup (interval &)       throw();
+      friend inline       real & Sup (interval &)       noexcept;
       //! Returns the supremum of an interval
-      friend inline const real & Sup (const interval &) throw();
+      friend inline const real & Sup (const interval &) noexcept;
       
       //! Returns the interval with the new given infimum value
-      friend inline interval& SetInf (interval &, const real &) throw();
+      friend inline interval& SetInf (interval &, const real &) noexcept;
       //! Returns the interval with the new given supremum value
-      friend inline interval& SetSup (interval &, const real &) throw();
+      friend inline interval& SetSup (interval &, const real &) noexcept;
       //! Returns the interval with the unchecked new given infimum value
-      friend inline interval& UncheckedSetInf (interval &, const real &) throw();
+      friend inline interval& UncheckedSetInf (interval &, const real &) noexcept;
       //! Returns the interval with the unchecked new given supremum value
-      friend inline interval& UncheckedSetSup (interval &, const real &) throw();
+      friend inline interval& UncheckedSetSup (interval &, const real &) noexcept;
 
       //! Returns true if the interval is empty
-      friend inline bool IsEmpty (const interval &) throw();
+      friend inline bool IsEmpty (const interval &) noexcept;
 
       //! Returns the absolute value of the interval
-      friend inline interval abs  (const interval &) throw();
+      friend inline interval abs  (const interval &) noexcept;
       //! Returns the rounded middle of the interval
-      friend        real     mid  (const interval &) throw();	  
+      friend        real     mid  (const interval &) noexcept;	  
       // Returns the rounded middle of the interval (faster version for tests)
-      friend        real     Mid  (const interval &) throw();	  
+      friend        real     Mid  (const interval &) noexcept;	  
       //! Returns the rounded diameter of the interval
-      friend inline real     diam (const interval &) throw();	  
+      friend inline real     diam (const interval &) noexcept;	  
       //! Multiplication of interval with \f$ 2^n \f$
-      friend inline void times2pown(interval &, const int&) throw(); // Blomquist, 28.11.02
+      friend inline void times2pown(interval &, const int&) noexcept; // Blomquist, 28.11.02
 };
 
 /*!
@@ -402,31 +402,31 @@ class interval
 
 \sa cxsc::interval::interval(const real &r)
 */
-inline interval _interval(const real & r) throw() { return interval(r); }
+inline interval _interval(const real & r) noexcept { return interval(r); }
 /*!
 \deprecated use standard contructors for typecasting
 
 \sa cxsc::interval::interval(const real&, const real&)
 */
-inline interval _interval(const real & a, const real & b) throw(ERROR_INTERVAL_EMPTY_INTERVAL) { return interval(a,b); }
+inline interval _interval(const real & a, const real & b) noexcept(false) { return interval(a,b); }
 /*!
 \deprecated use standard contructors for typecasting
 
 \sa cxsc::interval::interval(const dotprecision &)
 */
-inline interval _interval(const dotprecision &a) throw() { return interval(a); }
+inline interval _interval(const dotprecision &a) noexcept { return interval(a); }
 /*!
 \deprecated use standard contructors for typecasting
 
 \sa cxsc::interval::interval(const dotprecision &,const dotprecision &)
 */
-inline interval _interval(const dotprecision &a,const dotprecision &b) throw(ERROR_INTERVAL_EMPTY_INTERVAL) { return interval(a,b); }
+inline interval _interval(const dotprecision &a,const dotprecision &b) noexcept(false) { return interval(a,b); }
 /*!
 \deprecated use standard contructors for typecasting
 
 \sa cxsc::interval::interval(const idotprecision &)
 */
-inline interval _interval(const idotprecision &a) throw() { return interval(a); }
+inline interval _interval(const idotprecision &a) noexcept { return interval(a); }
 
 // for compatibility with CToolbox library - from former i_util.hpp
 //! Checks if first argument is part of second argument
@@ -448,7 +448,7 @@ extern real     RelDiam    ( const interval& );
 extern int      UlpAcc     ( const interval&, int );
 
 // Additional declaration of friend functions outside class interval
-real     mid  (const interval& a) throw();	  
+real     mid  (const interval& a) noexcept;	  
 
 // Interval constants, optimal inclusions:
 //! Enclosure-Interval for \f$ \pi \f$

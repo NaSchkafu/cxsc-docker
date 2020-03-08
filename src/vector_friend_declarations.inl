@@ -29,7 +29,7 @@ template<class Tx, class Ty, class Tres, class TDot>
 friend inline Tres spsp_vv_mult(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TDot>
-friend inline Tres spsp_vv_mult(const Tx&, const Ty&) throw();
+friend inline Tres spsp_vv_mult(const Tx&, const Ty&) noexcept;
 #endif
 
 
@@ -38,7 +38,7 @@ template<class Tx, class Ty, class Tres, class TDot>
 friend inline Tres slsp_vv_mult(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TDot>
-friend inline Tres slsp_vv_mult(const Tx&, const Ty&) throw();
+friend inline Tres slsp_vv_mult(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -46,7 +46,7 @@ template<class Tx, class Ty, class Tres, class TDot>
 friend inline Tres spsl_vv_mult(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TDot>
-friend inline Tres spsl_vv_mult(const Tx&, const Ty&) throw();
+friend inline Tres spsl_vv_mult(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -54,7 +54,7 @@ template<class Tx, class Ty, class Tres, class TDot>
 friend inline Tres spf_vv_mult(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TDot>
-friend inline Tres spf_vv_mult(const Tx&, const Ty&) throw();
+friend inline Tres spf_vv_mult(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -62,7 +62,7 @@ template<class Tx, class Ty, class Tres, class TDot>
 friend inline Tres fsp_vv_mult(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TDot>
-friend inline Tres fsp_vv_mult(const Tx&, const Ty&) throw();
+friend inline Tres fsp_vv_mult(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -70,7 +70,7 @@ template<class Tx, class Ty, class Tres, class TDot>
 friend inline Tres slf_vv_mult(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TDot>
-friend inline Tres slf_vv_mult(const Tx&, const Ty&) throw();
+friend inline Tres slf_vv_mult(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -78,7 +78,7 @@ template<class Tx, class Ty, class Tres, class TDot>
 friend inline Tres fsl_vv_mult(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TDot>
-friend inline Tres fsl_vv_mult(const Tx&, const Ty&) throw();
+friend inline Tres fsl_vv_mult(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -86,7 +86,7 @@ template<class Tx, class Ty, class Tres, class TDot>
 friend inline Tres slsl_vv_mult(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TDot>
-friend inline Tres slsl_vv_mult(const Tx&, const Ty&) throw();
+friend inline Tres slsl_vv_mult(const Tx&, const Ty&) noexcept;
 #endif
 
 template<class Tv, class Ts, class Tres>
@@ -103,7 +103,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres spsp_vv_add(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres spsp_vv_add(const Tx&, const Ty&) throw();
+friend inline Tres spsp_vv_add(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -111,7 +111,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres slsp_vv_add(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres slsp_vv_add(const Tx&, const Ty&) throw();
+friend inline Tres slsp_vv_add(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -119,7 +119,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres spsl_vv_add(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres spsl_vv_add(const Tx&, const Ty&) throw();
+friend inline Tres spsl_vv_add(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -127,7 +127,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres spf_vv_add(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres spf_vv_add(const Tx&, const Ty&) throw();
+friend inline Tres spf_vv_add(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -135,7 +135,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres fsp_vv_add(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres fsp_vv_add(const Tx&, const Ty&) throw();
+friend inline Tres fsp_vv_add(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -143,7 +143,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres slf_vv_add(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres slf_vv_add(const Tx&, const Ty&) throw();
+friend inline Tres slf_vv_add(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -151,7 +151,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres fsl_vv_add(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres fsl_vv_add(const Tx&, const Ty&) throw();
+friend inline Tres fsl_vv_add(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -159,7 +159,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres slsl_vv_add(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres slsl_vv_add(const Tx&, const Ty&) throw();
+friend inline Tres slsl_vv_add(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -167,7 +167,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres spsp_vv_sub(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres spsp_vv_sub(const Tx&, const Ty&) throw();
+friend inline Tres spsp_vv_sub(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -175,7 +175,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres slsp_vv_sub(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres slsp_vv_sub(const Tx&, const Ty&) throw();
+friend inline Tres slsp_vv_sub(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -183,7 +183,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres spsl_vv_sub(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres spsl_vv_sub(const Tx&, const Ty&) throw();
+friend inline Tres spsl_vv_sub(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -191,7 +191,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres spf_vv_sub(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres spf_vv_sub(const Tx&, const Ty&) throw();
+friend inline Tres spf_vv_sub(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -199,7 +199,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres fsp_vv_sub(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres fsp_vv_sub(const Tx&, const Ty&) throw();
+friend inline Tres fsp_vv_sub(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -207,7 +207,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres slf_vv_sub(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres slf_vv_sub(const Tx&, const Ty&) throw();
+friend inline Tres slf_vv_sub(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -215,7 +215,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres fsl_vv_sub(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres fsl_vv_sub(const Tx&, const Ty&) throw();
+friend inline Tres fsl_vv_sub(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -223,7 +223,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres slsl_vv_sub(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres slsl_vv_sub(const Tx&, const Ty&) throw();
+friend inline Tres slsl_vv_sub(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -231,7 +231,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres spsp_vv_hull(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres spsp_vv_hull(const Tx&, const Ty&) throw();
+friend inline Tres spsp_vv_hull(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -239,7 +239,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres slsp_vv_hull(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres slsp_vv_hull(const Tx&, const Ty&) throw();
+friend inline Tres slsp_vv_hull(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -247,7 +247,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres spsl_vv_hull(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres spsl_vv_hull(const Tx&, const Ty&) throw();
+friend inline Tres spsl_vv_hull(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -255,7 +255,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres spf_vv_hull(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres spf_vv_hull(const Tx&, const Ty&) throw();
+friend inline Tres spf_vv_hull(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -263,7 +263,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres fsp_vv_hull(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres fsp_vv_hull(const Tx&, const Ty&) throw();
+friend inline Tres fsp_vv_hull(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -271,7 +271,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres slf_vv_hull(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres slf_vv_hull(const Tx&, const Ty&) throw();
+friend inline Tres slf_vv_hull(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -279,7 +279,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres fsl_vv_hull(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres fsl_vv_hull(const Tx&, const Ty&) throw();
+friend inline Tres fsl_vv_hull(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -287,7 +287,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres slsl_vv_hull(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres slsl_vv_hull(const Tx&, const Ty&) throw();
+friend inline Tres slsl_vv_hull(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -295,7 +295,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres spsp_vv_intersect(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres spsp_vv_intersect(const Tx&, const Ty&) throw();
+friend inline Tres spsp_vv_intersect(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -303,7 +303,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres slsp_vv_intersect(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres slsp_vv_intersect(const Tx&, const Ty&) throw();
+friend inline Tres slsp_vv_intersect(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -311,7 +311,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres spsl_vv_intersect(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres spsl_vv_intersect(const Tx&, const Ty&) throw();
+friend inline Tres spsl_vv_intersect(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -319,7 +319,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres spf_vv_intersect(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres spf_vv_intersect(const Tx&, const Ty&) throw();
+friend inline Tres spf_vv_intersect(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -327,7 +327,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres fsp_vv_intersect(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres fsp_vv_intersect(const Tx&, const Ty&) throw();
+friend inline Tres fsp_vv_intersect(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -335,7 +335,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres slf_vv_intersect(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres slf_vv_intersect(const Tx&, const Ty&) throw();
+friend inline Tres slf_vv_intersect(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -343,7 +343,7 @@ template<class Tx, class Ty, class Tres>
 friend inline Tres fsl_vv_intersect(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres>
-friend inline Tres fsl_vv_intersect(const Tx&, const Ty&) throw();
+friend inline Tres fsl_vv_intersect(const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -351,7 +351,7 @@ template<class Tx, class Ty, class Tres, class TType>
 friend inline Tres slsl_vv_intersect(const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class Tres, class TType>
-friend inline Tres slsl_vv_intersect(const Tx&, const Ty&) throw();
+friend inline Tres slsl_vv_intersect(const Tx&, const Ty&) noexcept;
 #endif
 
 template<class Tx, class Ty>
@@ -497,7 +497,7 @@ template<class Tx, class Ty, class TType>
 friend inline Tx& fssp_vv_assign(Tx& v1, const Ty& v2) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class TType>
-friend inline Tx& fssp_vv_assign(Tx& v1, const Ty& v2) throw();
+friend inline Tx& fssp_vv_assign(Tx& v1, const Ty& v2) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -505,7 +505,7 @@ template<class Tx, class Ty, class TType>
 friend inline Tx& fssl_vv_assign(Tx& v1, const Ty& v2) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class TType>
-friend inline Tx& fssl_vv_assign(Tx& v1, const Ty& v2) throw();
+friend inline Tx& fssl_vv_assign(Tx& v1, const Ty& v2) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -513,7 +513,7 @@ template<class Tx, class Ty, class TType, class TIt>
 friend inline Tx& slsl_vv_assign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class TType, class TIt>
-friend inline Tx& slsl_vv_assign(Tx&, const Ty&) throw();
+friend inline Tx& slsl_vv_assign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -521,7 +521,7 @@ template<class Tx, class Ty, class TType, class TIt>
 friend inline Tx& slsp_vv_assign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class TType, class TIt>
-friend inline Tx& slsp_vv_assign(Tx&, const Ty&) throw();
+friend inline Tx& slsp_vv_assign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -529,7 +529,7 @@ template<class Tx, class Ty, class TType, class TIt>
 friend inline Tx& slf_vv_assign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class TType, class TIt>
-friend inline Tx& slf_vv_assign(Tx&, const Ty&) throw();
+friend inline Tx& slf_vv_assign(Tx&, const Ty&) noexcept;
 #endif
 
 template<class Tx, class TType>
@@ -555,7 +555,7 @@ template<class Tx, class Ty>
 friend inline Tx& spf_vv_addassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& spf_vv_addassign(Tx&, const Ty&) throw();
+friend inline Tx& spf_vv_addassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -563,7 +563,7 @@ template<class Tx, class Ty>
 friend inline Tx& spsp_vv_addassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& spsp_vv_addassign(Tx&, const Ty&) throw();
+friend inline Tx& spsp_vv_addassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -571,7 +571,7 @@ template<class Tx, class Ty>
 friend inline Tx& spsl_vv_addassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& spsl_vv_addassign(Tx&, const Ty&) throw();
+friend inline Tx& spsl_vv_addassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -579,7 +579,7 @@ template<class Tx, class Ty>
 friend inline Tx& fsp_vv_addassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& fsp_vv_addassign(Tx&, const Ty&) throw();
+friend inline Tx& fsp_vv_addassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -587,7 +587,7 @@ template<class Tx, class Ty>
 friend inline Tx& fsl_vv_addassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& fsl_vv_addassign(Tx&, const Ty&) throw();
+friend inline Tx& fsl_vv_addassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -595,7 +595,7 @@ template<class Tx, class Ty>
 friend inline Tx& spf_vv_subassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& spf_vv_subassign(Tx&, const Ty&) throw();
+friend inline Tx& spf_vv_subassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -603,7 +603,7 @@ template<class Tx, class Ty>
 friend inline Tx& spsp_vv_subassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& spsp_vv_subassign(Tx&, const Ty&) throw();
+friend inline Tx& spsp_vv_subassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -611,7 +611,7 @@ template<class Tx, class Ty>
 friend inline Tx& spsl_vv_subassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& spsl_vv_subassign(Tx&, const Ty&) throw();
+friend inline Tx& spsl_vv_subassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -619,7 +619,7 @@ template<class Tx, class Ty>
 friend inline Tx& fsp_vv_subassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& fsp_vv_subassign(Tx&, const Ty&) throw();
+friend inline Tx& fsp_vv_subassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -627,7 +627,7 @@ template<class Tx, class Ty>
 friend inline Tx& fsl_vv_subassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& fsl_vv_subassign(Tx&, const Ty&) throw();
+friend inline Tx& fsl_vv_subassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -635,7 +635,7 @@ template<class Tx, class Ty>
 friend inline Tx& spf_vv_hullassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& spf_vv_hullassign(Tx&, const Ty&) throw();
+friend inline Tx& spf_vv_hullassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -643,7 +643,7 @@ template<class Tx, class Ty>
 friend inline Tx& spsp_vv_hullassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& spsp_vv_hullassign(Tx&, const Ty&) throw();
+friend inline Tx& spsp_vv_hullassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -651,7 +651,7 @@ template<class Tx, class Ty>
 friend inline Tx& spsl_vv_hullassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& spsl_vv_hullassign(Tx&, const Ty&) throw();
+friend inline Tx& spsl_vv_hullassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -659,7 +659,7 @@ template<class Tx, class Ty>
 friend inline Tx& fsp_vv_hullassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& fsp_vv_hullassign(Tx&, const Ty&) throw();
+friend inline Tx& fsp_vv_hullassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -667,7 +667,7 @@ template<class Tx, class Ty>
 friend inline Tx& fsl_vv_hullassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& fsl_vv_hullassign(Tx&, const Ty&) throw();
+friend inline Tx& fsl_vv_hullassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -675,7 +675,7 @@ template<class Tx, class Ty>
 friend inline Tx& spf_vv_intersectassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& spf_vv_intersectassign(Tx&, const Ty&) throw();
+friend inline Tx& spf_vv_intersectassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -683,7 +683,7 @@ template<class Tx, class Ty>
 friend inline Tx& spsp_vv_intersectassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& spsp_vv_intersectassign(Tx&, const Ty&) throw();
+friend inline Tx& spsp_vv_intersectassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -691,7 +691,7 @@ template<class Tx, class Ty>
 friend inline Tx& spsl_vv_intersectassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& spsl_vv_intersectassign(Tx&, const Ty&) throw();
+friend inline Tx& spsl_vv_intersectassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -699,7 +699,7 @@ template<class Tx, class Ty>
 friend inline Tx& fsp_vv_intersectassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& fsp_vv_intersectassign(Tx&, const Ty&) throw();
+friend inline Tx& fsp_vv_intersectassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -707,7 +707,7 @@ template<class Tx, class Ty>
 friend inline Tx& fsl_vv_intersectassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& fsl_vv_intersectassign(Tx&, const Ty&) throw();
+friend inline Tx& fsl_vv_intersectassign(Tx&, const Ty&) noexcept;
 #endif
 
 template<class Tx, class Ty>
@@ -721,7 +721,7 @@ template<class Tx, class Ty, class TType>
 friend inline Tx& slf_vv_addassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class TType>
-friend inline Tx& slf_vv_addassign(Tx&, const Ty&) throw();
+friend inline Tx& slf_vv_addassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -729,7 +729,7 @@ template<class Tx, class Ty>
 friend inline Tx& slsp_vv_addassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& slsp_vv_addassign(Tx&, const Ty&) throw();
+friend inline Tx& slsp_vv_addassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -737,7 +737,7 @@ template<class Tx, class Ty>
 friend inline Tx& slsl_vv_addassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& slsl_vv_addassign(Tx&, const Ty&) throw();
+friend inline Tx& slsl_vv_addassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -745,7 +745,7 @@ template<class Tx, class Ty, class TType>
 friend inline Tx& slf_vv_subassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class TType>
-friend inline Tx& slf_vv_subassign(Tx&, const Ty&) throw();
+friend inline Tx& slf_vv_subassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -753,7 +753,7 @@ template<class Tx, class Ty>
 friend inline Tx& slsp_vv_subassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& slsp_vv_subassign(Tx&, const Ty&) throw();
+friend inline Tx& slsp_vv_subassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -761,7 +761,7 @@ template<class Tx, class Ty>
 friend inline Tx& slsl_vv_subassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& slsl_vv_subassign(Tx&, const Ty&) throw();
+friend inline Tx& slsl_vv_subassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -769,7 +769,7 @@ template<class Tx, class Ty, class TType>
 friend inline Tx& slf_vv_hullassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class TType>
-friend inline Tx& slf_vv_hullassign(Tx&, const Ty&) throw();
+friend inline Tx& slf_vv_hullassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -777,7 +777,7 @@ template<class Tx, class Ty>
 friend inline Tx& slsp_vv_hullassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& slsp_vv_hullassign(Tx&, const Ty&) throw();
+friend inline Tx& slsp_vv_hullassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -785,7 +785,7 @@ template<class Tx, class Ty>
 friend inline Tx& slsl_vv_hullassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& slsl_vv_hullassign(Tx&, const Ty&) throw();
+friend inline Tx& slsl_vv_hullassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -793,7 +793,7 @@ template<class Tx, class Ty, class TType>
 friend inline Tx& slf_vv_intersectassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty, class TType>
-friend inline Tx& slf_vv_intersectassign(Tx&, const Ty&) throw();
+friend inline Tx& slf_vv_intersectassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -801,7 +801,7 @@ template<class Tx, class Ty>
 friend inline Tx& slsp_vv_intersectassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& slsp_vv_intersectassign(Tx&, const Ty&) throw();
+friend inline Tx& slsp_vv_intersectassign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -809,7 +809,7 @@ template<class Tx, class Ty>
 friend inline Tx& slsl_vv_intersectassign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& slsl_vv_intersectassign(Tx&, const Ty&) throw();
+friend inline Tx& slsl_vv_intersectassign(Tx&, const Ty&) noexcept;
 #endif
 
 template<class Tx, class Ty>
@@ -823,7 +823,7 @@ template<class TA, class Tx, class Tres, class TDot, class TElement>
 friend inline Tres spsl_mv_mult(const TA&, const Tx&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TA, class Tx, class Tres, class TDot, class TElement>
-friend inline Tres spsl_mv_mult(const TA&, const Tx&) throw();
+friend inline Tres spsl_mv_mult(const TA&, const Tx&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -831,7 +831,7 @@ template<class TA, class Tx, class Tres, class TDot, class TElement>
 friend inline Tres spsp_mv_mult(const TA&, const Tx&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TA, class Tx, class Tres, class TDot, class TElement>
-friend inline Tres spsp_mv_mult(const TA&, const Tx&) throw();
+friend inline Tres spsp_mv_mult(const TA&, const Tx&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -839,7 +839,7 @@ template<class TA, class Tx, class Tres, class TDot>
 friend inline Tres spf_mv_mult(const TA&, const Tx&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TA, class Tx, class Tres, class TDot>
-friend inline Tres spf_mv_mult(const TA&, const Tx&) throw();
+friend inline Tres spf_mv_mult(const TA&, const Tx&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -847,7 +847,7 @@ template<class TA, class Tx, class Tres, class TDot>
 friend inline Tres fsp_mv_mult(const TA&, const Tx&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TA, class Tx, class Tres, class TDot>
-friend inline Tres fsp_mv_mult(const TA&, const Tx&) throw();
+friend inline Tres fsp_mv_mult(const TA&, const Tx&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -855,7 +855,7 @@ template<class TA, class Tx, class Tres, class TDot>
 friend inline Tres fsl_mv_mult(const TA&, const Tx&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TA, class Tx, class Tres, class TDot>
-friend inline Tres fsl_mv_mult(const TA&, const Tx&) throw();
+friend inline Tres fsl_mv_mult(const TA&, const Tx&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -863,7 +863,7 @@ template<class Tx, class Ty>
 friend inline Tx& svsp_vv_assign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& svsp_vv_assign(Tx&, const Ty&) throw();
+friend inline Tx& svsp_vv_assign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -871,7 +871,7 @@ template<class Tx, class Ty>
 friend inline Tx& svsl_vv_assign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& svsl_vv_assign(Tx&, const Ty&) throw();
+friend inline Tx& svsl_vv_assign(Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -879,7 +879,7 @@ template<class Tx, class Ty>
 friend inline Tx& svf_vv_assign(Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class Tx, class Ty>
-friend inline Tx& svf_vv_assign(Tx&, const Ty&) throw();
+friend inline Tx& svf_vv_assign(Tx&, const Ty&) noexcept;
 #endif
 
 template<class Tx, class Ts>
@@ -899,7 +899,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void spsp_vv_accu(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void spsp_vv_accu(TDot&, const Tx&, const Ty&) throw();
+friend inline void spsp_vv_accu(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -907,7 +907,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void spf_vv_accu(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void spf_vv_accu(TDot&, const Tx&, const Ty&) throw();
+friend inline void spf_vv_accu(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -915,7 +915,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void fsp_vv_accu(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void fsp_vv_accu(TDot&, const Tx&, const Ty&) throw();
+friend inline void fsp_vv_accu(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -923,7 +923,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void slsl_vv_accu(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void slsl_vv_accu(TDot&, const Tx&, const Ty&) throw();
+friend inline void slsl_vv_accu(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -931,7 +931,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void spsl_vv_accu(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void spsl_vv_accu(TDot&, const Tx&, const Ty&) throw();
+friend inline void spsl_vv_accu(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -939,7 +939,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void slsp_vv_accu(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void slsp_vv_accu(TDot&, const Tx&, const Ty&) throw();
+friend inline void slsp_vv_accu(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -947,7 +947,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void slf_vv_accu(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void slf_vv_accu(TDot&, const Tx&, const Ty&) throw();
+friend inline void slf_vv_accu(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -955,7 +955,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void fsl_vv_accu(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void fsl_vv_accu(TDot&, const Tx&, const Ty&) throw();
+friend inline void fsl_vv_accu(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -963,7 +963,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void spsp_vv_accuapprox(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void spsp_vv_accuapprox(TDot&, const Tx&, const Ty&) throw();
+friend inline void spsp_vv_accuapprox(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -971,7 +971,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void spf_vv_accuapprox(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void spf_vv_accuapprox(TDot&, const Tx&, const Ty&) throw();
+friend inline void spf_vv_accuapprox(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -979,7 +979,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void fsp_vv_accuapprox(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void fsp_vv_accuapprox(TDot&, const Tx&, const Ty&) throw();
+friend inline void fsp_vv_accuapprox(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -987,7 +987,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void slsl_vv_accuapprox(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void slsl_vv_accuapprox(TDot&, const Tx&, const Ty&) throw();
+friend inline void slsl_vv_accuapprox(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -995,7 +995,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void spsl_vv_accuapprox(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void spsl_vv_accuapprox(TDot&, const Tx&, const Ty&) throw();
+friend inline void spsl_vv_accuapprox(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -1003,7 +1003,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void slsp_vv_accuapprox(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void slsp_vv_accuapprox(TDot&, const Tx&, const Ty&) throw();
+friend inline void slsp_vv_accuapprox(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -1011,7 +1011,7 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void slf_vv_accuapprox(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void slf_vv_accuapprox(TDot&, const Tx&, const Ty&) throw();
+friend inline void slf_vv_accuapprox(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -1019,18 +1019,18 @@ template<class TDot, class Tx, class Ty, class TSparseDot>
 friend inline void fsl_vv_accuapprox(TDot&, const Tx&, const Ty&) throw(OP_WITH_WRONG_DIM);
 #else
 template<class TDot, class Tx, class Ty, class TSparseDot>
-friend inline void fsl_vv_accuapprox(TDot&, const Tx&, const Ty&) throw();
+friend inline void fsl_vv_accuapprox(TDot&, const Tx&, const Ty&) noexcept;
 #endif
 
 template<class Tx>
-friend inline void sp_v_resize(Tx &v) throw();
+friend inline void sp_v_resize(Tx &v) noexcept;
 
 #if(CXSC_INDEX_CHECK)
 template <class Tx>
 friend inline void sp_v_resize(Tx &v, const int &len) throw(WRONG_BOUNDARIES);
 #else
 template <class Tx>
-friend inline void sp_v_resize(Tx &v, const int &len) throw();
+friend inline void sp_v_resize(Tx &v, const int &len) noexcept;
 #endif
 
 #if(CXSC_INDEX_CHECK)
@@ -1038,5 +1038,5 @@ template<class Tx>
 friend inline void sp_v_resize(Tx &v, const int &lb, const int &ub) throw(WRONG_BOUNDARIES);
 #else
 template<class Tx>
-friend inline void sp_v_resize(Tx &v, const int &lb, const int &ub) throw();
+friend inline void sp_v_resize(Tx &v, const int &lb, const int &ub) noexcept;
 #endif

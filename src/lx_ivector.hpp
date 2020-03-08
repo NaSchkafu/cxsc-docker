@@ -49,53 +49,53 @@ class lx_ivector
 	//------ Konstruktoren ----------------------------------------------------
 		
 	//! Constructor of class lx_ivector
-	inline lx_ivector () throw();
+	inline lx_ivector () noexcept;
 		
 	/*!
 	\param i Dimension of vector
 	Creation of a variable of type lx_ivector with length \f$ n = i \f$ and index bounds \f$ lb = 1 \f$, and \f$ ub = i \f$. The values of the elements are undefined.
 	*/
-	explicit inline lx_ivector(int i) throw();
+	explicit inline lx_ivector(int i) noexcept;
 		
 	//! Constructor of class lx_ivector
 	explicit inline lx_ivector(int i1, int i2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR_IVECTOR_WRONG_BOUNDARIES,ERROR_IVECTOR_NO_MORE_MEMORY);
 #else
-		throw();
+		noexcept;
 #endif
 		
 	//! Constructor of class lx_ivector
-	explicit inline lx_ivector(const lx_interval &) throw();
+	explicit inline lx_ivector(const lx_interval &) noexcept;
 	//! Constructor of class lx_ivector
-	explicit inline lx_ivector(const l_interval &)  throw();
+	explicit inline lx_ivector(const l_interval &)  noexcept;
 	//! Constructor of class lx_ivector
-	explicit inline lx_ivector(const interval &)    throw();
+	explicit inline lx_ivector(const interval &)    noexcept;
 	//! Constructor of class lx_ivector
-	explicit inline lx_ivector(const lx_real &)     throw();
+	explicit inline lx_ivector(const lx_real &)     noexcept;
 	//! Constructor of class lx_ivector
-	explicit inline lx_ivector(const l_real &)      throw();
+	explicit inline lx_ivector(const l_real &)      noexcept;
 	//! Constructor of class lx_ivector
-	explicit inline lx_ivector(const real &)        throw();
+	explicit inline lx_ivector(const real &)        noexcept;
 	
 	//! Constructor of class lx_ivector
-	inline lx_ivector(const lx_ivector &) throw();
+	inline lx_ivector(const lx_ivector &) noexcept;
 		
 	
 	//! Implementation of standard assigning operator
-	inline lx_ivector & operator = (const lx_ivector &) throw();
+	inline lx_ivector & operator = (const lx_ivector &) noexcept;
 	//! Implementation of standard assigning operator
-	inline lx_ivector & operator =(const lx_interval &) throw();
+	inline lx_ivector & operator =(const lx_interval &) noexcept;
 	//! Implementation of standard assigning operator
-	inline lx_ivector & operator =(const l_interval &) throw();
+	inline lx_ivector & operator =(const l_interval &) noexcept;
 	//! Implementation of standard assigning operator
-	inline lx_ivector & operator =(const interval &) throw();
+	inline lx_ivector & operator =(const interval &) noexcept;
 	//! Implementation of standard assigning operator
-	inline lx_ivector & operator =(const lx_real &) throw();
+	inline lx_ivector & operator =(const lx_real &) noexcept;
 	//! Implementation of standard assigning operator
-	inline lx_ivector & operator =(const l_real &) throw();
+	inline lx_ivector & operator =(const l_real &) noexcept;
 	//! Implementation of standard assigning operator
-	inline lx_ivector & operator =(const real &) throw();
+	inline lx_ivector & operator =(const real &) noexcept;
 	
 	//--------- Destruktor ----------------------------------------------------
 	inline ~lx_ivector() { delete [] dat; }
@@ -106,29 +106,29 @@ class lx_ivector
 #if(CXSC_INDEX_CHECK)
 			throw(ERROR_IVECTOR_ELEMENT_NOT_IN_VEC);
 #else
-	throw();
+	noexcept;
 #endif
 	//! Operator for accessing the single elements of the vector
 	inline const lx_interval & operator [](const int &i) const
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_IVECTOR_ELEMENT_NOT_IN_VEC);
 #else
-	throw();
+	noexcept;
 #endif
 	
 //------ Standardfunktionen -----------------------------------------------
 	
 //! Returns the lower bound of the vector
-friend inline int Lb(const lx_ivector &a) throw() { return a.l; }
+friend inline int Lb(const lx_ivector &a) noexcept { return a.l; }
 //! Returns the upper bound of the vector
-friend inline int Ub(const lx_ivector &a) throw() { return a.u; }
+friend inline int Ub(const lx_ivector &a) noexcept { return a.u; }
 //! Returns the dimension of the vector
-friend inline int VecLen(const lx_ivector &a) throw() { return a.size; }
+friend inline int VecLen(const lx_ivector &a) noexcept { return a.size; }
 //! Sets the lower bound of the vector
-friend inline lx_ivector& SetLb(lx_ivector &a, int l) throw() 
+friend inline lx_ivector& SetLb(lx_ivector &a, int l) noexcept 
 { a.l=l; a.u=l+a.size-1; return a; }
 //! Sets the upper bound of the vector
-friend inline lx_ivector & SetUb(lx_ivector &a, int u) throw()
+friend inline lx_ivector & SetUb(lx_ivector &a, int u) noexcept
 { a.u=u; a.l=u-a.size+1; return a; }
 
 //! Resizes the vector
@@ -136,7 +136,7 @@ friend inline void Resize(lx_ivector &rv, int lb, int ub)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__WRONG_BOUNDARIES<lx_ivector>);
 #else
-		throw();
+		noexcept;
 #endif
 
 //! Resizes the vector
@@ -144,26 +144,26 @@ friend inline void Resize(lx_ivector &rv, int len)
 #if(CXSC_INDEX_CHECK)
 				throw(ERROR__WRONG_BOUNDARIES<lx_ivector>);
 #else
-		throw();
+		noexcept;
 #endif		
 	
 }; // End of class lx_ivector
 
 //! Doubles the vector size
-inline void DoubleSize(lx_ivector&) throw();
+inline void DoubleSize(lx_ivector&) noexcept;
 
 inline void Resize(lx_ivector &rv, int lb, int ub)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__WRONG_BOUNDARIES<lx_ivector>);
 #else
-		throw();
+		noexcept;
 #endif
 		
 		inline void Resize(lx_ivector &rv, int len)
 #if(CXSC_INDEX_CHECK)
 				throw(ERROR__WRONG_BOUNDARIES<lx_ivector>);
 #else
-		throw();
+		noexcept;
 #endif		
 
 } // End namespace cxsc

@@ -36,7 +36,7 @@ extern "C"
    a_intg r_expo(a_real);
 }
 
-inline double _double(const real &a) throw()
+inline double _double(const real &a) noexcept
 { 
    return a.w; 
 }
@@ -46,80 +46,80 @@ inline double _double(const real &a) throw()
 
 \sa cxsc::real::real(const double &a)
 */
-inline real   _real(const double &a) throw()
+inline real   _real(const double &a) noexcept
 { 
    return real(a); 
 }
 
-inline real pred(const real& r) throw()
+inline real pred(const real& r) noexcept
 {
    real ret;
    ret = fi_lib::q_pred(r.w);
    return ret;
 }
 
-inline real succ(const real& r) throw()
+inline real succ(const real& r) noexcept
 {
    real ret;
    ret = fi_lib::q_succ(r.w);
    return ret;
 }
 
-inline a_intg expo(const real &r) throw()
+inline a_intg expo(const real &r) noexcept
 {
    return r_expo(*(a_real*)&r.w);
 }
 
-inline real comp(const real &r, a_intg i) throw()
+inline real comp(const real &r, a_intg i) noexcept
 {
    return real(r_comp(*(a_real*)&r.w,i));
 }
 
-inline real mant(const real &r) throw()
+inline real mant(const real &r) noexcept
 {
    return real(r_mant(*(a_real*)&r.w));
 }
 
-inline real operator -(const real &a) throw()       { return -a.w; }
-inline real operator +(const real &a) throw()       { return a; }
+inline real operator -(const real &a) noexcept       { return -a.w; }
+inline real operator +(const real &a) noexcept       { return a; }
 
-inline real operator +(const real &a,const real &b) throw () { return a.w+b.w; }
-inline real operator -(const real &a,const real &b) throw () { return a.w-b.w; }
-inline real operator *(const real &a,const real &b) throw () { return a.w*b.w; }
-inline real operator /(const real &a,const real &b) throw () { return a.w/b.w; }
+inline real operator +(const real &a,const real &b) noexcept { return a.w+b.w; }
+inline real operator -(const real &a,const real &b) noexcept { return a.w-b.w; }
+inline real operator *(const real &a,const real &b) noexcept { return a.w*b.w; }
+inline real operator /(const real &a,const real &b) noexcept { return a.w/b.w; }
 
-inline real& operator +=(real &a, const real &b) throw () { a.w+=b.w; return a; }
-inline real& operator -=(real &a, const real &b) throw () { a.w-=b.w; return a; }
-inline real& operator *=(real &a, const real &b) throw () { a.w*=b.w; return a; }
-inline real& operator /=(real &a, const real &b) throw () { a.w/=b.w; return a; }
+inline real& operator +=(real &a, const real &b) noexcept { a.w+=b.w; return a; }
+inline real& operator -=(real &a, const real &b) noexcept { a.w-=b.w; return a; }
+inline real& operator *=(real &a, const real &b) noexcept { a.w*=b.w; return a; }
+inline real& operator /=(real &a, const real &b) noexcept { a.w/=b.w; return a; }
 
-inline bool operator!  (const real& a)                throw () { return !a.w; }
-inline bool operator== (const real& a, const real& b) throw () { return a.w==b.w; }
-inline bool operator!= (const real& a, const real& b) throw () { return a.w!=b.w; }
-inline bool operator<  (const real& a, const real& b) throw () { return a.w<b.w;  }
-inline bool operator<= (const real& a, const real& b) throw () { return a.w<=b.w; }
-inline bool operator>= (const real& a, const real& b) throw () { return a.w>=b.w; }
-inline bool operator>  (const real& a, const real& b) throw () { return a.w>b.w;  }
+inline bool operator!  (const real& a)                noexcept { return !a.w; }
+inline bool operator== (const real& a, const real& b) noexcept { return a.w==b.w; }
+inline bool operator!= (const real& a, const real& b) noexcept { return a.w!=b.w; }
+inline bool operator<  (const real& a, const real& b) noexcept { return a.w<b.w;  }
+inline bool operator<= (const real& a, const real& b) noexcept { return a.w<=b.w; }
+inline bool operator>= (const real& a, const real& b) noexcept { return a.w>=b.w; }
+inline bool operator>  (const real& a, const real& b) noexcept { return a.w>b.w;  }
 
-inline bool operator== (const real& a, const int & b) throw () { return a.w==b; }
-inline bool operator!= (const real& a, const int & b) throw () { return a.w!=b; }
-inline bool operator== (const int & a, const real& b) throw () { return a==b.w; }
-inline bool operator!= (const int & a, const real& b) throw () { return a!=b.w; }
-inline bool operator== (const real& a, const long & b) throw () { return a.w==b; }
-inline bool operator!= (const real& a, const long & b) throw () { return a.w!=b; }
-inline bool operator== (const long & a, const real& b) throw () { return a==b.w; }
-inline bool operator!= (const long & a, const real& b) throw () { return a!=b.w; }
-inline bool operator== (const real& a, const float & b) throw () { return a.w==b; }
-inline bool operator!= (const real& a, const float & b) throw () { return a.w!=b; }
-inline bool operator== (const float & a, const real& b) throw () { return a==b.w; }
-inline bool operator!= (const float & a, const real& b) throw () { return a!=b.w; }
-inline bool operator== (const real& a, const double & b) throw () { return a.w==b; }
-inline bool operator!= (const real& a, const double & b) throw () { return a.w!=b; }
-inline bool operator== (const double & a, const real& b) throw () { return a==b.w; }
-inline bool operator!= (const double & a, const real& b) throw () { return a!=b.w; }
+inline bool operator== (const real& a, const int & b) noexcept { return a.w==b; }
+inline bool operator!= (const real& a, const int & b) noexcept { return a.w!=b; }
+inline bool operator== (const int & a, const real& b) noexcept { return a==b.w; }
+inline bool operator!= (const int & a, const real& b) noexcept { return a!=b.w; }
+inline bool operator== (const real& a, const long & b) noexcept { return a.w==b; }
+inline bool operator!= (const real& a, const long & b) noexcept { return a.w!=b; }
+inline bool operator== (const long & a, const real& b) noexcept { return a==b.w; }
+inline bool operator!= (const long & a, const real& b) noexcept { return a!=b.w; }
+inline bool operator== (const real& a, const float & b) noexcept { return a.w==b; }
+inline bool operator!= (const real& a, const float & b) noexcept { return a.w!=b; }
+inline bool operator== (const float & a, const real& b) noexcept { return a==b.w; }
+inline bool operator!= (const float & a, const real& b) noexcept { return a!=b.w; }
+inline bool operator== (const real& a, const double & b) noexcept { return a.w==b; }
+inline bool operator!= (const real& a, const double & b) noexcept { return a.w!=b; }
+inline bool operator== (const double & a, const real& b) noexcept { return a==b.w; }
+inline bool operator!= (const double & a, const real& b) noexcept { return a!=b.w; }
 
 
-inline real abs(const real &a) throw()
+inline real abs(const real &a) noexcept
 {
   /* if(a.w>=0)
       return a.w;
@@ -127,7 +127,7 @@ inline real abs(const real &a) throw()
   return fabs(a.w);
 }
 
-inline int sign(const real &a) throw()
+inline int sign(const real &a) noexcept
 {
    if(a.w>0)
       return 1;
@@ -153,7 +153,7 @@ inline void times2pown(real& r, const int n) // Blomquist 01.10.02.
     } 
 } // end of times2pown(...)
 
-inline real pow2n(const int n) throw() // Blomquist 03.10.02.
+inline real pow2n(const int n) noexcept // Blomquist 03.10.02.
 {   // Fast and exact calculation of 2^n; -1074 <= n <= +1023;
     return comp(0.5,n+1);
 }

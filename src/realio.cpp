@@ -71,7 +71,7 @@ std::string realToHex(const real& a)
    return string(cs);
 }
 
-std::string & operator<<(std::string &s, const real& a) throw()
+std::string & operator<<(std::string &s, const real& a) noexcept
 {
 #if _WIN32
    static __declspec(thread) char cs[256];
@@ -182,7 +182,7 @@ std::string & operator<<(std::string &s, const real& a) throw()
    return s;
 }
 
-std::ostream & operator <<(std::ostream &o,const real &a) throw()
+std::ostream & operator <<(std::ostream &o,const real &a) noexcept
 {
    std::string s="";
    s << a;
@@ -190,7 +190,7 @@ std::ostream & operator <<(std::ostream &o,const real &a) throw()
    return o;
 }
 
-std::string & operator>> (std::string & str, real& a) throw()
+std::string & operator>> (std::string & str, real& a) noexcept
 {
    char *s=new char[str.size()+1];
    char *orgs=s;
@@ -250,17 +250,17 @@ std::string & operator>> (std::string & str, real& a) throw()
    delete [] orgs;
    return str;
 }   
-void operator >>(const char *a,real &b) throw()
+void operator >>(const char *a,real &b) noexcept
 {
    std::string c(a);
    c>>b;
 }
-void operator >>(const string &a,real &b) throw()
+void operator >>(const string &a,real &b) noexcept
 {
    std::string c(a);
    c>>b;
 }
-std::istream& operator>> (std::istream& s, real& a) throw()
+std::istream& operator>> (std::istream& s, real& a) noexcept
 {
    if (ioflags.isset(IOFlags::hex))
    {

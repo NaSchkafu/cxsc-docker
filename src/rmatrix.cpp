@@ -34,7 +34,7 @@
 namespace cxsc {
   
     //Ostrowskis comparison matrix
-    rmatrix CompMat ( const rmatrix& A) throw() {
+    rmatrix CompMat ( const rmatrix& A) noexcept {
       rmatrix M(Lb(A,1), Ub(A,1), Lb(A,2), Ub(A,2));
 
       for(int i=Lb(A,1) ; i<=Ub(A,1) ; i++) {
@@ -82,7 +82,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -100,7 +100,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -118,7 +118,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -136,7 +136,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -154,7 +154,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -172,7 +172,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -190,7 +190,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -209,7 +209,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -227,7 +227,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -245,7 +245,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -261,7 +261,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -277,7 +277,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -294,7 +294,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{
 #if(CXSC_INDEX_CHECK)
@@ -312,7 +312,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -331,7 +331,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -348,7 +348,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -365,7 +365,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -384,7 +384,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -403,7 +403,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)
@@ -420,7 +420,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ 
 #if(CXSC_INDEX_CHECK)

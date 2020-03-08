@@ -59,99 +59,99 @@
 namespace cxsc{
 
 //! Calculates \f$ \exp([z]) \f$
-cinterval exp(const cinterval&) throw();
+cinterval exp(const cinterval&) noexcept;
 //! Calculates \f$ \exp([z])-1 \f$
-cinterval expm1(const cinterval&) throw();
+cinterval expm1(const cinterval&) noexcept;
 //! Calculates \f$ 2^{[z]} \f$
-cinterval exp2(const cinterval&) throw();
+cinterval exp2(const cinterval&) noexcept;
 //! Calculates \f$ 10^{[z]} \f$
-cinterval exp10(const cinterval&) throw();
+cinterval exp10(const cinterval&) noexcept;
 //! Calculates \f$ \cos([z]) \f$
-cinterval cos(const cinterval&) throw();
+cinterval cos(const cinterval&) noexcept;
 //! Calculates \f$ \sin([z]) \f$
-cinterval sin(const cinterval&) throw();
+cinterval sin(const cinterval&) noexcept;
 //! Calculates \f$ \cosh([z]) \f$
-cinterval cosh(const cinterval&) throw();
+cinterval cosh(const cinterval&) noexcept;
 //! Calculates \f$ \sinh([z]) \f$
-cinterval sinh(const cinterval&) throw();
+cinterval sinh(const cinterval&) noexcept;
 
 //! Calculates \f$ \tan([z]) \f$
-cinterval tan(const cinterval&) throw();
+cinterval tan(const cinterval&) noexcept;
 //! Calculates \f$ \cot([z]) \f$
-cinterval cot(const cinterval&) throw();
+cinterval cot(const cinterval&) noexcept;
 //! Calculates \f$ \tanh([z]) \f$
-cinterval tanh(const cinterval&) throw();
+cinterval tanh(const cinterval&) noexcept;
 //! Calculates \f$ \coth([z]) \f$
-cinterval coth(const cinterval&) throw();
+cinterval coth(const cinterval&) noexcept;
 
 //! Calculates \f$ \mbox{arg}([z]) \f$
-interval arg(const cinterval&) throw();
-interval arg_inclmon(const cinterval&) throw();
+interval arg(const cinterval&) noexcept;
+interval arg_inclmon(const cinterval&) noexcept;
 //! Calculates \f$ \mbox{arg}([z]) \f$
-interval Arg(const cinterval&) throw();
+interval Arg(const cinterval&) noexcept;
 
 //! Calculates \f$ \ln([z]) \f$
-cinterval ln(const cinterval&) throw();
+cinterval ln(const cinterval&) noexcept;
 //! Calculates \f$ \ln([z]) \f$
-cinterval Ln(const cinterval&) throw();
+cinterval Ln(const cinterval&) noexcept;
 //! Calculates \f$ \ln(1+[z]) \f$
-cinterval lnp1(const cinterval&) throw();
+cinterval lnp1(const cinterval&) noexcept;
 
 //! Calculates \f$ \mbox{log2}([z]) \f$
-cinterval log2(const cinterval&) throw();
+cinterval log2(const cinterval&) noexcept;
 //! Calculates \f$ \mbox{log2}([z]) \f$
-cinterval log10(const cinterval&) throw();
+cinterval log10(const cinterval&) noexcept;
 
 //! Calculates \f$ [z]^2  \f$
-cinterval sqr(const cinterval&) throw();
+cinterval sqr(const cinterval&) noexcept;
 
 //! Calculates \f$ \sqrt{[z]}  \f$
-cinterval sqrt(const cinterval&) throw();
+cinterval sqrt(const cinterval&) noexcept;
 //! Calculates \f$ \sqrt{1+[z]}-1  \f$
-cinterval sqrtp1m1(const cinterval&) throw();
+cinterval sqrtp1m1(const cinterval&) noexcept;
 //! Calculates \f$ \sqrt{1+[z]^2}  \f$
-cinterval sqrt1px2(const cinterval&) throw();
+cinterval sqrt1px2(const cinterval&) noexcept;
 //! Calculates \f$ \sqrt{[z]^2-1}  \f$
-cinterval sqrtx2m1(const cinterval&) throw();
+cinterval sqrtx2m1(const cinterval&) noexcept;
 //! Calculates \f$ \sqrt{1-[z]^2}  \f$
-cinterval sqrt1mx2(const cinterval&) throw();
+cinterval sqrt1mx2(const cinterval&) noexcept;
 
 //! Calculates \f$ \sqrt{[z]}  \f$ and returns all possible solutions
 std::list<cinterval>sqrt_all(const cinterval&);
 //! Calculates \f$ \sqrt[n]{[z]} \f$
-cinterval sqrt(const cinterval&, int) throw();
+cinterval sqrt(const cinterval&, int) noexcept;
 //! Calculates \f$ \sqrt[n]{[z]} \f$ and returns all possible solutions
 std::list<cinterval>sqrt_all(const cinterval&, int);
 
 //! Calculates \f$ [z]^n \f$
-cinterval power_fast(const cinterval&,int) throw();
+cinterval power_fast(const cinterval&,int) noexcept;
 //! Calculates \f$ [z]^n \f$
-cinterval power(const cinterval&,int) throw();
+cinterval power(const cinterval&,int) noexcept;
 //! Calculates \f$ [z]^{[y]} \f$
-cinterval pow(const cinterval&, const interval&) throw();
+cinterval pow(const cinterval&, const interval&) noexcept;
 //! Calculates \f$ [z_1]^{[z_2]} \f$
-cinterval pow(const cinterval&, const cinterval&) throw();
+cinterval pow(const cinterval&, const cinterval&) noexcept;
 //! Calculates \f$ [z]^{[y]} \f$ and returns all possible solutions
-std::list<cinterval>pow_all(const cinterval&, const interval&) throw();
+std::list<cinterval>pow_all(const cinterval&, const interval&) noexcept;
 //! Fast multiplication of reference parameter [z] with \f$ 2^n \f$
-void times2pown(cinterval& x, int n) throw();
+void times2pown(cinterval& x, int n) noexcept;
 
 //! Calculates \f$ \arcsin([z]) \f$
-cinterval asin(const cinterval&) throw();
+cinterval asin(const cinterval&) noexcept;
 //! Calculates \f$ \arccos([z]) \f$
-cinterval acos(const cinterval&) throw();
+cinterval acos(const cinterval&) noexcept;
 //! Calculates \f$ \mbox{arcsinh}([z]) \f$
-cinterval asinh(const cinterval&) throw();
+cinterval asinh(const cinterval&) noexcept;
 //! Calculates \f$ \mbox{arccosh}([z]) \f$
-cinterval acosh(const cinterval&) throw();
+cinterval acosh(const cinterval&) noexcept;
 //! Calculates \f$ \arctan([z]) \f$
-cinterval atan(const cinterval&) throw();
+cinterval atan(const cinterval&) noexcept;
 //! Calculates \f$ \mbox{arccot}([z]) \f$
-cinterval acot(const cinterval&) throw();
+cinterval acot(const cinterval&) noexcept;
 //! Calculates \f$ \mbox{arctanh}([z]) \f$
-cinterval atanh(const cinterval&) throw();
+cinterval atanh(const cinterval&) noexcept;
 //! Calculates \f$ \mbox{arccoth}([z]) \f$
-cinterval acoth(const cinterval&) throw();
+cinterval acoth(const cinterval&) noexcept;
 
 } // namespace cxsc
 

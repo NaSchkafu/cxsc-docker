@@ -28,7 +28,7 @@ namespace cxsc {
 	/*!
 	Creation of a variable of type lx_ivector with length \f$ n = 1 \f$ and index bounds \f$ lb = ub = 1 \f$. The value of the element is undefined.
 	 */
-	inline lx_ivector::lx_ivector () throw():dat(NULL),l(1),u(0),size(0)
+	inline lx_ivector::lx_ivector () noexcept:dat(NULL),l(1),u(0),size(0)
 	{ }
 	
 	/*!
@@ -36,7 +36,7 @@ namespace cxsc {
 
 	Creation of a variable of type lx_ivector with length \f$ n = i \f$ and index bounds \f$ lb = 1 \f$, and \f$ ub = i \f$. The values of the elements are undefined.
 	*/
-	inline lx_ivector::lx_ivector(int i) throw():l(1),u(i),size(i)
+	inline lx_ivector::lx_ivector(int i) noexcept:l(1),u(i),size(i)
 	{
 		dat=new lx_interval[i];
 	}
@@ -52,7 +52,7 @@ namespace cxsc {
 		throw(ERROR_IVECTOR_WRONG_BOUNDARIES,ERROR_IVECTOR_NO_MORE_MEMORY):
 			                                            l(i1),u(i2),size(i2-i1+1)
 #else
-		throw():l(i1),u(i2),size(i2-i1+1)
+		noexcept:l(i1),u(i2),size(i2-i1+1)
 #endif
 	{
 #if(CXSC_INDEX_CHECK)
@@ -62,51 +62,51 @@ namespace cxsc {
 		dat=new lx_interval[size];
 	}
 			
-	inline lx_ivector::lx_ivector(const lx_interval &r) throw():l(1),u(1),size(1)
+	inline lx_ivector::lx_ivector(const lx_interval &r) noexcept:l(1),u(1),size(1)
 	{
 		dat=new lx_interval[1];
 		*dat=r;
 	}
 	
-	inline lx_ivector::lx_ivector(const l_interval &r) throw():l(1),u(1),size(1)
+	inline lx_ivector::lx_ivector(const l_interval &r) noexcept:l(1),u(1),size(1)
 	{
 		dat=new lx_interval[1];
 		*dat=r;
 	}	
 	
-	inline lx_ivector::lx_ivector(const interval &r) throw():l(1),u(1),size(1)
+	inline lx_ivector::lx_ivector(const interval &r) noexcept:l(1),u(1),size(1)
 	{
 		dat=new lx_interval[1];
 		*dat=r;
 	}
 		
-	inline lx_ivector::lx_ivector(const lx_real &r) throw():l(1),u(1),size(1)
+	inline lx_ivector::lx_ivector(const lx_real &r) noexcept:l(1),u(1),size(1)
 	{
 		dat=new lx_interval[1];
 		*dat=r;
 	}
 		
-	inline lx_ivector::lx_ivector(const l_real &r) throw():l(1),u(1),size(1)
+	inline lx_ivector::lx_ivector(const l_real &r) noexcept:l(1),u(1),size(1)
 	{
 		dat=new lx_interval[1];
 		*dat=r;
 	}
 		
-	inline lx_ivector::lx_ivector(const real &r) throw():l(1),u(1),size(1)
+	inline lx_ivector::lx_ivector(const real &r) noexcept:l(1),u(1),size(1)
 	{
 		dat=new lx_interval[1];
 		*dat=r;
 	}	
 
 	inline lx_ivector::lx_ivector(const lx_ivector &v)
-			                                   throw():l(v.l),u(v.u),size(v.size)
+			                                   noexcept:l(v.l),u(v.u),size(v.size)
 	{
 		dat=new lx_interval[size];
 		for (int i=0;i<size;i++)
 			dat[i]=v.dat[i];
 	}
 	
-	inline lx_ivector &lx_ivector::operator =(const lx_ivector &rv) throw()
+	inline lx_ivector &lx_ivector::operator =(const lx_ivector &rv) noexcept
 	{ 
 		l = rv.l; u = rv.u; size = rv.size;
 		dat=new lx_interval[size];
@@ -115,7 +115,7 @@ namespace cxsc {
 		return *this;
 	}
 	
-	inline lx_ivector &lx_ivector::operator =(const lx_interval &r) throw()
+	inline lx_ivector &lx_ivector::operator =(const lx_interval &r) noexcept
 	{
 		lx_interval *newdat = new lx_interval[size];
 		for (int i=0;i<size;i++)
@@ -125,7 +125,7 @@ namespace cxsc {
 		return *this;
 	}
 	
-	inline lx_ivector &lx_ivector::operator =(const l_interval &r) throw()
+	inline lx_ivector &lx_ivector::operator =(const l_interval &r) noexcept
 	{
 		lx_interval *newdat = new lx_interval[size];
 		for (int i=0;i<size;i++)
@@ -135,7 +135,7 @@ namespace cxsc {
 		return *this;
 	}
 	
-	inline lx_ivector &lx_ivector::operator =(const interval &r) throw()
+	inline lx_ivector &lx_ivector::operator =(const interval &r) noexcept
 	{
 		lx_interval *newdat = new lx_interval[size];
 		for (int i=0;i<size;i++)
@@ -145,7 +145,7 @@ namespace cxsc {
 		return *this;
 	}
 	
-	inline lx_ivector &lx_ivector::operator =(const lx_real &r) throw()
+	inline lx_ivector &lx_ivector::operator =(const lx_real &r) noexcept
 	{
 		lx_interval *newdat = new lx_interval[size];
 		for (int i=0;i<size;i++)
@@ -155,7 +155,7 @@ namespace cxsc {
 		return *this;
 	}
 	
-	inline lx_ivector &lx_ivector::operator =(const l_real &r) throw()
+	inline lx_ivector &lx_ivector::operator =(const l_real &r) noexcept
 	{
 		lx_interval *newdat = new lx_interval[size];
 		for (int i=0;i<size;i++)
@@ -165,7 +165,7 @@ namespace cxsc {
 		return *this;
 	}
 	
-	inline lx_ivector &lx_ivector::operator =(const real &r) throw()
+	inline lx_ivector &lx_ivector::operator =(const real &r) noexcept
 	{
 		lx_interval *newdat = new lx_interval[size];
 		for (int i=0;i<size;i++)
@@ -179,7 +179,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR_IVECTOR_ELEMENT_NOT_IN_VEC)
 #else
-		throw()
+		noexcept
 #endif
 	{
 #if(CXSC_INDEX_CHECK)
@@ -193,7 +193,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 			throw(ERROR_IVECTOR_ELEMENT_NOT_IN_VEC)
 #else
-			throw()
+			noexcept
 #endif
 	{
 #if(CXSC_INDEX_CHECK)
@@ -207,7 +207,7 @@ inline void Resize(lx_ivector &rv, int len)
 #if(CXSC_INDEX_CHECK)
 			throw(ERROR__WRONG_BOUNDARIES<lx_ivector>);
 #else
-	throw()
+	noexcept
 #endif
 	{
 		if (rv.size == len)
@@ -236,7 +236,7 @@ inline void Resize(lx_ivector &rv, int lb, int ub)
 #if(CXSC_INDEX_CHECK)
 			throw(ERROR__WRONG_BOUNDARIES<lx_ivector>)
 #else
-			throw()
+			noexcept
 #endif
 { 
 	if (rv.size == ub-lb+1)
@@ -264,7 +264,7 @@ inline void Resize(lx_ivector &rv, int lb, int ub)
 	}
 }
 
-inline void DoubleSize(lx_ivector& x) throw()
+inline void DoubleSize(lx_ivector& x) noexcept
 {
 	int n = Lb(x);
 	Resize(x,n,2*Ub(x)-n+1);

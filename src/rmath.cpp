@@ -121,7 +121,7 @@ const real expmx2_x0 = 7491658466053896.0 / 281474976710656.0;
 // Die relative Fehlerschranke e(f) := 4.618919E-16 gilt fuer
 // alle |x| <= expmx2_x0 = 26.61571750925.... 
 
-real expmx2(const real& x) throw()
+real expmx2(const real& x) noexcept
 // e^(-x^2);  rel. Fehlerschranke:  eps = 4.618919E-16 = e(f) gilt
 // fuer alle |x| <= expmx2_x0 = 26.61571750925....
 // Fuer |x| > expmx2_x0 --> expmx2(x) = 0;
@@ -227,7 +227,7 @@ real expx2m1(const real& x)
 
 //------------------------------------------------------------------
 
-real sqrt1px2(const real& x) throw()
+real sqrt1px2(const real& x) noexcept
 // sqrt(1+x^2); Blomquist 13.12.02;
 {
     if (expo(x) > 33) return abs(x);
@@ -238,7 +238,7 @@ real sqrt1px2(const real& x) throw()
 // real sqrtp1m1(const real& x) throw();  Blomquist, 05.08.03
 const real sqrtp1m1_s = 9007199254740984.0 / 1125899906842624.0;
 
-real sqrtp1m1(const real& x) throw()
+real sqrtp1m1(const real& x) noexcept
 // sqrtp1m1(x) = sqrt(x+1)-1;
 // Blomquist, 05.08.03; 
 {
@@ -255,7 +255,7 @@ real sqrtp1m1(const real& x) throw()
 
 //------------------------------------------------------------------
 
-real sqrtx2y2(const real& x, const real& y) throw()
+real sqrtx2y2(const real& x, const real& y) noexcept
 // calculating sqrt(x^2 + y^2) in high accuracy. Blomquist 01.12.02
 {
     real a,b,r;
@@ -332,7 +332,7 @@ real sqrtx2m1(const real& x)
 
 //------------------------------------------------------------------
 
-real sqrt1mx2(const real& x) throw(STD_FKT_OUT_OF_DEF)
+real sqrt1mx2(const real& x) noexcept(false)
 // sqrt(1-x2);  rel. Fehlerschranke:  eps = 3.700747E-16 = e(f)
 // Blomquist, 19.06.04;
 { 
@@ -379,7 +379,7 @@ int Interval_Nr(int* v, const int& n, const int& ex)
 //------------------------------------------------------------------
 
 real ln_sqrtx2y2(const real& x, const real& y) 
-                                throw(STD_FKT_OUT_OF_DEF)
+                                noexcept(false)
 // ln( sqrt(x^2+y^2) ) == 0.5*ln(x^2+y^2); Blomquist, 21.11.03;
 // Relative error bound: 5.160563E-016;
 // Absolute error bound: 2.225075E-308; if x=1 and 0<=y<=b0;
@@ -533,7 +533,7 @@ real Cut26(const real& x){
   return real(y.f);
 }
 
-int Round(const real& x) throw()
+int Round(const real& x) noexcept
 // y = Round(x) delivers the rounded value y of x.
 // For |x| < 2147483647.5 the assignment  y = Round(x)  delivers
 // the next integer value y.
@@ -555,7 +555,7 @@ int Round(const real& x) throw()
 	return dbl<0 ? int(dbl-0.5) : int(dbl+0.5);
 }
 
-int ceil(const real& x) throw()
+int ceil(const real& x) noexcept
 {
 	real y(x); 
 	bool neg(y<0);
@@ -567,7 +567,7 @@ int ceil(const real& x) throw()
 	return res;
 }
 
-int ifloor(const real& x) throw()
+int ifloor(const real& x) noexcept
 {
 	real y(x); 
 	bool neg(y<0);
@@ -595,7 +595,7 @@ static const real c_ln2_B = 6243314768165359.0 / 9007199254740992.0;
 // c_ln2_B < ln(2) is the nearest machine number for ln(2) with an
 // absolute error < 2.3190469E-17;
 
-real acoshp1(const real& x) throw()
+real acoshp1(const real& x) noexcept
 // acoshp1(x) = acosh(1+x);  rel. error: eps = 7.792706E-16 = e(f)
 // Ausfuehrlich getestet;  Blomquist, 27.03.05;
 { 

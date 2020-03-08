@@ -27,7 +27,7 @@
 
 namespace cxsc {
 	
-	l_complex sqrt(const l_complex& z) throw()
+	l_complex sqrt(const l_complex& z) noexcept
 // Computation of sqrt(z); stagprec <= stagmax=19 determines the maximum 
 // accuracy of about 16*19 = 304 decimal digits.
 // The branch cut of this sqrt-function is the negative imaginary axis.
@@ -68,76 +68,76 @@ namespace cxsc {
 	 return l_complex(x,y);
 	} // sqrt
 	
-	l_complex sqrtp1m1(const l_complex& z) throw()
+	l_complex sqrtp1m1(const l_complex& z) noexcept
 	{ return mid(sqrtp1m1(l_cinterval(z))); }
 	
-	l_complex sqrt1px2(const l_complex& z) throw()
+	l_complex sqrt1px2(const l_complex& z) noexcept
 	{ return mid(sqrt1px2(l_cinterval(z))); }
 	
-	l_complex sqrtx2m1(const l_complex& z) throw()
+	l_complex sqrtx2m1(const l_complex& z) noexcept
 	{ return mid(sqrtx2m1(l_cinterval(z))); }
 	
-	l_complex sqrt1mx2(const l_complex& z) throw()
+	l_complex sqrt1mx2(const l_complex& z) noexcept
 	{ return mid(sqrt1mx2(l_cinterval(z))); }
 
-	l_complex exp(const l_complex& z) throw()
+	l_complex exp(const l_complex& z) noexcept
 	{ return mid(exp(l_cinterval(z))); }
 	
-	l_complex expm1(const l_complex& z) throw()
+	l_complex expm1(const l_complex& z) noexcept
 	{ return mid(expm1(l_cinterval(z))); }
 	
-	l_complex exp2(const l_complex& z) throw()
+	l_complex exp2(const l_complex& z) noexcept
 	{ return mid(exp2(l_cinterval(z))); }
 	
-	l_complex exp10(const l_complex& z) throw()
+	l_complex exp10(const l_complex& z) noexcept
 	{ return mid(exp10(l_cinterval(z))); }
 
-	l_complex sin(const l_complex& z) throw()
+	l_complex sin(const l_complex& z) noexcept
 	{ return mid(sin(l_cinterval(z))); }
 
-	l_complex cos(const l_complex& z) throw()
+	l_complex cos(const l_complex& z) noexcept
 	{ return mid(cos(l_cinterval(z))); }
 
-	l_complex tan(const l_complex& z) throw()
+	l_complex tan(const l_complex& z) noexcept
 	{ return mid(tan(l_cinterval(z))); }
 
-	l_complex cot(const l_complex& z) throw()
+	l_complex cot(const l_complex& z) noexcept
 	{ return mid(cot(l_cinterval(z))); }	
 	
-	l_complex asin(const l_complex& z) throw()
+	l_complex asin(const l_complex& z) noexcept
 	{ return mid(asin(l_cinterval(z))); }
 
-	l_complex acos(const l_complex& z) throw()
+	l_complex acos(const l_complex& z) noexcept
 	{ return mid(acos(l_cinterval(z))); }
 
-	l_complex atan(const l_complex& z) throw()
+	l_complex atan(const l_complex& z) noexcept
 	{ return mid(atan(l_cinterval(z))); }
 
-	l_complex acot(const l_complex& z) throw()
+	l_complex acot(const l_complex& z) noexcept
 	{ return mid(acot(l_cinterval(z))); }	
 	
-	l_complex sinh(const l_complex& z) throw()
+	l_complex sinh(const l_complex& z) noexcept
 	{ return mid(sinh(l_cinterval(z))); }
 
-	l_complex cosh(const l_complex& z) throw()
+	l_complex cosh(const l_complex& z) noexcept
 	{ return mid(cosh(l_cinterval(z))); }
 
-	l_complex tanh(const l_complex& z) throw()
+	l_complex tanh(const l_complex& z) noexcept
 	{ return mid(tanh(l_cinterval(z))); }
 
-	l_complex coth(const l_complex& z) throw()
+	l_complex coth(const l_complex& z) noexcept
 	{ return mid(coth(l_cinterval(z))); }
 	
-	l_complex asinh(const l_complex& z) throw()
+	l_complex asinh(const l_complex& z) noexcept
 	{ return mid(asinh(l_cinterval(z))); }
 
-	l_complex acosh(const l_complex& z) throw()
+	l_complex acosh(const l_complex& z) noexcept
 	{ return mid(acosh(l_cinterval(z))); }
 
-	l_complex atanh(const l_complex& z) throw()
+	l_complex atanh(const l_complex& z) noexcept
 	{ return mid(atanh(l_cinterval(z))); }
 
-	l_complex acoth(const l_complex& z) throw()
+	l_complex acoth(const l_complex& z) noexcept
 	{ return mid(acoth(l_cinterval(z))); }
 
    // sqrt_all(c) computes a list of 2 values for all square roots of c
@@ -153,13 +153,13 @@ namespace cxsc {
 		return res;
 	} 	// end sqrt_all
 	
-	l_complex sqrt(const l_complex& z, int n) throw()
+	l_complex sqrt(const l_complex& z, int n) noexcept
 	{ return mid(sqrt(l_cinterval(z),n)); }		
 			
-	l_real arg(const l_complex& z) throw()
+	l_real arg(const l_complex& z) noexcept
 	{ return mid(arg(l_cinterval(z))); }
 	
-	l_real Arg(const l_complex& z) throw()
+	l_real Arg(const l_complex& z) noexcept
 	{ return mid(Arg(l_cinterval(z))); }
 	
 	std::list<l_complex> sqrt_all( const l_complex& z, int n )
@@ -203,13 +203,13 @@ namespace cxsc {
 	//
 //-- end sqrt_all -------------------------------------------------------------
 	
-	l_complex ln(const l_complex& z) throw()
+	l_complex ln(const l_complex& z) noexcept
 	{ return mid(ln(l_cinterval(z))); }
 	
-	l_complex lnp1(const l_complex& z) throw()
+	l_complex lnp1(const l_complex& z) noexcept
 	{ return mid(lnp1(l_cinterval(z))); }
 	
-	l_complex power_fast(const l_complex& z, int n) throw()
+	l_complex power_fast(const l_complex& z, int n) noexcept
 	{
 		if( n == 0 )
 			return l_complex(1,0);
@@ -240,19 +240,19 @@ namespace cxsc {
 	}
 }
 
-l_complex power(const l_complex& z, int n) throw()
+l_complex power(const l_complex& z, int n) noexcept
 { return mid( power(l_cinterval(z),n) ); }
 	
-l_complex log2(const l_complex& z) throw()
+l_complex log2(const l_complex& z) noexcept
 { return mid(log2(l_cinterval(z))); }
 
-l_complex log10(const l_complex& z) throw()
+l_complex log10(const l_complex& z) noexcept
 { return mid(log10(l_cinterval(z))); }
 	
-l_complex pow(const l_complex& z, const l_real& p) throw()
+l_complex pow(const l_complex& z, const l_real& p) noexcept
 { return mid( pow( l_cinterval(z) , l_interval(p) ) ); }
 	
-l_complex pow(const l_complex& z, const l_complex& p) throw()	
+l_complex pow(const l_complex& z, const l_complex& p) noexcept	
 { return mid( pow( l_cinterval(z) , l_cinterval(p) ) ); }
 
 

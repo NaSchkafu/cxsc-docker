@@ -33,17 +33,17 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_TYPE_CAST_OF_THICK_OBJ)
 #else
-	throw()
+	noexcept
 #endif
 	{ _vmconstr<cvector,rmatrix,complex>(*this,sl); }
 	INLINE cvector::cvector(const rmatrix_slice &sl)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_TYPE_CAST_OF_THICK_OBJ)
 #else
-	throw()
+	noexcept
 #endif
 	{ _vmsconstr<cvector,rmatrix_slice,complex>(*this,sl); }
-	INLINE cvector::cvector(const rmatrix_subv &v) throw():l(v.lb),u(v.ub),size(v.size)
+	INLINE cvector::cvector(const rmatrix_subv &v) noexcept:l(v.lb),u(v.ub),size(v.size)
 	{
 		dat=new complex[size];
 		for (int i=0, j=v.start;i<v.size;i++,j+=v.offset)
@@ -53,14 +53,14 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_TYPE_CAST_OF_THICK_OBJ)
 #else
-	throw()
+	noexcept
 #endif
 	{ return cvector(sl); }
 	INLINE cvector _cvector(const rmatrix_slice &sl)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_TYPE_CAST_OF_THICK_OBJ)
 #else
-	throw()
+	noexcept
 #endif
 	{ return cvector(sl); }
 
@@ -122,34 +122,34 @@ namespace cxsc {
 // #endif
 // 	{ _vmvaccu<cidotprecision,cvector,rmatrix_subv>(dp,cvector(rv1),rv2); }
 
-	INLINE cvector &cvector::operator =(const rmatrix_subv &mv) throw() { return _vmvassign<cvector,rmatrix_subv,complex>(*this,mv); }
-	INLINE cvector_slice &cvector_slice::operator =(const rmatrix_subv &mv) throw() { return _vsvassign(*this,rvector(mv)); }
+	INLINE cvector &cvector::operator =(const rmatrix_subv &mv) noexcept { return _vmvassign<cvector,rmatrix_subv,complex>(*this,mv); }
+	INLINE cvector_slice &cvector_slice::operator =(const rmatrix_subv &mv) noexcept { return _vsvassign(*this,rvector(mv)); }
 	INLINE cvector &cvector::operator =(const rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_TYPE_CAST_OF_THICK_OBJ)
 #else
-	throw()
+	noexcept
 #endif
 	{ return _vmassign<cvector,rmatrix,complex>(*this,m); }
 	INLINE cvector &cvector::operator =(const rmatrix_slice &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_TYPE_CAST_OF_THICK_OBJ)
 #else
-	throw()
+	noexcept
 #endif
 	{ return _vmassign<cvector,rmatrix,complex>(*this,rmatrix(m)); }
 	INLINE cvector_slice &cvector_slice::operator =(const rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__OP_WITH_WRONG_DIM<rvector>,ERROR_RMATRIX_TYPE_CAST_OF_THICK_OBJ)
 #else
-	throw()
+	noexcept
 #endif
 	{ return _vsvassign(*this,rvector(m)); }
 	INLINE cvector_slice & cvector_slice::operator =(const rmatrix_slice &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR__OP_WITH_WRONG_DIM<rvector>,ERROR_RMATRIX_TYPE_CAST_OF_THICK_OBJ)
 #else
-	throw()
+	noexcept
 #endif
 	{ return _vsvassign(*this,cvector(rmatrix(m))); }
 
@@ -157,42 +157,42 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ return _mvcmult<rmatrix,cvector,cvector>(m,v); }
 	INLINE cvector operator *(const rmatrix_slice &ms,const cvector &v)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ return _msvcmult<rmatrix_slice,cvector,cvector>(ms,v); }
 	INLINE cvector operator *(const cvector &v,const rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ return _vmcmult<cvector,rmatrix,cvector>(v,m); }
 	INLINE cvector operator *(const cvector &v,const rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ return _vmscmult<cvector,rmatrix_slice,cvector>(v,ms); }
 	INLINE cvector &operator *=(cvector &v,const rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ return _vmcmultassign<cvector,rmatrix,complex>(v,m); }
 	INLINE cvector &operator *=(cvector &v,const rmatrix_slice &ms)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ return _vmscmultassign<cvector,rmatrix_slice,complex>(v,ms); }
 
@@ -200,14 +200,14 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ return _vmcmult<cvector,rmatrix,cvector>(cvector(v),m); }
 	INLINE cvector_slice &cvector_slice::operator *=(const rmatrix &m)
 #if(CXSC_INDEX_CHECK)
 	throw(ERROR_RMATRIX_OP_WITH_WRONG_DIM)
 #else
-	throw()
+	noexcept
 #endif
 	{ return _vsmcmultassign<cvector_slice,rmatrix,complex>(*this,m); }
 	

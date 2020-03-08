@@ -33,14 +33,14 @@ namespace cxsc {
 
 
 	template <class V>
-	TINLINE void _vresize(V &rv) throw();
+	TINLINE void _vresize(V &rv) noexcept;
 
 	template <class V,class S>
 	TINLINE void _vresize(V &rv, const int &len)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__WRONG_BOUNDARIES<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class S>
@@ -48,43 +48,43 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__WRONG_BOUNDARIES<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2,class S>
-	TINLINE V1 &_vvassign(V1 &rv1,const V2 &rv2) throw();
+	TINLINE V1 &_vvassign(V1 &rv1,const V2 &rv2) noexcept;
 
 	template <class V,class S>
-	TINLINE V & _vsassign(V &rv,const S &r) throw();
+	TINLINE V & _vsassign(V &rv,const S &r) noexcept;
 
 	template <class VS1,class VS2>
 	TINLINE VS1 & _vsvsassign(VS1 &sl1,const VS2 &sl2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 	
 	template <class V,class VS,class S>
-	TINLINE V & _vvsassign(V &rv,const VS &sl) throw();
+	TINLINE V & _vvsassign(V &rv,const VS &sl) noexcept;
 
 	template <class VS,class V>
 	TINLINE VS & _vsvassign(VS &sl,const V &rv)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class S>
-	TINLINE VS & _vssassign(VS &sl,const S &r) throw();
+	TINLINE VS & _vssassign(VS &sl,const S &r) noexcept;
 
 	template <class DP,class V1,class V2>
 	TINLINE void _vvaccu(DP &dp, const V1 & rv1, const V2 &rv2)
 #if(CXSC_INDEX_CHECK)
 		throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class DP,class VS,class V>
@@ -92,30 +92,30 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class S,class E>
-	TINLINE E _vsdiv(const V &rv, const S &s) throw();
+	TINLINE E _vsdiv(const V &rv, const S &s) noexcept;
 
 	template <class V,class S>
-	TINLINE V &_vsdivassign(V &rv,const S &r) throw();
+	TINLINE V &_vsdivassign(V &rv,const S &r) noexcept;
 
 	template <class VS,class S,class E>
-	TINLINE E _vssdiv(const VS &sl, const S &s) throw();
+	TINLINE E _vssdiv(const VS &sl, const S &s) noexcept;
 
 	template <class V,class S,class E>
-	TINLINE E _vsmult(const V &rv, const S &s) throw();
+	TINLINE E _vsmult(const V &rv, const S &s) noexcept;
 
 	template <class VS,class S,class E>
-	TINLINE E _vssmult(const VS &sl, const S &s) throw();
+	TINLINE E _vssmult(const VS &sl, const S &s) noexcept;
 
 	template <class V1,class V2,class E>
 	TINLINE E _vvlmult(const V1 & rv1, const V2 &rv2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V,class E>
@@ -123,7 +123,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2,class E>
@@ -131,7 +131,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2,class E>
@@ -139,7 +139,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V,class E>
@@ -147,7 +147,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2,class E>
@@ -155,7 +155,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2,class E>
@@ -163,7 +163,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V,class E>
@@ -171,7 +171,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2,class E>
@@ -179,7 +179,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2,class E>
@@ -187,7 +187,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V,class E>
@@ -195,7 +195,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2,class E>
@@ -203,7 +203,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2,class E>
@@ -211,7 +211,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V,class E>
@@ -219,7 +219,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2,class E>
@@ -227,7 +227,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2,class E>
@@ -235,7 +235,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V,class E>
@@ -243,7 +243,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2,class E>
@@ -251,24 +251,24 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class S>
-	TINLINE V &_vsmultassign(V &rv,const S &r) throw();
+	TINLINE V &_vsmultassign(V &rv,const S &r) noexcept;
 
 	template <class VS,class S>
-	TINLINE VS &_vssmultassign(VS &rv,const S &r) throw();
+	TINLINE VS &_vssmultassign(VS &rv,const S &r) noexcept;
 
 	template <class VS,class S>
-	TINLINE VS &_vssdivassign(VS &rv,const S &r) throw();
+	TINLINE VS &_vssdivassign(VS &rv,const S &r) noexcept;
 
 	template <class V1,class V2,class E>
 	TINLINE E _vvplus(const V1 &rv1, const V2 &rv2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS,class E>
@@ -276,7 +276,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2,class E>
@@ -284,7 +284,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2,class E>
@@ -292,7 +292,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2>
@@ -300,7 +300,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS>
@@ -308,7 +308,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V>
@@ -316,7 +316,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2>
@@ -324,7 +324,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2>
@@ -332,7 +332,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2>
@@ -340,7 +340,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS>
@@ -348,7 +348,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V>
@@ -356,21 +356,21 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V>
-	TINLINE V _vminus(const V &rv) throw();
+	TINLINE V _vminus(const V &rv) noexcept;
 
 	template <class VS,class V>
-	TINLINE V _vsminus(const VS &sl) throw();
+	TINLINE V _vsminus(const VS &sl) noexcept;
 
 	template <class V1,class V2,class E>
 	TINLINE E _vvminus(const V1 &rv1, const V2 &rv2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS,class E>
@@ -378,7 +378,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 	
 	template <class VS,class V,class E>
@@ -386,7 +386,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2,class E>
@@ -394,7 +394,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS,class E>
@@ -402,7 +402,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2,class E>
@@ -410,7 +410,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2>
@@ -418,7 +418,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS>
@@ -426,7 +426,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V>
@@ -434,7 +434,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2>
@@ -442,7 +442,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2,class E>
@@ -450,7 +450,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS,class E>
@@ -458,7 +458,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2,class E>
@@ -466,7 +466,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<E>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2>
@@ -474,7 +474,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS>
@@ -482,7 +482,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V>
@@ -490,7 +490,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2>
@@ -498,135 +498,135 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2>
-	TINLINE bool _vveq(const V1 &rv1, const V2 &rv2) throw();
+	TINLINE bool _vveq(const V1 &rv1, const V2 &rv2) noexcept;
 
 	template <class VS,class V>
-	TINLINE bool _vsveq(const VS &sl, const V &rv) throw();
+	TINLINE bool _vsveq(const VS &sl, const V &rv) noexcept;
 
 	template <class V1,class V2>
-	TINLINE bool _vvneq(const V1 &rv1, const V2 &rv2) throw();
+	TINLINE bool _vvneq(const V1 &rv1, const V2 &rv2) noexcept;
 
 	template <class VS,class V>
-	TINLINE bool _vsvneq(const VS &sl, const V &rv) throw();
+	TINLINE bool _vsvneq(const VS &sl, const V &rv) noexcept;
 
 	template <class V1,class V2>
-	TINLINE bool _vvless(const V1 &rv1, const V2 &rv2) throw();
+	TINLINE bool _vvless(const V1 &rv1, const V2 &rv2) noexcept;
 
 	template <class VS,class V>
-	TINLINE bool _vsvless(const VS &sl, const V &rv) throw();
+	TINLINE bool _vsvless(const VS &sl, const V &rv) noexcept;
 
 	template <class V1,class V2>
-	TINLINE bool _vvleq(const V1 &rv1, const V2 &rv2) throw();
+	TINLINE bool _vvleq(const V1 &rv1, const V2 &rv2) noexcept;
 
 	template <class VS,class V>
-	TINLINE bool _vsvleq(const VS &sl, const V &rv) throw();
+	TINLINE bool _vsvleq(const VS &sl, const V &rv) noexcept;
 
 	template <class V,class VS>
-	TINLINE bool _vvsless(const V &rv, const VS &sl) throw();
+	TINLINE bool _vvsless(const V &rv, const VS &sl) noexcept;
 
 	template <class V,class VS>
-	TINLINE bool _vvsleq(const V &rv, const VS &sl) throw();
+	TINLINE bool _vvsleq(const V &rv, const VS &sl) noexcept;
 
 	template <class V>
-	TINLINE bool _vnot(const V &rv) throw();
+	TINLINE bool _vnot(const V &rv) noexcept;
 
 	template <class V>
-	TINLINE void *_vvoid(const V &rv) throw();
+	TINLINE void *_vvoid(const V &rv) noexcept;
 
 	template <class V>
-	TINLINE V _vconj(const V &rv) throw();
+	TINLINE V _vconj(const V &rv) noexcept;
 
 	template <class VS,class E>
-	TINLINE E _vsconj(const VS &sl) throw();
+	TINLINE E _vsconj(const VS &sl) noexcept;
 
 	template <class V,class E>
-	TINLINE E _vabs(const V &rv) throw();
+	TINLINE E _vabs(const V &rv) noexcept;
 
 	template <class VS,class E>
-	TINLINE E _vsabs(const VS &sl) throw();
+	TINLINE E _vsabs(const VS &sl) noexcept;
 
 	template <class V,class E>
-	TINLINE E _vdiam(const V &rv) throw();
+	TINLINE E _vdiam(const V &rv) noexcept;
 
 	template <class VS,class E>
-	TINLINE E _vsdiam(const VS &sl) throw();
+	TINLINE E _vsdiam(const VS &sl) noexcept;
 
 	template <class V,class E>
-	TINLINE E _vmid(const V &rv) throw();
+	TINLINE E _vmid(const V &rv) noexcept;
 
 	template <class VS,class E>
-	TINLINE E _vsmid(const VS &sl) throw();
+	TINLINE E _vsmid(const VS &sl) noexcept;
 
 	template <class V,class E>
-	TINLINE E _vinf(const V &rv) throw();
+	TINLINE E _vinf(const V &rv) noexcept;
 
 	template <class VS,class E>
-	TINLINE E _vsinf(const VS &sl) throw();
+	TINLINE E _vsinf(const VS &sl) noexcept;
 
 	template <class V,class E>
-	TINLINE E _vsup(const V &rv) throw();
+	TINLINE E _vsup(const V &rv) noexcept;
 
 	template <class VS,class E>
-	TINLINE E _vssup(const VS &sl) throw();
+	TINLINE E _vssup(const VS &sl) noexcept;
 
 	template <class V,class E>
-	TINLINE E _vre(const V &rv) throw();
+	TINLINE E _vre(const V &rv) noexcept;
 
 	template <class VS,class E>
-	TINLINE E _vsre(const VS &sl) throw();
+	TINLINE E _vsre(const VS &sl) noexcept;
 
 	template <class V,class E>
-	TINLINE E _vim(const V &rv) throw();
+	TINLINE E _vim(const V &rv) noexcept;
 
 	template <class VS,class E>
-	TINLINE E _vsim(const VS &sl) throw();
+	TINLINE E _vsim(const VS &sl) noexcept;
 
 	template <class V,class S>
-	TINLINE V &_vsusetsup(V &v, const S &s) throw();
+	TINLINE V &_vsusetsup(V &v, const S &s) noexcept;
 
 	template <class V,class S>
-	TINLINE V &_vsusetinf(V &v, const S &s) throw();
+	TINLINE V &_vsusetinf(V &v, const S &s) noexcept;
 
 	template <class V,class S>
-	TINLINE V &_vssetinf(V &v, const S &s) throw();
+	TINLINE V &_vssetinf(V &v, const S &s) noexcept;
 
 	template <class V,class S>
-	TINLINE V &_vssetsup(V &v, const S &s) throw();
+	TINLINE V &_vssetsup(V &v, const S &s) noexcept;
 
 	template <class V,class S>
-	TINLINE V &_vssetre(V &v, const S &s) throw();
+	TINLINE V &_vssetre(V &v, const S &s) noexcept;
 
 	template <class V,class S>
-	TINLINE V &_vssetim(V &v, const S &s) throw();
+	TINLINE V &_vssetim(V &v, const S &s) noexcept;
 
 	template <class VS,class S>
-	TINLINE VS &_vssusetsup(VS &vs, const S &s) throw();
+	TINLINE VS &_vssusetsup(VS &vs, const S &s) noexcept;
 
 	template <class VS,class S>
-	TINLINE VS &_vssusetinf(VS &vs, const S &s) throw();
+	TINLINE VS &_vssusetinf(VS &vs, const S &s) noexcept;
 
 	template <class VS,class S>
-	TINLINE VS &_vsssetinf(VS &vs, const S &s) throw();
+	TINLINE VS &_vsssetinf(VS &vs, const S &s) noexcept;
 
 	template <class VS,class S>
-	TINLINE VS &_vsssetsup(VS &vs, const S &s) throw();
+	TINLINE VS &_vsssetsup(VS &vs, const S &s) noexcept;
 
 	template <class VS,class S>
-	TINLINE VS &_vsssetre(VS &vs, const S &s) throw();
+	TINLINE VS &_vsssetre(VS &vs, const S &s) noexcept;
 
 	template <class VS,class S>
-	TINLINE VS &_vsssetim(VS &vs, const S &s) throw();
+	TINLINE VS &_vsssetim(VS &vs, const S &s) noexcept;
 
 	template <class V1,class V2>
 	TINLINE V1 &_vvsetinf(V1 &rv1, const V2 &rv2)
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS>
@@ -634,7 +634,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V>
@@ -642,7 +642,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2>
@@ -650,7 +650,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2>
@@ -658,7 +658,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS>
@@ -666,7 +666,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V>
@@ -674,7 +674,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2>
@@ -682,7 +682,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2>
@@ -690,7 +690,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS>
@@ -698,7 +698,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V>
@@ -706,7 +706,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2>
@@ -714,7 +714,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2>
@@ -722,7 +722,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS>
@@ -730,7 +730,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V>
@@ -738,7 +738,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2>
@@ -746,7 +746,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2>
@@ -754,7 +754,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS>
@@ -762,7 +762,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V>
@@ -770,7 +770,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2>
@@ -778,7 +778,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V1,class V2>
@@ -786,7 +786,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class V,class VS>
@@ -794,7 +794,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<V>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS,class V>
@@ -802,7 +802,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2>
@@ -810,7 +810,7 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(ERROR__OP_WITH_WRONG_DIM<VS1>);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class DP,class VS1,class VS2>
@@ -818,38 +818,38 @@ namespace cxsc {
 #if(CXSC_INDEX_CHECK)
 		throw(OP_WITH_WRONG_DIM);
 #else
-	throw();
+	noexcept;
 #endif
 
 	template <class VS1,class VS2>
-	TINLINE bool _vsvseq(const VS1 &sl1, const VS2 &sl2) throw();
+	TINLINE bool _vsvseq(const VS1 &sl1, const VS2 &sl2) noexcept;
 
 	template <class VS1,class VS2>
-	TINLINE bool _vsvsneq(const VS1 &sl1, const VS2 &sl2) throw();
+	TINLINE bool _vsvsneq(const VS1 &sl1, const VS2 &sl2) noexcept;
 
 	template <class VS1,class VS2>
-	TINLINE bool _vsvsless(const VS1 &sl1, const VS2 &sl2) throw();
+	TINLINE bool _vsvsless(const VS1 &sl1, const VS2 &sl2) noexcept;
 
 	template <class VS1,class VS2>
-	TINLINE bool _vsvsleq(const VS1 &sl1, const VS2 &sl2) throw();
+	TINLINE bool _vsvsleq(const VS1 &sl1, const VS2 &sl2) noexcept;
 
 	template <class VS>
-	TINLINE bool _vsnot(const VS &sl) throw();
+	TINLINE bool _vsnot(const VS &sl) noexcept;
 
 	template <class VS>
-	TINLINE void *_vsvoid(const VS &sl) throw();
+	TINLINE void *_vsvoid(const VS &sl) noexcept;
 
 	template <class V>
-	std::ostream &_vout(std::ostream &s, const V &rv) throw();
+	std::ostream &_vout(std::ostream &s, const V &rv) noexcept;
 
 	template <class V>
-	std::istream &_vin(std::istream &s, V &rv) throw();
+	std::istream &_vin(std::istream &s, V &rv) noexcept;
 
 	template <class V>
-	std::ostream &_vsout(std::ostream &s, const V &rv) throw();
+	std::ostream &_vsout(std::ostream &s, const V &rv) noexcept;
 
 	template <class V>
-	std::istream &_vsin(std::istream &s, V &rv) throw();
+	std::istream &_vsin(std::istream &s, V &rv) noexcept;
 
 } // namespace cxsc 
 
