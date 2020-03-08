@@ -3,6 +3,8 @@ This is a modified copy of the C-XSC source code available at the official homep
 Modifcations:
 
 - Replace all dynamic exception specifiers with noexcept (so that the code-base is C++17 compatible).
+- Added a Dockerfile to build a C-XSC image with docker using
+  docker build .
 
 
                      Installing C-XSC (CToolbox included)
